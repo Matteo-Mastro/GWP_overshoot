@@ -1,0 +1,9 @@
+[CHART]
+VERID=GAMSIDE Chart(s) V1
+GDXFILE=FUTURE_p.gdx
+TITLE=CONCO2INT
+SUBTITLE=Atmospheric CO2 concentration (without ENSO effect)     [ppm]
+
+[SERIES1]
+SYMBOL=CONCO2INT
+TYPE=line

@@ -1,0 +1,9 @@
+[CHART]
+VERID=GAMSIDE Chart(s) V1
+GDXFILE=FUTURE_p.gdx
+TITLE=T2M
+SUBTITLE=Global-mean surface temperature change                 [degree in C]
+
+[SERIES1]
+SYMBOL=T2M
+TYPE=line

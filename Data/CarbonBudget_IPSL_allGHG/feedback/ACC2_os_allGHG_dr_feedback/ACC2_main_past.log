@@ -1,0 +1,1841 @@
+
+--- Job ACC2_main_future_overshoot.gms Start 12/06/22 17:36:07 40.3.0 f227c22a WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\40\gmsprmNT.txt
+--- GAMS Parameters defined
+    Input C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\ACC2_main_future_overshoot.gms
+    PageSize 0
+    ScrDir C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\225a\
+    SysDir C:\GAMS\40\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+Licensee: Small MUD - 5 User License                     S210824|0002AO-GEN
+          UVSQ, LSCE                                                DC15537
+          C:\Users\mastr\OneDrive\Documenti\GAMS\gamslice.txt
+          License Admin: Katsumasa Tanaka, katsumasa.tanaka@lsce.ipsl.fr   
+Processor information: 1 socket(s), 10 core(s), and 12 thread(s) available
+GAMS 40.3.0   Copyright (C) 1987-2022 GAMS Development. All rights reserved
+--- Starting compilation
+--- ACC2_main_future_overshoot.gms(125) 3 Mb
+--- . ACC2_set_common.inc(117) 3 Mb
+--- ACC2_main_future_overshoot.gms(126) 3 Mb
+--- . ACC2_constants_common.inc(626) 3 Mb
+--- ACC2_main_future_overshoot.gms(127) 3 Mb
+--- . ACC2_variables_common.inc(573) 3 Mb
+--- ACC2_main_future_overshoot.gms(128) 3 Mb
+--- . ACC2_scenarios_future.inc(45400) 10 Mb
+--- ACC2_main_future_overshoot.gms(129) 10 Mb
+--- . ACC2_settings_future.inc(251) 10 Mb
+--- ACC2_main_future_overshoot.gms(130) 10 Mb
+--- . ACC2_bounds_future.inc(289) 10 Mb
+--- ACC2_main_future_overshoot.gms(131) 10 Mb
+--- . ACC2_switchboard_common.inc(257) 10 Mb
+--- ACC2_main_future_overshoot.gms(132) 10 Mb
+--- . ACC2_init_future.inc(522) 10 Mb
+--- ACC2_main_future_overshoot.gms(133) 10 Mb
+--- . ACC2_equations_common.inc(1281) 10 Mb
+--- ACC2_main_future_overshoot.gms(134) 10 Mb
+--- . ACC2_abatement_future.inc(498) 10 Mb
+--- ACC2_main_future_overshoot.gms(257) 10 Mb
+--- . ACC2_outputs_future.inc(457) 10 Mb
+--- ACC2_main_future_overshoot.gms(258) 10 Mb
+--- . ACC2_alert_future.inc(76) 10 Mb
+--- ACC2_main_future_overshoot.gms(259) 10 Mb
+--- Starting execution: elapsed 0:00:00.347
+--- ACC2_main_future_overshoot.gms(50031) 20 Mb
+--- GDXin=C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\FUTURE_p.gdx
+--- ACC2_main_future_overshoot.gms(50031) 31 Mb
+--- GDX File (execute_load) C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\FUTURE_p.gdx
+--- Generating NLP model FUTURE
+--- ACC2_main_future_overshoot.gms(50033) 117 Mb
+---   134,270 rows  171,680 columns  1,027,893 non-zeroes
+---   2,586,894 nl-code  659,928 nl-non-zeroes
+--- Range statistics (absolute non-zero finite values)
+--- RHS       [min, max] : [ 2.262E-05, 4.235E+02] - Zero values observed as well
+--- Bound     [min, max] : [ 1.000E-06, 3.000E+05] - Zero values observed as well
+--- Matrix    [min, max] : [ 1.012E-20, 7.670E+04] - Zero values observed as well
+--- ACC2_main_future_overshoot.gms(50033) 103 Mb
+--- Executing CONOPT3 (Solvelink=2): elapsed 0:00:01.016
+
+CONOPT 3         40.3.0 f227c22a Sep 16, 2022          WEI x86 64bit/MS Window
+
+
+Reading parameter(s) from "C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\conopt3.opt"
+>>  ********** ACC2 version 3.1.0. *****************************************************************************************
+>>  ********** CONOPT options ==============================================================================================
+>>  * General strategy to use CONOPT options:
+>>  * According to Arne Stolbjerg Drud (personal communication on Oct. 3, 2005) at ARKI, they attempt to creat a system
+>>  * in a way that a user should not be concerned with options. Unfortunately, the state of the art for nonlinear
+>>  * programming is not yet at a stage where options can be avoided completely.
+>>  * But one should always try to start without any options and then add a few if they become necessary.
+>>  *
+>>  * Maximum feasibility tolerance: a constraint will only be considered feasible if the residual is less than
+>>  * rtnwma times MaxJac.
+>>  * RTNWMA 1.e-6 (default 1.e-3)
+>>  *
+>>  * Minmum feasibility tolerance: a constraint will always be considered feasible if...
+>>  * RTNWMI 4.e-10 (default 4.e-10)
+>>  *
+>>  * Maximum Hessian dimension: if the number of superbasics exceeds lfnsup, CONOPT will no longer use the BFGS algorighm
+>>  * but will switch to a steepest descend approach.
+>>  * CONOPT2 and 3 react very differently.
+>>  * There has been a problem for CONOPT3 where a reasonable solution (1 normal completion and 2 locally optimal) is
+>>  * aparantly reached whereas there are some slacks left in the equations. When this happens, one should run the model
+>>  * again and often a correct solution can then be found. According to Arne Stolbjerg Drud (personal communication,
+>>  * Oct. 24, 2006), this problem in CONOPT3 will be fixed in the next version. He suggests that for now, LFNSUP be changed
+>>  * from 1000 to 1500 or 2000. When the model runs, the 'NSB' column in the log-file has numbers around 1265 most of the
+>>  * time. In order to estimate good 2nd order information, lfnsup should be larger than 1265. It seems to give some
+>>  * speedup for the algorithm.
+>>  LFNSUP = 2000
+>>  *
+>>  * Maximum Jacobian element
+>>  * rtmaxj of 2.d7 led to warming, but that of 1.d7 went through.
+>>  * The following choice is made by Arne Stolbjerg Drud experimentally.
+>>  * According to Drud (personal communication on Oct. 3, 2005), the Rtmaxv and Rtmaxj options are necessary,
+>>  * being related to large variables, which cannot be properly scaled automatically at this stage.
+>>  RTMAXJ = 1.e15
+>>  *
+>>  * Internal value of infinity
+>>  * My choice was 8.0E+07.
+>>  * See the note above for TRMAXJ
+>>  RTMAXV = 1.d50
+*** Value Error line 38: Value brought in range for option "RTMAXV" saw "1E50"
+*** Value Error line 38:    Value set to 1E30
+>>  *
+>>  * The optimization is stopped with a "slow progress" message if the change in objective is less than
+>>  * 10*rtobjr*max(1, abs(FOBJ)) for lfnicr consecutive iterations when FOBJ is the value of the current objective function.
+>>  LFNICR = 500
+>>  *
+>>  * Reduced gradient less than tolerance: the largest component of the reduced gradient is less than the tolerance rtredy.
+>>  * default 9.d-8
+>>  RTREDG = 9.d-6
+>>  * The following is a quote from my email communication with Drud on Oct. 12, 2005.
+>>  * Once a feasible solution has been found CONOPT will move in a direction suggested by the reduced gradient
+>>  * until the reduced gradient becomes smaller than the optimality tolerance, Rtredg.
+>>  * During this process the objective function must be reduced monotonically.
+>>  * Sometimes, it is not possible to reduce the objective function even though the reduced gradient is not very small and
+>>  * CONOPT will terminate with some kind of message about 'Slow convergence' and you will see NOPT with some variables.
+>>  * Having a larger Rtredg will remove these NOPT messages, but it may also mean that CONOPT terminates too early
+>>  * while it is still possible to get a better solution.
+>>  * Slow convergence can happen for very large model or model for which CONOPT's scaling procedure does not work well.
+>>  *
+>>  * Maximum number of stalled iteration
+>>  * Default 100
+>>  * LFSTAL 100
+>>  * LFILOG 5000
+>>  * lfmxns 0
+>>  *
+>>  * Alternative method: It can make larger steps and therefore better reductions in the sum of infeasibilities,
+>>  * and it is not very sensitive to degeneracies.
+>>  * According to Drud (personal communication on Oct. 3, 2005), the lmmxsf option should be fine now.
+>>  * This option has now been used by many users for many years without any error reports recently.
+>>  * lmmxsf 1
+>>  *
+>>  * Upon slow convergence, increase rtredg and/or decrease lfnicr
+>>  *
+>>  * Triangular crash turned on as suggested by Drud (personal communication on Oct. 11, 2005).
+>>  * lstcrs = true
+Finished reading from "C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\conopt3.opt"
+
+ 
+ 
+    C O N O P T 3   version 3.17M
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        4.0965517775E-09 (Input point)
+ 
+                   Pre-triangular equations:   57312
+                   Post-triangular equations:  23186
+                   Definitional equations:     18921
+ 
+      1   0        3.6211378050E-09 (After pre-processing)
+      2   0        6.9413645049E-12 (After scaling)
+ 
+ ** Feasible solution. Value of objective =    88537.7506414
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+      3   3        8.8462892319E+04 3.2E+06   263 1.0E+00    3 T  T
+      4   3        8.7883262773E+04 4.6E+07   271 1.0E+00    5 T  T
+      5   3        8.7748536751E+04 9.7E+06   270 1.0E+00   12 T  T
+      6   3        8.7454893909E+04 1.4E+07   276 1.0E+00   14 T  T
+      7   3        8.7241980714E+04 2.3E+08   284 1.0E+00   19 T  T
+      8   3        8.7156507940E+04 3.8E+10   278 7.4E-01   25 T  T
+      9   3        8.6903545264E+04 8.4E+06   281 1.0E+00   24 T  T
+     10   3        8.6357777413E+04 4.6E+07   264 1.0E+00   29 T  T
+     11   3        8.5774274684E+04 2.7E+08   249 1.0E+00   34 T  T
+     12   3        8.5426290765E+04 2.1E+06   246 1.0E+00   39 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     13   3        8.4690171107E+04 2.4E+06   233 1.0E+00   42 T  T
+     14   3        8.4307855051E+04 6.7E+05   222 1.0E+00   45 T  T
+     15   3        8.2871798645E+04 4.2E+05   228 1.0E+00   50 T  T
+     16   3        8.1795623360E+04 1.1E+05   260 1.0E+00   53 T  T
+     17   3        8.1495915754E+04 2.7E+06   250 1.0E+00   53 F  T
+     18   3        8.1192924095E+04 2.3E+04   255 4.4E-01   39 F  T
+     19   3        8.1190818996E+04 2.3E+04   254 3.4E-09      T  T
+     20   3        8.1167543286E+04 2.3E+04   253 4.0E-08      T  T
+     21   3        8.1152790182E+04 4.1E+03   252 3.6E-07      T  T
+     22   3        8.1152089823E+04 1.8E+03   251 3.0E-08      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     23   3        8.1142422476E+04 1.8E+03   250 4.3E-07      T  T
+     24   3        8.1133365045E+04 5.3E+03   250 1.0E+00    3 T  T
+     25   3        8.1043570715E+04 2.5E+03   247 1.0E+00    8 T  T
+     26   3        8.0900073079E+04 6.8E+05   240 1.0E+00   11 T  T
+     27   3        8.0778577740E+04 3.6E+03   310 1.0E+00   14 T  T
+     28   3        8.0708843190E+04 3.1E+03   297 1.0E+00   19 T  T
+     29   3        8.0619521755E+04 7.5E+03   274 1.0E+00   22 F  T
+     30   3        8.0535054173E+04 2.9E+05   241 3.7E-01   16 F  T
+     31   3        8.0483975710E+04 3.0E+05   245 5.5E-10      T  T
+     32   3        8.0478949218E+04 1.1E+03   267 2.8E-07      T  T
+   Elapsed time       48.8 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     33   3        8.0475552153E+04 9.7E+02   266 2.0E-07      T  T
+     34   3        8.0469566247E+04 2.4E+05   265 1.0E-10      T  T
+     35   3        8.0447303011E+04 2.3E+05   265 4.4E-10      T  T
+     36   3        8.0419908885E+04 8.5E+02   269 1.0E+00    3 T  T
+     37   3        8.0288478768E+04 8.5E+02   266 1.0E+00    8 T  T
+     38   3        8.0079901484E+04 4.6E+03   261 1.0E+00   11 T  T
+     39   3        8.0033233777E+04 1.8E+04   266 1.0E+00   17 T  T
+     40   3        7.9914507447E+04 3.5E+05   308 1.0E+00   19 T  T
+     41   3        7.9809540600E+04 3.2E+04   273 3.9E-01   24 F  T
+     42   3        7.9678024699E+04 3.0E+04   272 1.0E+00   18 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     43   3        7.9553150329E+04 5.8E+04   281 1.0E+00   18 F  T
+     44   3        7.9476045663E+04 5.7E+03   293 1.0E+00   13 T  T
+     45   3        7.9412392190E+04 2.7E+04   378 1.0E+00   13 T  T
+     46   3        7.9378895557E+04 5.3E+02   348 1.0E+00   13 T  T
+     47   3        7.9109248526E+04 1.0E+04   338 1.0E+00   18 T  T
+     48   3        7.8992850012E+04 3.0E+04   343 1.0E+00   23 T  T
+     49   3        7.8935854318E+04 4.5E+03   328 5.7E-01   23 F  T
+     50   3        7.8934890415E+04 3.5E+03   353 1.3E-01   19 F  T
+     51   3        7.8934315144E+04 2.9E+03   353 4.6E-08      T  T
+     52   3        7.8933728999E+04 2.9E+03   352 7.4E-08      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     53   3        7.8932934793E+04 4.3E+02   351 5.1E-07      T  T
+     54   3        7.8932841491E+04 1.4E+03   351 2.6E-08      T  T
+     55   3        7.8932707109E+04 1.4E+03   350 4.2E-08      T  T
+     56   3        7.8932625730E+04 1.4E+03   349 2.8E-08      T  T
+     57   3        7.8932499678E+04 1.4E+03   348 4.8E-08      T  T
+     58   3        7.8930946498E+04 4.3E+02   347 1.0E+00    3 T  T
+     59   3        7.8925121938E+04 4.3E+02   344 1.0E+00    8 T  T
+     60   3        7.8891098947E+04 1.0E+04   337 1.0E+00   13 F  T
+     61   3        7.8835363110E+04 9.3E+02   337 3.8E-01    8 F  T
+     62   3        7.8832515607E+04 2.7E+02   333 2.4E-06      T  T
+   Elapsed time       92.3 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     63   3        7.8832201325E+04 2.7E+02   332 2.7E-07      T  T
+     64   3        7.8831850979E+04 2.7E+02   331 3.1E-07      T  T
+     65   3        7.8831455553E+04 2.7E+02   330 3.6E-07      T  T
+     66   3        7.8823605865E+04 2.7E+02   329 8.1E-06      T  T
+     67   3        7.8823469962E+04 2.7E+02   328 1.6E-07      T  T
+     68   3        7.8807843946E+04 1.7E+04   319 1.0E+00    3 T  T
+     69   3        7.8724094023E+04 3.5E+03   317 1.0E+00    8 T  T
+     70   3        7.8646868380E+04 1.8E+04   344 1.0E+00   11 T  T
+     71   3        7.8615947304E+04 1.3E+03   366 5.2E-01   11 F  T
+     72   3        7.8600029772E+04 1.9E+03   352 4.2E-01    8 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     73   3        7.8599941128E+04 8.3E+02   352 3.8E-08      T  T
+     74   3        7.8599435712E+04 8.7E+02   351 2.4E-07      T  T
+     75   3        7.8594103300E+04 2.7E+02   350 4.0E-06      T  T
+     76   3        7.8591003473E+04 2.7E+02   349 2.6E-06      T  T
+     77   3        7.8587738541E+04 2.0E+02   348 3.6E-06      T  T
+     78   3        7.8586851732E+04 8.2E+02   429 1.0E+00    3 T  T
+     79   3        7.8586655146E+04 1.8E+02   350 1.0E+00    9 T  T
+     80   3        7.8573372496E+04 1.1E+04   340 1.0E+00   11 T  T
+     81   3        7.8563354666E+04 5.8E+02   368 2.5E-01   13 F  T
+     82   3        7.8554533849E+04 5.6E+02   331 1.0E+00    5 F  T
+   Elapsed time      130.5 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     83   3        7.8546799389E+04 2.7E+02   354 2.0E-05      F  T
+     84   3        7.8539475783E+04 2.6E+02   402 2.6E-05      F  T
+     85   4        7.8539475783E+04 2.7E+02   402 0.0E+00      T  T
+     86   4        7.8539294280E+04 2.7E+02   401 9.2E-03      T  T
+     87   3        7.8531418694E+04 2.7E+02   400 1.9E-05      F  T
+     88   3        7.8524363757E+04 2.6E+02   364 2.0E-05      F  T
+     89   4        7.8521463678E+04 2.7E+02   364 2.3E-01      T  T
+     90   4        7.8519276689E+04 2.7E+02   363 1.7E-01      T  T
+     91   4        7.8516472699E+04 2.7E+02   362 2.4E-01      T  T
+     92   4        7.8511546409E+04 2.7E+02   361 4.2E-01      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     93   4        7.8510244083E+04 2.7E+02   360 1.1E-01      T  T
+     94   3        7.8503897080E+04 2.7E+02   359 2.4E-05      F  T
+     95   3        7.8496948858E+04 2.6E+02   359 1.6E-05      F  T
+     96   4        7.8493435438E+04 2.7E+02   359 4.4E-01      T  T
+     97   4        7.8492075473E+04 2.7E+02   358 2.3E-01      T  T
+     98   3        7.8488091276E+04 2.7E+02   354 1.2E-05      T  T
+     99   3        7.8472748311E+04 2.6E+02   353 6.3E-05      T  T
+    100   3        7.8466750667E+04 2.6E+02   352 2.8E-05      T  T
+    101   3        7.8461115540E+04 2.7E+02   342 1.7E-05      F  T
+    102   3        7.8455663337E+04 2.6E+02   351 2.7E-05      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    103   4        7.8450740694E+04 2.7E+02   349 2.8E-01      T  T
+    104   4        7.8447283518E+04 2.7E+02   348 2.0E-01      T  T
+    105   4        7.8441439124E+04 2.7E+02   347 4.4E-01      T  T
+    106   3        7.8437044427E+04 2.7E+02   313 1.3E-05      T  T
+    107   3        7.8429665862E+04 2.7E+02   312 4.4E-05      T  T
+    108   3        7.8426958336E+04 2.7E+02   315 6.3E-06      T  T
+    109   3        7.8426742123E+04 2.7E+02   314 6.7E-07      T  T
+    110   3        7.8426730381E+04 2.7E+02   312 1.0E+00    3 T  T
+    111   3        7.8426697909E+04 2.7E+02   317 1.0E+00    8 T  T
+    112   3        7.8426165091E+04 1.7E+04   375 1.0E+00   13 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    113   3        7.8417509544E+04 4.8E+03   364 1.0E+00   18 T  T
+    114   3        7.8406492937E+04 1.2E+04   375 2.3E-01   23 F  T
+    115   3        7.8394386420E+04 1.4E+03   379 1.0E+00   10 T  T
+    116   3        7.8386557962E+04 1.1E+04   344 2.7E-01   13 F  T
+    117   3        7.8383195028E+04 1.1E+04   349 1.0E+00   10 T  T
+    118   3        7.8372017113E+04 8.7E+01   341 6.9E-01    7 F  T
+    119   3        7.8361210798E+04 2.2E+02   341 4.5E-01    5 F  T
+    120   3        7.8360667937E+04 8.5E+01   367 3.7E-06      T  T
+    121   3        7.8360241567E+04 8.5E+01   366 2.9E-06      T  T
+    122   3        7.8358885680E+04 8.5E+01   365 9.6E-06      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    123   3        7.8354135183E+04 8.5E+01   364 3.6E-05      T  T
+    124   3        7.8351244345E+04 8.5E+01   363 2.5E-05      T  T
+    125   3        7.8348376096E+04 5.3E+03   336 1.4E-01    3 F  T
+    126   3        7.8347278117E+04 5.3E+03   317 1.0E+00    2 T  T
+    127   3        7.8344448120E+04 3.3E+02   374 6.9E-01    5 F  T
+    128   3        7.8341632364E+04 1.0E+02   317 3.3E-01    3 F  T
+    129   3        7.8341609852E+04 9.0E+01   342 1.2E-07      T  T
+    130   3        7.8341587850E+04 8.6E+01   341 1.2E-07      T  T
+    131   3        7.8338988063E+04 8.3E+01   340 2.3E-05      T  T
+    132   3        7.8336603210E+04 8.3E+01   371 3.0E-05      F  T
+   Elapsed time      164.8 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    133   3        7.8333873393E+04 9.2E+01   371 1.8E-05      F  T
+    134   4        7.8332616153E+04 8.3E+01   371 3.6E-01      T  T
+    135   4        7.8331970063E+04 1.4E+02   370 1.5E-01      T  T
+    136   3        7.8331356568E+04 1.4E+02   369 2.0E-06      T  T
+    137   3        7.8329446889E+04 1.4E+02   368 1.5E-05      F  T
+    138   3        7.8326222581E+04 1.4E+02   368 1.7E-05      T  T
+    139   3        7.8323786312E+04 1.4E+02   367 1.3E-05      T  T
+    140   3        7.8322484606E+04 1.4E+02   366 1.9E-05      F  T
+    141   3        7.8318961074E+04 1.4E+02   366 1.5E-05      F  T
+    142   4        7.8318961074E+04 1.4E+02   366 0.0E+00      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    143   4        7.8310599515E+04 1.4E+02   365 2.6E+00      T  T
+    144   4        7.8309022567E+04 1.4E+02   364 5.3E-01      T  T
+    145   4        7.8305964315E+04 1.4E+02   363 1.0E+00      T  T
+    146   4        7.8305942651E+04 3.9E+02   364 5.4E-03      T  T
+    147   3        7.8305927711E+04 1.4E+02   363 1.1E-07      T  T
+    148   3        7.8304889109E+04 5.9E+01   362 1.1E-05      T  T
+    149   3        7.8296816036E+04 5.8E+01   350 1.7E-04      T  T
+    150   3        7.8292922848E+04 1.3E+02   360 1.1E-05      F  T
+    151   3        7.8279281334E+04 5.5E+01   359 2.7E-04      T  T
+    152   3        7.8278038527E+04 5.5E+01   358 3.2E-05      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    153   3        7.8275314183E+04 1.1E+02   357 1.2E-05      F  T
+    154   3        7.8275307691E+04 7.5E+01   359 9.1E-08      T  T
+    155   3        7.8275294394E+04 2.3E+03   358 3.0E-09      T  T
+    156   3        7.8275286270E+04 1.9E+03   358 7.7E-09      F  T
+    157   3        7.8275283915E+04 1.3E+02   364 5.4E-08      F  T
+    158   4        7.8275282138E+04 5.2E+02   364 5.2E-03      T  T
+    159   4        7.8271976201E+04 5.2E+02   363 2.0E+01      T  T
+    160   4        7.8270087107E+04 3.3E+02   362 4.6E+00      T  T
+    161   4        7.8270027694E+04 1.5E+03   362 1.7E-02      T  T
+    162   4        7.8269936168E+04 1.2E+03   362 1.5E-02      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    163   4        7.8269552192E+04 1.5E+03   362 1.6E-02      T  T
+    164   4        7.8269153381E+04 1.2E+03   362 4.1E-02      F  T
+    165   4        7.8268798234E+04 1.1E+04   362 4.2E-03      T  T
+    166   4        7.8268691998E+04 7.8E+02   362 1.7E-02      T  T
+    167   4        7.8268460982E+04 2.9E+02   362 6.4E-02      T  T
+    168   4        7.8268409722E+04 3.5E+03   361 5.3E-03      T  T
+    169   4        7.8268392527E+04 1.2E+03   361 1.4E-02      T  T
+    170   4        7.8268375877E+04 4.9E+02   361 2.2E-02      T  T
+    171   4        7.8268338039E+04 1.1E+03   361 1.4E-02      T  T
+    172   4        7.8268288733E+04 4.4E+02   361 2.4E-02      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    173   4        7.8268246603E+04 1.1E+03   361 1.3E-02      T  T
+    174   4        7.8268094928E+04 3.5E+02   361 2.6E-02      T  T
+    175   4        7.8267901895E+04 4.9E+01   360 3.9E-02      T  T
+    176   4        7.8267866032E+04 1.0E+03   360 1.1E-02      T  T
+    177   4        7.8267814497E+04 4.6E+02   360 4.9E-02      F  T
+    178   3        7.8267740141E+04 5.6E+03   360 4.1E-09      T  T
+    179   3        7.8266433824E+04 5.3E+01   368 1.7E-05      F  T
+    180   3        7.8266008574E+04 4.9E+01   368 4.6E-06      T  T
+    181   3        7.8265795387E+04 4.9E+01   367 2.8E-06      T  T
+    182   3        7.8265451543E+04 4.9E+01   366 5.7E-06      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    183   3        7.8265008841E+04 4.9E+01   365 7.7E-06      T  T
+    184   3        7.8264080932E+04 4.9E+01   364 1.8E-05      T  T
+    185   3        7.8264066870E+04 1.2E+03   365 2.0E-01    3 F  T
+    186   3        7.8264056122E+04 1.8E+03   365 1.0E+00    2 F  T
+    187   3        7.8264055046E+04 3.2E+02   364 1.3E-08      F  T
+    188   3        7.8264053996E+04 2.5E+02   364 1.7E-08      F  T
+    189   4        7.8262815688E+04 3.2E+02   364 1.0E+01      T  T
+    190   4        7.8261862638E+04 1.3E+02   363 9.2E-01      F  T
+    191   4        7.8261420641E+04 7.8E+01   363 1.1E+00      T  T
+    192   4        7.8261034776E+04 7.8E+01   362 1.8E+00      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    193   4        7.8260321363E+04 1.3E+02   362 1.8E+00      F  T
+    194   4        7.8256195733E+04 7.6E+01   362 1.0E+00    2 T  T
+    195   4        7.8247030848E+04 9.4E+02   361 1.0E+00    8 T  T
+    196   4        7.8224284717E+04 2.5E+03   354 1.0E+00   12 T  T
+    197   4        7.8175215076E+04 1.9E+04   342 1.0E+00   14 T  T
+    198   3        7.8175215076E+04 1.7E+04   315 0.0E+00      T  T
+    199   3        7.8175215071E+04 1.3E+07   315 2.0E-17      F  T
+    200   3        7.8175215057E+04 1.7E+04   332 2.8E-14      T  T
+    201   3        7.8174804713E+04 1.7E+04   331 1.1E-09      T  T
+    202   3        7.8174310292E+04 5.2E+05   330 1.9E-12      T  T
+   Elapsed time      197.0 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    203   3        7.8173970804E+04 1.3E+04   330 2.1E-09      T  T
+    204   3        7.8172204823E+04 1.6E+03   329 7.4E-07      T  T
+    205   3        7.8171585830E+04 5.1E+03   311 1.0E+00    3 T  T
+    206   3        7.8170217621E+04 8.4E+02   311 5.1E-01    6 F  T
+    207   3        7.8168970538E+04 8.6E+02   294 1.4E-01    5 F  T
+    208   3        7.8168969935E+04 8.5E+02   330 5.0E-10      T  T
+    209   3        7.8168967709E+04 8.5E+02   329 2.0E-09      T  T
+    210   3        7.8168947536E+04 2.0E+03   328 5.0E-09      T  T
+    211   3        7.8168944381E+04 5.8E+02   328 8.7E-09      T  T
+    212   3        7.8168030981E+04 7.1E+01   327 2.6E-05      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    213   3        7.8167209420E+04 7.1E+01   299 1.4E-01    1 F  T
+    214   3        7.8166410875E+04 7.1E+01   295 3.0E-01    1 F  T
+    215   3        7.8165634411E+04 7.0E+01   315 2.5E-05      F  T
+    216   3        7.8164865611E+04 7.0E+01   315 2.0E-05      F  T
+    217   4        7.8162049451E+04 7.0E+01   315 2.4E+00      T  T
+    218   4        7.8152347456E+04 6.9E+01   314 9.3E+00      T  T
+    219   4        7.8147039210E+04 6.7E+01   313 8.9E-01      T  T
+    220   4        7.8145804018E+04 6.7E+01   312 2.2E-01      T  T
+    221   3        7.8144148957E+04 6.7E+01   311 1.4E-04      F  T
+    222   3        7.8142066165E+04 8.6E+01   309 1.1E-05      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    223   3        7.8141182044E+04 6.6E+01   308 8.4E-05      F  T
+    224   3        7.8139571809E+04 6.5E+01   321 1.4E-05      F  T
+    225   4        7.8138364906E+04 6.6E+01   321 4.0E+00      T  T
+    226   4        7.8136711280E+04 6.5E+01   320 9.0E-01      T  T
+    227   4        7.8135786125E+04 6.5E+01   319 5.3E-01      T  T
+    228   4        7.8133751027E+04 6.5E+01   318 1.3E+00      T  T
+    229   4        7.8126291751E+04 6.5E+01   317 5.1E+00      T  T
+    230   4        7.8123046551E+04 9.0E+01   316 2.4E+00      F  T
+    231   4        7.8119628124E+04 6.4E+01   315 1.1E+00      T  T
+    232   4        7.8112108576E+04 6.4E+01   314 5.7E+00      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    233   3        7.8110463627E+04 6.3E+01   314 1.5E-05      F  T
+    234   3        7.8109741721E+04 6.3E+01   314 4.9E-05      F  T
+    235   4        7.8107901225E+04 6.3E+01   314 4.7E-01      T  T
+    236   4        7.8101861074E+04 6.3E+01   313 1.8E+00      T  T
+    237   4        7.8099704305E+04 6.3E+01   312 7.0E-01      T  T
+    238   3        7.8097563948E+04 8.4E+01   311 2.0E-05      F  T
+    239   3        7.8096492907E+04 6.3E+01   311 7.0E-05      F  T
+    240   4        7.8092618509E+04 6.2E+01   310 5.8E-01      T  T
+    241   4        7.8092419072E+04 1.3E+05   310 1.6E-07      T  T
+    242   3        7.8091350193E+04 3.4E+04   293 8.3E-10      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    243   3        7.8091329631E+04 4.8E+04   293 8.4E-12      T  T
+    244   3        7.8091144889E+04 4.7E+04   292 7.9E-11      T  T
+    245   3        7.8091062044E+04 4.2E+03   291 5.5E-09      T  T
+    246   3        7.8091005738E+04 2.2E+02   295 5.0E-07      T  T
+    247   3        7.8089891218E+04 5.3E+01   294 2.0E-01    1 F  T
+    248   3        7.8088931449E+04 5.3E+01   294 1.0E+00    1 T  T
+    249   3        7.8088035109E+04 5.2E+01   293 2.4E-01    1 F  T
+    250   3        7.8087258046E+04 7.4E+01   293 1.0E+00    1 F  T
+    251   3        7.8086103536E+04 5.2E+01   298 2.3E-05      F  T
+    252   3        7.8085240463E+04 5.2E+01   311 4.3E-05      F  T
+   Elapsed time      235.7 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    253   4        7.8080362066E+04 5.2E+01   311 1.5E+00      T  T
+    254   4        7.8078167204E+04 5.2E+01   310 8.4E-01      T  T
+    255   3        7.8076400161E+04 7.4E+01   309 2.0E-05      F  T
+    256   3        7.8076384156E+04 1.7E+03   310 5.5E-09      T  T
+    257   3        7.8075340900E+04 5.0E+01   331 5.5E-05      F  T
+    258   3        7.8074518879E+04 5.0E+01   321 1.2E-05      T  T
+    259   3        7.8072905284E+04 5.0E+01   320 6.8E-05      T  T
+    260   3        7.8071989827E+04 4.9E+01   319 3.2E-05      F  T
+    261   3        7.8071083686E+04 4.9E+01   319 4.0E-05      F  T
+    262   4        7.8065127823E+04 4.9E+01   319 2.6E+00      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    263   4        7.8064859454E+04 1.4E+03   319 3.1E-03      T  T
+    264   4        7.8044928533E+04 4.8E+01   332 4.2E-01      T  T
+    265   4        7.8041307607E+04 4.5E+01   331 1.9E-01      T  T
+    266   3        7.8040717158E+04 4.5E+01   330 1.8E-05      F  T
+    267   3        7.8040297682E+04 3.4E+01   330 3.4E-05      F  T
+    268   4        7.8040297682E+04 4.1E+01   330 0.0E+00      T  T
+    269   4        7.8038244344E+04 4.1E+01   329 1.5E+00      T  T
+    270   4        7.8036740099E+04 4.1E+01   328 1.2E+00      T  T
+    271   4        7.8031378103E+04 4.1E+01   327 7.0E+00      T  T
+    272   4        7.8027616840E+04 9.9E+01   326 4.8E-01      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    273   4        7.8027220206E+04 4.3E+01   324 8.5E-02      T  T
+    274   4        7.8024976217E+04 4.3E+01   323 7.9E-01      T  T
+    275   4        7.8022522700E+04 4.9E+01   322 1.8E+00      T  T
+    276   4        7.8021583951E+04 4.9E+01   321 1.0E+00      F  T
+    277   3        7.8020836318E+04 4.3E+01   309 2.2E-05      F  T
+    278   4        7.8019416081E+04 3.2E+01   309 4.0E+00      F  T
+    279   4        7.8016291076E+04 3.0E+03   322 1.0E+00    2 T  T
+    280   4        7.7995267889E+04 2.6E+03   320 1.0E+00    6 T  T
+    281   4        7.7976660073E+04 2.9E+03   316 1.0E+00    7 T  T
+    282   4        7.7953479783E+04 1.9E+03   313 1.0E+00   12 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    283   4        7.7926039406E+04 5.8E+03   311 1.0E+00   17 T  T
+    284   4        7.7907308986E+04 2.8E+03   304 1.0E+00   20 T  T
+    285   4        7.7891595371E+04 2.1E+04   287 1.0E+00   25 T  T
+    286   4        7.7884359494E+04 2.4E+05   265 1.0E+00   11 T  T
+    287   4        7.7876436505E+04 3.1E+04   256 1.0E+00   14 T  T
+    288   4        7.7869826676E+04 6.0E+04   249 1.0E+00   17 T  T
+    289   4        7.7865752758E+04 1.3E+04   238 1.0E+00   11 T  T
+    290   4        7.7860124932E+04 2.4E+04   232 1.0E+00   14 T  T
+    291   4        7.7858640783E+04 5.8E+04   226 1.0E+00    5 T  T
+    292   4        7.7858254566E+04 4.6E+03   224 1.0E+00    1 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    293   4        7.7858210128E+04 5.4E+03   225 1.0E+00    2 T  T
+    294   4        7.7858141000E+04 3.6E+03   224 1.0E+00    2 T  T
+    295   4        7.7856153775E+04 1.2E+01   222 1.0E+00   12 T  T
+    296   4        7.7852123581E+04 1.2E+01   218 1.0E+00   18 T  T
+    297   4        7.7852065557E+04 1.7E+03   211 1.0E+00    1 T  T
+    298   4        7.7851285963E+04 3.9E+03   212 1.0E+00    6 T  T
+    299   4        7.7848941540E+04 2.5E+03   219 1.0E+00   15 T  T
+    300   4        7.7848142622E+04 2.0E+04   209 1.0E+00    9 T  T
+    301   4        7.7847001312E+04 1.1E+03   209 1.0E+00   16 T  T
+    302   4        7.7846254863E+04 1.8E+03   203 1.0E+00    8 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    303   4        7.7846253184E+04 2.0E+03   201 1.0E+00    1 F  T
+    304   4        7.7844880375E+04 1.7E+03   203 1.0E+00    7 T  T
+    305   4        7.7844749940E+04 3.6E+04   198 1.0E+00    1 T  T
+    306   4        7.7844729904E+04 1.7E+04   198 1.0E+00    1 F  T
+    307   4        7.7844304928E+04 4.4E+02   199 1.0E+00   10 F  T
+    308   4        7.7844303943E+04 4.0E+03   198 1.0E+00    1 F  T
+    309   4        7.7844250994E+04 1.3E+04   200 1.0E+00    5 T  T
+    310   4        7.7843590457E+04 2.1E+03   200 1.0E+00   12 T  T
+    311   4        7.7842803300E+04 1.0E+04   198 1.0E+00    3 T  T
+    312   4        7.7841790178E+04 1.5E+03   196 1.0E+00   11 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    313   4        7.7839545259E+04 1.9E+03   194 1.0E+00   15 T  T
+    314   4        7.7839543521E+04 1.9E+05   188 1.0E+00    1 F  T
+    315   4        7.7838581142E+04 5.9E+02   189 1.0E+00    9 T  T
+    316   4        7.7838007184E+04 2.2E+03   186 1.0E+00   10 T  T
+    317   4        7.7837387740E+04 1.6E+02   184 1.0E+00   20 F  T
+    318   4        7.7837313677E+04 6.0E+03   191 1.0E+00    2 T  T
+    319   4        7.7836849439E+04 9.9E+00   191 1.0E+00   12 T  T
+    320   4        7.7836607176E+04 6.8E+00   188 1.0E+00   18 T  T
+    321   4        7.7836581870E+04 4.3E+03   183 1.0E+00    3 T  T
+    322   4        7.7836571307E+04 4.7E+03   184 1.0E+00    2 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    323   4        7.7836551522E+04 2.5E+03   184 1.0E+00    3 F  T
+    324   4        7.7836550816E+04 1.0E+03   183 1.0E+00    1 F  T
+    325   4        7.7835809024E+04 3.5E+04   193 1.0E+00    7 T  T
+    326   4        7.7834354820E+04 2.2E+04   191 1.0E+00    3 T  T
+    327   4        7.7831742455E+04 4.1E+03   190 1.0E+00    9 T  T
+    328   4        7.7831590370E+04 2.9E+03   189 1.0E+00    2 T  T
+    329   4        7.7830588205E+04 2.0E+04   195 1.0E+00    5 T  T
+    330   4        7.7830209155E+04 1.9E+03   195 1.0E+00    7 T  T
+    331   4        7.7830084216E+04 2.2E+03   192 1.0E+00    7 T  T
+    332   4        7.7830077150E+04 1.1E+03   191 1.0E+00    1 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    333   4        7.7830070005E+04 2.0E+03   191 1.0E+00    1 F  T
+    334   4        7.7829935009E+04 3.6E+02   192 1.0E+00   10 T  T
+    335   4        7.7829744559E+04 7.9E+02   189 1.0E+00   10 T  T
+    336   4        7.7829739814E+04 2.5E+03   186 1.0E+00    1 T  T
+    337   4        7.7829738831E+04 8.9E+02   186 1.0E+00    1 T  T
+    338   4        7.7829735632E+04 3.6E+02   186 1.0E+00    1 T  T
+    339   4        7.7829615703E+04 8.2E+03   195 1.0E+00    4 T  T
+    340   4        7.7828682433E+04 5.1E+04   196 1.0E+00   10 T  T
+    341   4        7.7828401991E+04 3.7E+04   194 3.1E-05      T  T
+    342   4        7.7827308916E+04 2.1E+04   193 1.0E+00   12 T  T
+   Elapsed time      266.9 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    343   4        7.7827302516E+04 1.4E+04   188 1.0E+00    1 F  T
+    344   4        7.7826593373E+04 6.3E+03   189 1.0E+00   11 T  T
+    345   4        7.7826040994E+04 7.1E+03   184 1.0E+00    8 T  T
+    346   4        7.7826040869E+04 1.7E+03   182 1.0E+00    1 F  T
+    347   4        7.7825856439E+04 8.6E+02   184 1.0E+00    4 F  T
+    348   4        7.7824822368E+04 1.5E+03   183 1.0E+00   11 T  T
+    349   4        7.7824462017E+04 2.2E+03   181 1.0E+00   14 T  T
+    350   4        7.7824461801E+04 9.8E+03   178 1.0E+00    1 F  T
+    351   4        7.7824427871E+04 1.3E+03   179 1.0E+00   10 T  T
+    352   4        7.7824269346E+04 1.6E+03   177 1.0E+00   16 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    353   4        7.7824229665E+04 8.4E+02   174 1.0E+00    6 T  T
+    354   4        7.7824206535E+04 4.1E+02   175 1.0E+00    2 T  T
+    355   4        7.7824150254E+04 2.5E-01   173 1.0E+00   12 T  T
+    356   4        7.7824120952E+04 9.5E-01   172 1.0E+00   18 T  T
+    357   4        7.7824100286E+04 1.6E-01   170 1.0E+00   27 T  T
+    358   4        7.7824100272E+04 2.0E+02   168 1.0E+00    1 F  T
+    359   4        7.7823969720E+04 9.6E+00   178 1.0E+00    4 T  T
+    360   4        7.7823898741E+04 3.0E+03   176 1.0E+00    3 T  T
+    361   4        7.7823622848E+04 5.7E+02   176 1.0E+00    7 T  T
+    362   4        7.7823115878E+04 4.5E+02   173 1.0E+00    7 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    363   4        7.7823114397E+04 7.3E+02   171 1.0E+00    1 F  T
+    364   4        7.7822775287E+04 4.3E+00   181 1.0E+00    9 T  T
+    365   4        7.7821446593E+04 6.7E+01   176 1.0E+00   13 T  T
+    366   4        7.7821436597E+04 5.5E+03   172 1.0E+00    1 T  T
+    367   4        7.7821436382E+04 4.7E+04   173 9.8E-04   10 F  T
+    368   3        7.7821434454E+04 3.0E+03   171 3.7E-10      T  T
+    369   3        7.7821434416E+04 2.4E+03   172 1.2E-11      F  T
+    370   3        7.7821434416E+04 7.6E+01   173 7.9E-11      T  T
+    371   3        7.7821434416E+04 2.8E+01   172 6.2E-11      F  T
+    372   3        7.7821434416E+04 3.7E+01   172 2.0E-11      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    373   4        7.7821434345E+04 2.8E+01   172 1.1E-01      F  T
+    374   4        7.7821426883E+04 3.8E+00   182 1.0E+00    1 F  T
+    375   4        7.7821220307E+04 1.5E+03   182 1.0E+00    5 F  T
+    376   4        7.7821207203E+04 3.3E+04   184 1.0E+00    4 F  T
+    377   4        7.7821101676E+04 7.7E+03   183 1.0E+00    5 T  T
+    378   4        7.7820954991E+04 1.7E+03   184 1.0E+00    6 T  T
+    379   4        7.7820954931E+04 2.7E+03   181 1.0E+00    1 F  T
+    380   4        7.7820779047E+04 3.6E+03   183 1.0E+00    7 F  T
+    381   4        7.7820462038E+04 1.8E+04   181 1.0E+00   10 T  T
+    382   4        7.7820456458E+04 2.8E+05   178 1.0E+00    1 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    383   4        7.7820380293E+04 4.2E+04   180 1.0E+00    5 T  T
+    384   4        7.7820373640E+04 2.1E+05   179 1.0E+00    1 F  T
+    385   4        7.7820234811E+04 1.6E+04   182 1.0E+00   11 F  T
+    386   4        7.7820233011E+04 3.2E+04   178 1.0E+00    1 F  T
+    387   4        7.7819912978E+04 2.9E+03   181 1.0E+00   18 T  T
+    388   4        7.7819912736E+04 2.7E+04   177 1.0E+00    1 F  T
+    389   4        7.7819803495E+04 9.7E+01   177 1.0E+00    9 F  T
+    390   4        7.7819232865E+04 5.4E+00   176 1.0E+00   16 T  T
+    391   4        7.7819232860E+04 3.2E+03   173 1.0E+00    1 F  T
+    392   4        7.7819226971E+04 2.3E+01   176 1.0E+00    7 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    393   4        7.7819226965E+04 3.8E+03   175 1.0E+00    1 F  T
+    394   4        7.7819190470E+04 1.4E+01   178 1.0E+00    8 T  T
+    395   4        7.7817954003E+04 2.0E+02   176 1.0E+00   13 T  T
+    396   4        7.7817953934E+04 1.5E+04   172 1.0E+00    1 F  T
+    397   4        7.7817863195E+04 8.0E+01   173 1.0E+00    7 F  T
+    398   4        7.7817838644E+04 1.6E+04   172 1.0E+00    3 T  T
+    399   4        7.7817836215E+04 4.1E+02   173 1.0E+00    4 F  T
+    400   4        7.7817836213E+04 2.1E+03   172 1.0E+00    1 F  T
+    401   4        7.7817780473E+04 1.1E+01   177 1.0E+00    6 T  T
+    402   4        7.7817645842E+04 3.2E+03   176 1.0E+00    5 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    403   4        7.7817622897E+04 2.2E+03   176 1.8E+00    3 T  T
+    404   4        7.7817622891E+04 2.2E+03   174 1.0E+00    1 F  T
+    405   4        7.7817578091E+04 1.0E+03   175 1.0E+00    3 F  T
+    406   4        7.7817396211E+04 4.9E+03   175 1.0E+00    6 T  T
+    407   4        7.7816105917E+04 1.7E+04   174 1.0E+00   11 T  T
+    408   4        7.7816065197E+04 3.8E+04   171 1.0E+00   11 T  T
+    409   4        7.7815997784E+04 1.1E+03   169 1.0E+00   19 F  T
+    410   4        7.7815745892E+04 2.6E+01   167 1.0E+00   24 T  T
+    411   4        7.7815731993E+04 1.1E+02   163 1.0E+00    2 F  T
+    412   4        7.7815731992E+04 2.1E+03   164 1.0E+00    1 F  T
+   Elapsed time      300.8 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    413   4        7.7815730660E+04 4.5E+00   174 1.0E+00    5 T  T
+    414   4        7.7815635043E+04 1.3E+03   173 1.0E+00    8 T  T
+    415   4        7.7815606118E+04 4.8E+02   171 1.0E+00    4 T  T
+    416   4        7.7815557441E+04 1.1E+04   173 1.0E+00    7 T  T
+    417   4        7.7815555815E+04 1.4E+05   173 1.0E+00    6 F  T
+    418   4        7.7815555029E+04 9.3E+03   173 2.0E+00    5 F  T
+    419   4        7.7815518660E+04 1.1E+05   173 6.9E-01    7 F  T
+    420   4        7.7815510316E+04 8.3E+05   172 1.0E+00    1 F  T
+    421   4        7.7815496376E+04 9.0E+03   175 1.0E+00   10 F  T
+    422   4        7.7815495815E+04 2.2E+05   174 1.0E+00    2 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    423   4        7.7815356796E+04 2.3E+02   174 1.0E+00   10 T  T
+    424   4        7.7815154625E+04 2.6E+04   170 1.0E+00   15 T  T
+    425   4        7.7815154503E+04 3.6E+04   167 1.0E+00    1 F  T
+    426   4        7.7815154501E+04 1.8E+03   169 1.0E+00    4 F  T
+    427   4        7.7815152012E+04 5.9E+00   178 1.0E+00   10 F  T
+    428   4        7.7815133627E+04 8.2E+04   171 1.0E+00    5 T  T
+    429   4        7.7815129825E+04 2.2E+04   172 1.0E+00    5 T  T
+    430   4        7.7815085039E+04 4.4E+02   171 1.0E+00   12 T  T
+    431   4        7.7815084576E+04 7.5E+04   170 1.0E+00    2 F  T
+    432   4        7.7815039384E+04 4.1E+01   170 1.0E+00   11 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    433   4        7.7815039377E+04 1.2E+04   167 1.0E+00    1 F  T
+    434   4        7.7815039369E+04 3.2E+03   168 1.0E+00    4 T  T
+    435   4        7.7815039368E+04 2.9E+03   167 1.0E+00    1 F  T
+    436   4        7.7815036057E+04 1.1E+03   168 1.0E+00    5 F  T
+    437   4        7.7815016124E+04 3.5E+03   168 1.0E+00   10 T  T
+    438   4        7.7815007859E+04 1.1E+04   167 1.0E+00    8 F  T
+    439   4        7.7814988615E+04 1.2E+03   167 1.0E+00   13 T  T
+    440   4        7.7814988613E+04 3.6E+03   165 1.0E+00    1 F  T
+    441   4        7.7814985758E+04 1.0E+01   166 1.0E+00    7 F  T
+    442   4        7.7814985141E+04 2.7E+03   166 1.0E+00    3 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    443   4        7.7814983048E+04 1.1E+03   168 1.0E+00    7 F  T
+    444   4        7.7814983046E+04 2.4E+03   167 1.0E+00    4 F  T
+    445   4        7.7814977078E+04 4.4E+01   166 1.0E+00    8 T  T
+    446   4        7.7814977078E+04 4.7E+02   166 1.0E+00    4 F  T
+    447   4        7.7814969847E+04 3.6E-01   164 1.0E+00    7 T  T
+    448   4        7.7814969847E+04 1.4E+03   165 1.0E+00    3 F  T
+    449   4        7.7814965772E+04 1.6E+01   164 1.0E+00    5 T  T
+    450   4        7.7814965762E+04 8.2E+03   166 1.0E+00    5 F  T
+    451   4        7.7814958058E+04 3.7E+02   165 1.0E+00   12 T  T
+    452   4        7.7814951352E+04 3.6E+03   162 1.0E+00    9 T  T
+   Elapsed time      334.0 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    453   4        7.7814951352E+04 9.8E+02   163 1.0E+00    2 F  T
+    454   4        7.7814949072E+04 6.3E+00   166 1.0E+00    4 F  T
+    455   4        7.7814931347E+04 8.2E+04   165 1.0E+00    3 T  T
+    456   4        7.7814931333E+04 4.0E+03   165 1.0E+00    3 F  T
+    457   4        7.7814930118E+04 4.7E+02   165 1.0E+00    6 T  T
+    458   4        7.7814921481E+04 1.0E+03   165 1.0E+00    8 T  T
+    459   4        7.7814913439E+04 1.3E+04   163 1.0E+00    6 F  T
+    460   4        7.7814907329E+04 1.1E+04   163 1.0E+00    6 T  T
+    461   4        7.7814888311E+04 1.6E+03   162 1.0E+00    4 T  T
+    462   4        7.7814888098E+04 3.5E+04   164 1.0E+00    3 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    463   4        7.7814881988E+04 2.3E+02   163 1.0E+00    6 T  T
+    464   4        7.7814881988E+04 6.5E+02   163 1.0E+00    2 F  T
+    465   4        7.7814879269E+04 2.0E+02   173 1.0E+00    8 T  T
+    466   4        7.7814877539E+04 4.0E+03   168 1.0E+00    1 F  T
+    467   4        7.7814877436E+04 9.0E+03   167 1.9E+00    3 F  T
+    468   4        7.7814877436E+04 9.3E+04   170 1.0E+00    1 F  T
+    469   4        7.7814876236E+04 4.5E+02   170 1.0E+00    6 T  T
+    470   4        7.7814875434E+04 1.9E+03   167 1.6E+01    1 F  T
+    471   4        7.7814875434E+04 5.8E+04   170 1.0E+00    1 F  T
+    472   4        7.7814875413E+04 5.6E+02   170 1.0E+00    2 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    473   4        7.7814870328E+04 2.2E+01   168 1.0E+00    6 T  T
+    474   4        7.7814870310E+04 5.7E+03   170 1.0E+00    2 F  T
+    475   4        7.7814855520E+04 3.9E+01   170 1.0E+00    8 T  T
+    476   4        7.7814855418E+04 6.1E+04   170 1.0E+00    5 F  T
+    477   4        7.7814853985E+04 1.0E+03   170 1.0E+00    9 T  T
+    478   4        7.7814853835E+04 4.0E+03   170 1.0E+00    6 F  T
+    479   4        7.7814835669E+04 3.2E-01   167 1.0E+00   15 T  T
+    480   4        7.7814835334E+04 2.1E+05   168 1.0E+00    1 F  T
+    481   4        7.7814835327E+04 3.0E+02   168 1.0E+00    7 T  T
+    482   4        7.7814835326E+04 9.8E+02   168 1.0E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    483   4        7.7814833716E+04 7.7E+01   168 1.0E+00    8 T  T
+    484   4        7.7814833711E+04 3.0E+04   168 1.0E+00    2 F  T
+    485   4        7.7814828527E+04 1.4E+02   167 1.0E+00    9 T  T
+    486   4        7.7814828509E+04 5.3E+04   165 1.0E+00    1 F  T
+    487   4        7.7814827277E+04 3.7E+03   168 1.0E+00    8 T  T
+    488   4        7.7814827277E+04 6.3E+02   167 0.0E+00    5 T  T
+    489   4        7.7814827277E+04 6.3E+02   167 0.0E+00    5 T  T
+    490   4        7.7814827277E+04 6.3E+02   167 0.0E+00    4 T  T
+    491   4        7.7814827277E+04 6.3E+02   167 0.0E+00    4 T  T
+    492   4        7.7814827277E+04 6.3E+02   167 0.0E+00    4 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    493   4        7.7814827277E+04 6.3E+02   167 0.0E+00    4 T  T
+    494   4        7.7814827277E+04 6.3E+02   167 1.3E-08      F  T
+    495   4        7.7814827277E+04 2.2E+02   167 3.4E-08      T  T
+    496   4        7.7814827277E+04 1.8E+02   166 7.4E-08      T  T
+    497   4        7.7814827277E+04 1.8E+02   165 6.3E-01      T  T
+    498   4        7.7814827277E+04 6.5E+01   165 4.4E-08      F  T
+    499   4        7.7814827277E+04 8.8E-01   212 4.0E-02      T  T
+    500   4        7.7814827244E+04 2.2E+00   211 2.0E-01      F  T
+    501   4        7.7814826973E+04 2.9E+01   211 5.0E-01      T  T
+    502   4        7.7814826953E+04 1.8E+01   210 1.4E-02      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    503   4        7.7814825772E+04 1.7E+01   209 1.7E+00      F  T
+    504   4        7.7814793892E+04 6.5E+01   209 5.1E+01      T  T
+    505   4        7.7814791767E+04 8.7E+02   208 7.0E-01      F  T
+    506   4        7.7814791754E+04 3.7E+04   211 1.3E-08      F  T
+    507   4        7.7814791161E+04 9.4E+02   212 1.0E+00    3 T  T
+    508   4        7.7814760012E+04 2.4E+03   210 1.0E+00    7 T  T
+    509   4        7.7814743995E+04 1.4E+06   206 1.0E+00    4 F  T
+    510   4        7.7814705807E+04 1.1E+04   207 1.0E+00   13 F  T
+    511   4        7.7814687842E+04 1.7E+06   202 1.0E+00    1 F  T
+    512   4        7.7814656919E+04 5.8E+04   205 6.4E-01   19 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    513   4        7.7814651135E+04 8.4E+05   196 1.0E+00    3 F  T
+    514   4        7.7814614303E+04 4.4E+03   199 1.0E+00   12 T  T
+    515   4        7.7814592255E+04 6.2E+03   195 1.0E+00    7 T  T
+    516   4        7.7814570261E+04 6.9E+03   195 1.0E+00    8 T  T
+    517   4        7.7814536417E+04 3.0E+03   192 1.0E+00   10 T  T
+    518   4        7.7814501553E+04 1.3E+01   190 1.0E+00   15 T  T
+    519   4        7.7814471894E+04 2.8E+03   185 1.0E+00   10 T  T
+    520   4        7.7814444749E+04 1.4E+03   186 1.0E+00   14 T  T
+    521   4        7.7814444720E+04 3.8E+04   185 1.0E+00    1 F  T
+    522   4        7.7814444570E+04 2.9E+02   185 1.0E+00    4 T  T
+   Elapsed time      365.6 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    523   4        7.7814439914E+04 4.6E+02   184 1.0E+00    4 T  T
+    524   4        7.7814439342E+04 3.7E+02   184 1.0E+00    8 F  T
+    525   4        7.7814435953E+04 2.6E+02   184 1.0E+00    9 T  T
+    526   4        7.7814435953E+04 4.4E+02   182 1.0E+00    1 F  T
+    527   4        7.7814435776E+04 6.6E-01   192 1.0E+00    7 T  T
+    528   4        7.7814432355E+04 6.8E+02   186 1.0E+00    5 T  T
+    529   4        7.7814431635E+04 1.0E+03   186 1.0E+00    6 T  T
+    530   4        7.7814431625E+04 2.1E+03   186 1.0E+00    2 F  T
+    531   4        7.7814428514E+04 5.4E+02   187 1.0E+00    7 T  T
+    532   4        7.7814407590E+04 5.9E+02   185 1.0E+00   11 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    533   4        7.7814407189E+04 1.2E+04   186 1.0E+00    6 F  T
+    534   4        7.7814402997E+04 1.5E+02   183 1.0E+00    4 T  T
+    535   4        7.7814397316E+04 9.2E+02   185 1.0E+00   10 T  T
+    536   4        7.7814397316E+04 2.2E+02   181 1.0E+00    1 F  T
+    537   4        7.7814379660E+04 8.1E+01   191 1.0E+00   11 T  T
+    538   4        7.7814373566E+04 1.9E+04   188 1.0E+00    5 T  T
+    539   4        7.7814373299E+04 3.5E+04   192 1.0E+00    5 F  T
+    540   4        7.7814339759E+04 2.9E+02   189 1.0E+00   14 T  T
+    541   4        7.7814330032E+04 4.9E+02   184 1.0E+00    2 F  T
+    542   4        7.7814324922E+04 1.5E+03   189 1.0E+00   12 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    543   4        7.7814320584E+04 1.1E+04   183 1.0E+00    5 F  T
+    544   4        7.7814303253E+04 1.4E+04   183 1.0E+00    5 T  T
+    545   4        7.7814302005E+04 2.8E+05   186 1.0E+00    2 F  T
+    546   4        7.7814300672E+04 7.5E+03   187 1.0E+00   10 T  T
+    547   4        7.7814291558E+04 3.6E+04   185 1.0E+00    7 F  T
+    548   4        7.7814291530E+04 7.8E+03   183 1.0E+00    2 F  T
+    549   4        7.7814291115E+04 1.7E+06   187 6.2E-02   11 F  T
+    550   4        7.7814291091E+04 8.7E+06   184 1.0E+00    1 F  T
+    551   4        7.7814291071E+04 4.9E+03   187 1.0E+00    6 T  T
+    552   4        7.7814290373E+04 1.2E+05   183 7.4E-02   10 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    553   4        7.7814288770E+04 7.3E+05   182 1.0E+00    2 F  T
+    554   4        7.7814277489E+04 3.8E+03   182 1.0E+00    9 T  T
+    555   4        7.7814274480E+04 3.2E+02   184 1.0E+00    5 T  T
+    556   4        7.7814274480E+04 3.1E+02   181 1.0E+00    1 F  T
+    557   4        7.7814272477E+04 2.2E+02   183 1.0E+00    4 T  T
+    558   4        7.7814257602E+04 6.0E+02   182 1.0E+00   13 T  T
+    559   4        7.7814257117E+04 5.3E+02   181 1.0E+00    2 F  T
+    560   4        7.7814228198E+04 5.5E+01   181 1.0E+00   11 T  T
+    561   4        7.7814228016E+04 1.8E+04   182 1.0E+00    4 F  T
+    562   4        7.7814222967E+04 7.2E+02   181 1.0E+00    7 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    563   4        7.7814222629E+04 2.3E+02   179 1.0E+00    1 T  T
+    564   4        7.7814206624E+04 1.7E-01   178 1.0E+00   11 T  T
+    565   4        7.7814189808E+04 4.6E-01   177 1.0E+00   16 T  T
+    566   4        7.7814189808E+04 1.4E+02   174 1.0E+00    1 F  T
+    567   4        7.7814188572E+04 1.3E+02   175 1.0E+00    5 F  T
+    568   4        7.7814188425E+04 1.1E+02   174 1.0E+00    3 T  T
+    569   4        7.7814180303E+04 6.0E+02   173 1.0E+00    7 T  T
+    570   4        7.7814179693E+04 3.3E+03   175 1.0E+00    8 F  T
+    571   4        7.7814179621E+04 5.9E+02   173 1.0E+00    2 F  T
+    572   4        7.7814172933E+04 1.3E+02   174 1.0E+00    9 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    573   4        7.7814172933E+04 5.9E+01   172 1.0E+00    1 F  T
+    574   4        7.7814171597E+04 3.4E-01   182 1.0E+00    3 T  T
+    575   4        7.7814151156E+04 1.7E+00   181 1.0E+00   11 T  T
+    576   4        7.7814146223E+04 1.2E+03   177 1.0E+00    5 T  T
+    577   4        7.7814146222E+04 4.5E+02   177 1.0E+00    2 F  T
+    578   4        7.7814142330E+04 1.1E+03   178 1.0E+00    6 T  T
+    579   4        7.7814136783E+04 4.0E+02   176 1.0E+00    7 T  T
+    580   4        7.7814133620E+04 4.2E+04   178 1.0E+00    5 T  T
+    581   4        7.7814133599E+04 1.3E+05   177 1.0E+00    1 F  T
+    582   4        7.7814133572E+04 6.1E+02   177 1.0E+00    2 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    583   4        7.7814124898E+04 9.3E+01   185 1.0E+00    6 T  T
+    584   4        7.7814124445E+04 1.9E+03   189 1.0E+00   13 T  T
+    585   4        7.7814124445E+04 4.2E+04   180 0.0E+00    8 F  F
+ 
+ ** Loss of feasibility while tightening tolerances - Return to phase 0.
+   Elapsed time      396.7 seconds.
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+    586   0        4.6760218373E-08
+    587   1     1  4.6485807870E-08 1.2E+00   176 0.0E+00      T  T
+ 
+ ** Feasible solution. Value of objective =    77814.1244629
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    588   3        7.7814124463E+04 7.7E+02   176 0.0E+00      T  T
+    589   3        7.7814124458E+04 5.1E+02   175 2.9E-11      T  T
+    590   3        7.7814124458E+04 1.5E+02   175 6.1E-11      T  T
+    591   3        7.7814124458E+04 1.2E+01   210 2.1E-10      F  T
+    592   3        7.7814124457E+04 1.2E+01   210 1.8E-09      T  T
+    593   3        7.7814124457E+04 1.2E+01   209 2.0E-10      F  T
+    594   3        7.7814124457E+04 1.2E+01   209 1.9E-09      T  T
+    595   3        7.7814124457E+04 1.2E+01   208 2.1E-10      F  T
+    596   3        7.7814124457E+04 1.2E+01   208 2.0E-09      T  T
+    597   3        7.7814124457E+04 1.1E+01   207 2.1E-10      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    598   3        7.7814124457E+04 1.2E+01   207 2.0E-09      T  T
+    599   3        7.7814124456E+04 1.1E+01   206 2.2E-10      F  T
+    600   3        7.7814124456E+04 1.1E+01   206 2.1E-09      T  T
+    601   3        7.7814124456E+04 1.1E+01   205 2.2E-10      F  T
+    602   3        7.7814124456E+04 1.1E+01   205 2.2E-09      T  T
+    603   3        7.7814124456E+04 1.1E+01   204 2.2E-10      F  T
+    604   3        7.7814124456E+04 1.1E+01   204 2.4E-09      T  T
+    605   3        7.7814124455E+04 1.1E+01   203 2.3E-10      F  T
+    606   3        7.7814124455E+04 1.1E+01   203 2.5E-09      T  T
+    607   3        7.7814124455E+04 1.1E+01   202 2.5E-10      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    608   3        7.7814124455E+04 1.1E+01   202 2.6E-09      T  T
+    609   3        7.7814124455E+04 1.0E+01   201 2.6E-10      F  T
+    610   3        7.7814124455E+04 1.0E+01   201 2.8E-09      T  T
+    611   3        7.7814124455E+04 1.0E+01   200 2.7E-10      F  T
+    612   3        7.7814124454E+04 1.0E+01   200 3.0E-09      T  T
+    613   3        7.7814124454E+04 1.1E+01   199 2.9E-10      F  T
+    614   3        7.7814124454E+04 9.9E+00   199 3.1E-09      T  T
+    615   3        7.7814124454E+04 1.1E+01   198 3.2E-10      F  T
+    616   3        7.7814124454E+04 9.7E+00   198 3.4E-09      T  T
+    617   3        7.7814124454E+04 1.1E+01   197 3.5E-10      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    618   3        7.7814124453E+04 9.5E+00   197 3.6E-09      T  T
+    619   3        7.7814124453E+04 1.1E+01   196 4.0E-10      F  T
+    620   3        7.7814124453E+04 9.2E+00   196 3.9E-09      T  T
+    621   3        7.7814124453E+04 1.1E+01   195 4.7E-10      F  T
+    622   3        7.7814124453E+04 9.0E+00   195 4.2E-09      T  T
+    623   3        7.7814124452E+04 1.1E+01   194 5.0E-10      F  T
+    624   3        7.7814124452E+04 8.7E+00   194 4.6E-09      T  T
+    625   3        7.7814124452E+04 9.4E+00   193 6.4E-10      F  T
+    626   3        7.7814124452E+04 8.4E+00   193 5.1E-09      T  T
+    627   3        7.7814124452E+04 9.2E+00   192 7.7E-10      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    628   3        7.7814124451E+04 8.0E+00   192 5.7E-09      T  T
+    629   3        7.7814124451E+04 9.3E+00   191 7.7E-10      F  T
+    630   3        7.7814124451E+04 7.7E+00   191 6.4E-09      T  T
+    631   3        7.7814124451E+04 9.4E+00   190 8.6E-10      F  T
+    632   3        7.7814124451E+04 7.3E+00   190 7.3E-09      T  T
+    633   3        7.7814124450E+04 9.6E+00   189 9.5E-10      F  T
+    634   3        7.7814124450E+04 6.9E+00   189 8.4E-09      T  T
+    635   3        7.7814124450E+04 9.8E+00   188 1.1E-09      F  T
+    636   3        7.7814124450E+04 6.5E+00   188 9.9E-09      T  T
+    637   3        7.7814124450E+04 9.9E+00   187 1.4E-09      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    638   3        7.7814124449E+04 6.0E+00   187 1.2E-08      T  T
+    639   3        7.7814124449E+04 7.9E+00   186 2.2E-09      F  T
+    640   3        7.7814124449E+04 5.4E+00   186 1.5E-08      F  T
+    641   4        7.7814124447E+04 8.1E+00   186 2.0E-02      F  T
+    642   4        7.7814124434E+04 1.2E+01   200 1.0E+00    3 T  T
+    643   4        7.7814122081E+04 1.9E+00   199 1.0E+00    8 T  T
+    644   4        7.7814120434E+04 3.0E+01   197 1.0E+00   14 T  T
+    645   4        7.7814096006E+04 3.5E+02   187 1.0E+00   14 T  T
+    646   4        7.7814092565E+04 1.6E+02   187 1.0E+00    6 T  T
+    647   4        7.7814092564E+04 3.9E+02   186 1.0E+00    1 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    648   4        7.7814090200E+04 1.9E+00   196 1.0E+00    7 T  T
+    649   4        7.7814058937E+04 1.7E+03   193 1.0E+00   11 T  T
+    650   4        7.7814058043E+04 2.7E+02   192 1.0E+00    4 F  T
+    651   4        7.7814051403E+04 5.2E+02   191 1.0E+00    7 T  T
+    652   4        7.7814049325E+04 1.3E+04   192 1.0E+00    3 T  T
+    653   4        7.7814042635E+04 9.5E+02   195 1.0E+00   10 T  T
+    654   4        7.7814040294E+04 4.1E+02   190 1.0E+00    3 T  T
+    655   4        7.7814038139E+04 4.3E+02   190 1.0E+00    5 T  T
+    656   4        7.7814037106E+04 3.7E+02   199 1.0E+00   12 T  T
+    657   4        7.7814037085E+04 2.2E+02   198 1.0E+00    3 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    658   4        7.7814036292E+04 3.9E+00   198 1.0E+00   13 T  T
+    659   4        7.7814004921E+04 5.9E+02   189 1.0E+00   12 T  T
+    660   4        7.7814003335E+04 6.3E+02   189 1.0E+00    2 F  T
+    661   4        7.7813990434E+04 1.7E+02   189 1.0E+00    5 T  T
+    662   4        7.7813980783E+04 1.9E+03   188 1.0E+00    4 F  T
+    663   4        7.7813960660E+04 4.9E+02   188 1.0E+00   10 F  T
+    664   4        7.7813958024E+04 1.3E+03   188 1.0E+00    5 T  T
+    665   4        7.7813953311E+04 2.6E+02   187 1.0E+00    5 T  T
+    666   4        7.7813952177E+04 8.3E+02   188 1.0E+00    6 T  T
+    667   4        7.7813952164E+04 2.5E+03   188 1.0E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    668   4        7.7813948947E+04 4.7E+02   187 1.0E+00   11 T  T
+    669   4        7.7813948947E+04 2.3E+02   186 0.0E+00    2 T  T
+    670   4        7.7813948880E+04 2.3E+02   185 1.0E+00    1 F  T
+    671   4        7.7813947812E+04 2.5E+00   186 1.0E+00    6 T  T
+    672   4        7.7813944601E+04 1.6E+02   184 1.0E+00    9 T  T
+    673   4        7.7813944282E+04 1.5E+02   183 8.5E+01    3 F  T
+    674   4        7.7813943616E+04 1.5E+01   183 1.0E+00    4 F  T
+    675   4        7.7813943616E+04 1.7E+02   184 1.0E+00    1 F  T
+    676   4        7.7813943220E+04 4.2E-01   194 1.0E+00    4 T  T
+    677   4        7.7813942632E+04 4.5E+02   193 1.0E+00    5 T  T
+   Elapsed time      427.4 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    678   4        7.7813942630E+04 4.1E+03   194 1.0E+00    3 F  T
+    679   4        7.7813942627E+04 4.0E+01   192 1.0E+00    2 T  T
+    680   4        7.7813940214E+04 1.8E+01   192 1.0E+00    9 T  T
+    681   4        7.7813938833E+04 1.3E+03   189 1.0E+00    2 T  T
+    682   4        7.7813938819E+04 4.3E+04   190 1.0E+00    1 F  T
+    683   4        7.7813938208E+04 4.0E+02   191 1.0E+00    5 T  T
+    684   4        7.7813938202E+04 1.2E+04   190 1.0E+00    2 T  T
+    685   4        7.7813937939E+04 7.7E+01   190 1.0E+00   12 T  T
+    686   4        7.7813937939E+04 6.2E+02   183 1.0E+00    1 F  T
+    687   4        7.7813930417E+04 1.8E+02   188 1.0E+00   13 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    688   4        7.7813927360E+04 5.6E+02   184 1.0E+00    7 T  T
+    689   4        7.7813927001E+04 1.3E+03   185 1.0E+00    6 F  T
+    690   4        7.7813916704E+04 6.5E+02   183 1.0E+00    7 T  T
+    691   4        7.7813915928E+04 3.6E+02   183 1.0E+00    4 F  T
+    692   4        7.7813893261E+04 3.0E+01   184 1.0E+00   13 F  T
+    693   4        7.7813891557E+04 5.1E+02   184 1.0E+00    6 T  T
+    694   4        7.7813887962E+04 1.4E+02   182 1.0E+00    8 T  T
+    695   4        7.7813887962E+04 6.3E+02   181 1.0E+00    2 F  T
+    696   4        7.7813886233E+04 2.9E+01   181 1.0E+00    6 T  T
+    697   4        7.7813886233E+04 4.8E+02   180 1.0E+00    1 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    698   4        7.7813885711E+04 6.2E+01   182 1.0E+00    5 F  T
+    699   4        7.7813885045E+04 1.9E+02   181 1.0E+00    5 T  T
+    700   4        7.7813885045E+04 1.2E+02   180 1.0E+00    1 F  T
+    701   4        7.7813884778E+04 4.8E+01   183 1.0E+00    5 T  T
+    702   4        7.7813882842E+04 7.7E+01   181 1.0E+00    6 T  T
+    703   4        7.7813881574E+04 1.1E+01   188 1.0E+00    6 F  T
+    704   4        7.7813876686E+04 2.8E+01   189 1.0E+00   16 T  T
+    705   4        7.7813869135E+04 4.0E+02   179 1.0E+00   10 T  T
+    706   4        7.7813869135E+04 6.2E+02   177 1.0E+00    1 F  T
+    707   4        7.7813866715E+04 7.3E-01   177 1.0E+00    5 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    708   4        7.7813864248E+04 9.9E+00   178 1.0E+00    9 F  T
+    709   4        7.7813862327E+04 9.2E+01   177 1.0E+00    7 F  T
+    710   4        7.7813860266E+04 4.3E-02   177 1.0E+00   13 T  T
+    711   4        7.7813856086E+04 5.3E+01   175 1.0E+00   14 T  T
+    712   4        7.7813855577E+04 8.7E+01   175 1.0E+00    2 F  T
+    713   4        7.7813854702E+04 2.1E+00   176 1.0E+00   11 T  T
+    714   4        7.7813854701E+04 2.1E+01   174 1.0E+00    2 F  T
+    715   4        7.7813852023E+04 5.7E-02   184 1.0E+00    7 T  T
+    716   4        7.7813837066E+04 2.0E+03   182 1.0E+00   16 T  T
+    717   4        7.7813837063E+04 4.4E+03   181 1.0E+00    2 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    718   4        7.7813835444E+04 4.5E+01   180 1.0E+00    3 T  T
+    719   4        7.7813834655E+04 1.2E+03   182 1.0E+00    6 T  T
+    720   4        7.7813834644E+04 8.9E+03   183 1.0E+00    2 F  T
+    721   4        7.7813833341E+04 4.0E+02   182 1.0E+00    6 T  T
+    722   4        7.7813833228E+04 6.6E+02   181 1.0E+00    5 F  T
+    723   4        7.7813833227E+04 1.8E+03   181 1.0E+00    3 F  T
+    724   4        7.7813829227E+04 7.4E+02   182 1.0E+00    6 F  T
+    725   4        7.7813829227E+04 9.9E+02   181 1.0E+00    1 F  T
+    726   4        7.7813825961E+04 3.5E+00   181 1.0E+00    5 T  T
+    727   4        7.7813825310E+04 2.1E+04   180 1.0E+00      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    728   4        7.7813825279E+04 1.0E+04   180 1.0E+00    2 F  T
+    729   4        7.7813822623E+04 6.9E+01   180 1.0E+00    8 F  T
+    730   4        7.7813821692E+04 1.6E+03   180 1.0E+00    5 F  T
+    731   4        7.7813821692E+04 2.9E+03   180 1.0E+00    1 F  T
+    732   4        7.7813820518E+04 9.5E+00   181 1.0E+00    6 F  T
+    733   4        7.7813818135E+04 1.1E+02   181 1.0E+00   13 T  T
+    734   4        7.7813817700E+04 2.3E+02   179 1.0E+00    3 T  T
+    735   4        7.7813816397E+04 2.6E+02   180 1.0E+00   12 T  T
+    736   4        7.7813816397E+04 4.6E+02   177 1.0E+00    1 F  T
+    737   4        7.7813816246E+04 1.2E+02   178 1.0E+00    4 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    738   4        7.7813816032E+04 2.7E+01   177 1.0E+00    7 T  T
+    739   4        7.7813815921E+04 6.6E+01   177 1.0E+00    7 F  T
+    740   4        7.7813815589E+04 2.3E+01   177 1.0E+00    7 F  T
+    741   4        7.7813815589E+04 1.3E+02   177 1.0E+00    1 F  T
+    742   4        7.7813815556E+04 4.2E+01   178 1.0E+00    5 F  T
+    743   4        7.7813815325E+04 2.4E+02   178 1.0E+00    3 F  T
+    744   4        7.7813814785E+04 2.8E+01   178 1.0E+00   17 T  T
+    745   4        7.7813814414E+04 1.2E+01   177 1.0E+00   13 F  T
+    746   4        7.7813814414E+04 1.7E+02   177 1.0E+00    1 F  T
+    747   4        7.7813813977E+04 3.7E-01   182 1.0E+00    2 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    748   4        7.7813811937E+04 4.7E+03   181 1.0E+00    4 T  T
+    749   4        7.7813811453E+04 2.0E+03   183 1.0E+00    7 F  T
+    750   4        7.7813809017E+04 9.9E+01   180 1.0E+00    8 T  T
+    751   4        7.7813809017E+04 4.9E+01   179 1.0E+00    1 F  T
+    752   4        7.7813808817E+04 5.6E-02   189 1.0E+00    3 T  T
+    753   4        7.7813805545E+04 1.6E+02   188 1.0E+00    6 T  T
+    754   4        7.7813801081E+04 2.2E+00   186 1.0E+00   14 T  T
+    755   4        7.7813797396E+04 1.4E+00   183 1.0E+00   14 T  T
+    756   4        7.7813787240E+04 2.5E+02   190 1.0E+00    6 T  T
+    757   4        7.7813786954E+04 2.6E+03   193 1.0E+00    8 F  T
+   Elapsed time      457.6 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    758   4        7.7813785360E+04 1.6E+03   193 1.0E+00    9 T  T
+    759   4        7.7813785356E+04 5.7E+03   188 1.0E+00    1 F  T
+    760   4        7.7813782996E+04 1.0E+02   190 1.0E+00    8 T  T
+    761   4        7.7813782822E+04 3.4E+04   193 1.0E+00    3 F  T
+    762   4        7.7813782591E+04 3.9E+02   192 1.0E+00    9 T  T
+    763   4        7.7813782583E+04 1.2E+03   192 1.0E+00    6 F  T
+    764   4        7.7813776606E+04 1.3E+02   187 1.0E+00   10 T  T
+    765   4        7.7813776604E+04 6.0E+04   186 1.0E+00    1 F  T
+    766   4        7.7813776600E+04 4.2E+03   191 1.0E+00    6 T  T
+    767   4        7.7813774534E+04 1.4E+02   188 1.0E+00   12 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    768   4        7.7813774531E+04 2.2E+04   189 1.0E+00    5 F  T
+    769   4        7.7813774004E+04 1.3E+03   188 1.0E+00    9 T  T
+    770   4        7.7813774004E+04 7.7E+03   189 0.0E+00    4 T  T
+    771   4        7.7813774004E+04 1.1E+03   186 1.0E+00    1 F  T
+    772   4        7.7813773987E+04 4.5E+02   189 1.0E+00    6 T  T
+    773   4        7.7813773443E+04 5.2E+02   187 1.0E+00   10 T  T
+    774   4        7.7813773443E+04 2.2E+03   185 1.0E+00    1 F  T
+    775   4        7.7813771654E+04 2.2E+03   186 1.0E+00    7 T  T
+    776   4        7.7813771606E+04 8.3E+03   185 1.0E+00    2 F  T
+    777   4        7.7813769663E+04 2.5E+02   185 1.0E+00   12 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    778   4        7.7813768992E+04 2.7E+02   184 1.0E+00    5 T  T
+    779   4        7.7813768992E+04 5.6E+03   184 1.0E+00    1 F  T
+    780   4        7.7813768972E+04 3.3E+02   189 1.0E+00    7 F  T
+    781   4        7.7813768972E+04 1.0E+03   186 1.0E+00    3 T  T
+    782   4        7.7813768972E+04 3.3E+02   186 0.0E+00    5 T  T
+    783   4        7.7813768972E+04 3.3E+02   185 0.0E+00    3 T  T
+    784   4        7.7813768969E+04 3.3E+02   184 1.0E+00    2 F  T
+    785   4        7.7813768449E+04 1.5E+02   184 1.0E+00    2 F  T
+    786   4        7.7813768449E+04 3.3E+02   184 1.0E+00    1 F  T
+    787   4        7.7813768444E+04 1.5E+02   187 1.0E+00    8 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    788   4        7.7813767540E+04 1.4E+02   185 1.0E+00   10 T  T
+    789   4        7.7813767540E+04 2.9E+04   186 1.0E+00    1 F  T
+    790   4        7.7813767530E+04 6.4E+02   188 1.0E+00    6 T  T
+    791   4        7.7813767530E+04 1.9E+01   185 1.0E+00    2 F  T
+    792   4        7.7813767506E+04 7.1E+02   187 1.0E+00    7 T  T
+    793   4        7.7813767506E+04 4.3E+03   185 1.0E+00    1 F  T
+    794   4        7.7813767106E+04 6.4E+02   185 1.0E+00   11 T  T
+    795   4        7.7813767106E+04 1.1E+05   186 1.0E+00    1 F  T
+    796   4        7.7813767106E+04 1.5E+02   186 1.0E+00    5 T  T
+    797   4        7.7813767106E+04 2.1E+02   184 1.0E+00    1 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    798   4        7.7813767106E+04 1.6E+01   184 1.0E+00    1 T  T
+    799   4        7.7813767025E+04 9.0E-02   183 1.0E+00    4 T  T
+    800   4        7.7813766991E+04 2.3E+03   187 1.0E+00    6 F  T
+    801   4        7.7813766991E+04 1.9E+01   185 1.0E+00    3 T  T
+    802   4        7.7813766991E+04 2.1E+02   184 1.0E+00    2 F  T
+    803   4        7.7813766989E+04 1.8E+00   184 1.0E+00    6 T  T
+    804   4        7.7813764883E+04 1.3E+00   193 1.0E+00    8 T  T
+    805   4        7.7813764478E+04 1.4E+02   192 1.0E+00    3 T  T
+    806   4        7.7813764074E+04 4.3E-01   191 1.0E+00   11 T  T
+    807   4        7.7813763986E+04 1.6E+02   192 1.0E+00   11 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    808   4        7.7813763423E+04 2.4E+01   186 1.0E+00    8 T  T
+    809   4        7.7813763423E+04 9.8E+02   191 0.0E+00    7 T  T
+    810   4        7.7813763423E+04 1.4E+02   186 1.0E+00    1 F  T
+    811   4        7.7813763423E+04 3.7E+01   187 1.0E+00    2 F  T
+    812   4        7.7813763147E+04 2.5E+02   188 1.0E+00    6 T  T
+    813   4        7.7813762874E+04 4.1E+02   187 1.0E+00    7 T  T
+    814   4        7.7813762874E+04 6.4E+03   194 0.0E+00   10 T  T
+    815   4        7.7813762874E+04 4.8E+03   186 1.0E+00    1 F  T
+    816   4        7.7813762874E+04 7.5E+00   186 1.0E+00    1 F  T
+    817   4        7.7813760253E+04 2.8E-02   196 1.0E+00    6 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    818   4        7.7813759892E+04 9.9E+03   194 1.0E+00    5 T  T
+    819   4        7.7813759817E+04 6.8E+03   201 1.0E+00   10 F  T
+    820   4        7.7813759153E+04 1.0E+03   200 1.0E+00   12 T  T
+    821   4        7.7813759153E+04 4.7E+03   193 1.0E+00    1 F  T
+    822   4        7.7813758177E+04 6.6E+01   196 1.0E+00    4 T  T
+    823   4        7.7813757586E+04 1.1E+03   200 1.0E+00   10 F  T
+    824   4        7.7813755347E+04 2.8E+02   195 1.0E+00    8 T  T
+    825   4        7.7813755342E+04 9.6E+03   202 1.0E+00    9 F  T
+    826   4        7.7813755330E+04 2.9E+02   198 1.0E+00    7 T  T
+    827   4        7.7813754040E+04 3.2E+02   195 1.0E+00   10 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    828   4        7.7813754035E+04 8.3E+03   201 1.0E+00   11 F  T
+    829   4        7.7813753322E+04 6.3E+02   196 1.0E+00   14 T  T
+    830   4        7.7813752006E+04 6.5E+02   196 1.4E+01    6 T  T
+    831   4        7.7813751977E+04 4.3E+03   199 4.0E+00    9 F  T
+    832   4        7.7813751810E+04 1.2E+04   191 1.0E+00    1 T  T
+    833   4        7.7813751793E+04 4.5E+03   200 1.0E+00   10 F  T
+    834   4        7.7813750527E+04 1.9E+03   194 1.0E+00   16 T  T
+    835   4        7.7813749052E+04 5.9E+04   190 1.0E+00    8 T  T
+    836   4        7.7813749052E+04 1.1E+04   189 1.0E+00    1 F  T
+    837   4        7.7813748931E+04 1.9E+03   191 1.0E+00   10 F  T
+   Elapsed time      488.0 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    838   4        7.7813748931E+04 7.8E+03   189 1.0E+00    1 F  T
+    839   4        7.7813748692E+04 1.9E+01   190 1.0E+00    7 T  T
+    840   4        7.7813748661E+04 2.2E+03   189 1.0E+00    2 F  T
+    841   4        7.7813748661E+04 1.1E+03   189 1.0E+00    1 F  T
+    842   4        7.7813748576E+04 1.3E+00   189 1.0E+00    4 T  T
+    843   4        7.7813748576E+04 6.4E+02   191 0.0E+00    5 T  T
+    844   4        7.7813748576E+04 6.4E+02   191 0.0E+00    5 T  T
+    845   4        7.7813748576E+04 6.4E+02   191 0.0E+00    4 T  T
+    846   4        7.7813748576E+04 6.4E+02   189 1.0E+00    1 F  T
+    847   4        7.7813748563E+04 7.7E-01   189 1.0E+00    4 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    848   4        7.7813748489E+04 1.3E+00   188 1.0E+00    3 T  T
+    849   4        7.7813748489E+04 1.3E+03   191 0.0E+00    4 T  T
+    850   4        7.7813748338E+04 1.7E+02   188 1.0E+00    3 F  T
+    851   4        7.7813748337E+04 1.4E+03   188 1.0E+00    1 F  T
+    852   4        7.7813748330E+04 2.1E+02   190 1.0E+00    7 T  T
+    853   4        7.7813747831E+04 4.1E+02   187 1.0E+00   11 T  T
+    854   4        7.7813747828E+04 4.2E+05   187 1.0E+00    1 F  T
+    855   4        7.7813747686E+04 8.9E+03   189 1.0E+00    3 F  T
+    856   4        7.7813747686E+04 1.0E+04   188 1.0E+00    1 F  T
+    857   4        7.7813747676E+04 3.8E+02   189 1.0E+00    7 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    858   4        7.7813747456E+04 2.1E+03   187 1.0E+00    5 T  T
+    859   4        7.7813747456E+04 4.4E+04   186 1.0E+00    2 F  T
+    860   4        7.7813747271E+04 5.3E+01   186 1.0E+00    6 T  T
+    861   4        7.7813747271E+04 2.5E+04   185 1.0E+00    1 F  T
+    862   4        7.7813747163E+04 9.0E+02   187 1.0E+00    9 T  T
+    863   4        7.7813747163E+04 8.2E+04   185 1.0E+00    1 F  T
+    864   4        7.7813747150E+04 1.0E+02   185 1.0E+00    2 T  T
+    865   4        7.7813747150E+04 1.4E+03   185 1.0E+00    1 F  T
+    866   4        7.7813747150E+04 4.3E+00   185 1.0E+00    2 T  T
+    867   4        7.7813747012E+04 2.0E-02   194 1.0E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    868   4        7.7813745609E+04 2.5E+00   194 1.0E+00   12 T  T
+    869   4        7.7813743515E+04 2.9E+04   192 1.0E+00   10 T  T
+    870   4        7.7813743506E+04 1.3E+05   191 1.0E+00    1 F  T
+    871   4        7.7813743448E+04 4.6E+04   193 1.0E+00    6 T  T
+    872   4        7.7813743417E+04 4.2E+04   191 1.0E+00    4 F  T
+    873   4        7.7813743194E+04 3.0E+04   189 1.0E+00   11 F  T
+    874   4        7.7813743100E+04 2.5E+07   190 1.0E+00    1 F  T
+    875   4        7.7813742892E+04 2.6E+03   192 1.0E+00   10 T  T
+    876   4        7.7813742853E+04 1.4E+03   192 1.0E+00    6 F  T
+    877   4        7.7813742849E+04 4.0E+03   189 1.0E+00    4 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    878   4        7.7813742849E+04 9.4E+02   188 1.0E+00    2 T  T
+    879   4        7.7813742849E+04 2.5E+03   188 1.0E+00    1 F  T
+    880   4        7.7813742841E+04 3.3E+01   189 1.0E+00    7 T  T
+    881   4        7.7813741994E+04 1.2E+02   189 1.0E+00   11 F  T
+    882   4        7.7813741519E+04 2.5E+03   188 1.0E+00    5 T  T
+    883   4        7.7813741219E+04 5.4E+02   187 1.0E+00    4 F  T
+    884   4        7.7813741219E+04 9.0E+02   187 1.0E+00    1 F  T
+    885   4        7.7813741046E+04 6.3E+00   187 1.0E+00    3 F  T
+    886   4        7.7813741046E+04 6.8E+02   187 1.0E+00    1 F  T
+    887   4        7.7813741046E+04 5.7E+02   188 1.0E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    888   4        7.7813740764E+04 3.3E+00   187 1.0E+00    8 T  T
+    889   4        7.7813740764E+04 2.4E+03   185 1.0E+00    1 F  T
+    890   4        7.7813740708E+04 1.8E+00   186 1.0E+00    5 F  T
+    891   4        7.7813740681E+04 1.1E+03   186 1.0E+00    4 F  T
+    892   4        7.7813740528E+04 5.4E+01   186 1.0E+00    5 F  T
+    893   4        7.7813740528E+04 3.7E+03   186 1.0E+00    1 F  T
+    894   4        7.7813740359E+04 7.0E+01   186 1.0E+00    5 T  T
+    895   4        7.7813740282E+04 7.0E+02   185 1.0E+00    5 F  T
+    896   4        7.7813740282E+04 6.0E+02   185 1.0E+00    1 F  T
+    897   4        7.7813740235E+04 1.6E-01   185 1.0E+00    5 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    898   4        7.7813740218E+04 2.2E+01   185 1.0E+00    5 T  T
+    899   4        7.7813740090E+04 6.0E+02   192 1.0E+00   11 T  T
+    900   4        7.7813739790E+04 3.2E+04   185 1.0E+00    5 T  T
+    901   4        7.7813739790E+04 1.0E+04   186 1.0E+00    2 F  T
+    902   4        7.7813739752E+04 1.7E+01   185 1.0E+00    6 T  T
+    903   4        7.7813739752E+04 1.5E+03   184 1.0E+00    1 F  T
+    904   4        7.7813739669E+04 1.0E+02   185 1.0E+00    4 F  T
+    905   4        7.7813739662E+04 8.7E+03   185 1.0E+00    4 T  T
+    906   4        7.7813739662E+04 6.4E+01   185 1.0E+00    2 F  T
+    907   4        7.7813739202E+04 1.2E-01   191 1.0E+00    6 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    908   4        7.7813739162E+04 2.4E+04   190 1.0E+00    2 F  T
+    909   4        7.7813738974E+04 2.4E+03   191 1.0E+00    7 T  T
+    910   4        7.7813738973E+04 4.4E+05   192 1.0E+00    1 F  T
+    911   4        7.7813738747E+04 1.5E+03   195 1.0E+00    8 T  T
+    912   4        7.7813738723E+04 2.0E+06   189 1.0E+00    3 F  T
+    913   4        7.7813738723E+04 2.7E+04   191 1.0E+00    1 F  T
+    914   4        7.7813738689E+04 1.8E+02   191 1.0E+00    9 T  T
+    915   4        7.7813738680E+04 5.7E+05   189 1.0E+00    4 F  T
+    916   4        7.7813738680E+04 5.2E+04   192 1.0E+00    1 F  T
+    917   4        7.7813738653E+04 4.3E+02   192 1.0E+00    7 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    918   4        7.7813738645E+04 2.7E+05   189 1.0E+00    3 F  T
+    919   4        7.7813738645E+04 1.1E+04   192 0.0E+00    7 T  T
+    920   4        7.7813738640E+04 1.1E+04   189 1.0E+00    3 F  T
+    921   4        7.7813738640E+04 3.5E+03   189 1.0E+00    1 F  T
+    922   4        7.7813738555E+04 1.1E+03   190 1.0E+00    8 T  T
+    923   4        7.7813738555E+04 1.7E+05   191 1.0E+00    1 F  T
+    924   4        7.7813738548E+04 1.2E+03   193 1.0E+00   10 T  T
+    925   4        7.7813738548E+04 8.1E+04   189 1.0E+00    2 F  T
+    926   4        7.7813738544E+04 3.9E+02   190 1.0E+00    5 T  T
+    927   4        7.7813738544E+04 1.6E+04   191 1.0E+00    1 F  T
+   Elapsed time      519.8 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    928   4        7.7813738524E+04 7.3E+01   192 1.0E+00    7 T  T
+    929   4        7.7813738524E+04 4.5E+04   190 1.0E+00    3 F  T
+    930   4        7.7813738492E+04 3.3E+01   190 1.0E+00   17 T  T
+    931   4        7.7813738492E+04 9.1E+02   188 1.0E+00    1 F  T
+    932   4        7.7813738485E+04 7.8E+00   189 1.0E+00    8 F  T
+    933   4        7.7813738478E+04 5.0E+01   189 6.6E-01   12 T  T
+ 
+ ** Loss of feasibility while tightening tolerances - Return to phase 0.
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+    934   0        1.1811263376E-09
+    935   1     1  1.2433382590E-09 1.3E+00   191 0.0E+00      T  T
+ 
+ ** Feasible solution. Value of objective =    77813.7384779
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    936   3        7.7813738478E+04 2.6E+02   188 0.0E+00      T  T
+    937   3        7.7813738478E+04 4.0E-02   188 4.5E-06      F  T
+    938   3        7.7813738478E+04 4.2E-03   188 4.3E-05      T  T
+    939   3        7.7813738478E+04 4.2E-03   187 7.9E-05      F  T
+    940   3        7.7813738478E+04 7.7E-03   187 9.8E-06      F  T
+    941   4        7.7813738478E+04 4.2E-03   187 3.6E+02      T  T
+    942   4        7.7813738478E+04 1.8E-02   186 3.3E-13      F  F
+    943   4        7.7813738478E+04 3.0E-02   186 6.8E+02      F  T
+    944   4        7.7813738475E+04 4.0E-02   188 1.0E+00    4 F  T
+    945   4        7.7813738456E+04 7.4E-02   188 1.0E+00    7 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    946   4        7.7813738427E+04 2.9E-02   188 1.0E+00   19 T  T
+    947   4        7.7813738156E+04 2.0E+02   187 1.0E+00   43 T  T
+    948   4        7.7813738151E+04 2.4E+01   187 1.0E+00    2 F  T
+    949   4        7.7813738136E+04 7.2E-03   196 1.0E+00   12 F  T
+    950   4        7.7813738115E+04 6.6E-03   196 1.0E+00   90 T  T
+    951   4        7.7813738109E+04 6.5E-03   195 1.0E+00   46 T  T
+    952   4        7.7813737949E+04 5.0E-01   194 1.0E+00  165 T  T
+    953   4        7.7813735682E+04 3.6E+02   193 1.0E+00   44 T  T
+    954   4        7.7813735645E+04 2.3E+06   185 1.0E+00    4 T  T
+    955   4        7.7813735644E+04 2.9E+06   186 1.0E+00    1 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    956   4        7.7813735644E+04 5.2E+04   186 1.0E+00    2 T  T
+    957   4        7.7813735402E+04 2.1E+03   189 1.0E+00    6 T  T
+    958   4        7.7813735224E+04 2.1E+05   184 1.0E+00    8 T  T
+    959   4        7.7813735224E+04 3.7E+06   183 0.0E+00    4 F  F
+    960   4        7.7813735206E+04 3.7E+06   179 4.0E-04      F  T
+    961   4        7.7813735206E+04 4.8E+04   183 1.0E+00    1 F  T
+    962   4        7.7813735201E+04 1.2E+03   183 1.0E+00    7 T  T
+    963   4        7.7813735149E+04 2.8E+05   180 1.0E+00    9 F  T
+    964   4        7.7813735149E+04 5.5E+05   180 1.0E+00    2 F  T
+    965   4        7.7813735142E+04 3.3E+03   182 1.4E-01    8 T  T
+   Elapsed time      553.2 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    966   4        7.7813735142E+04 2.7E+01   179 1.0E+00    1 F  T
+    967   4        7.7813735114E+04 2.8E+02   180 1.0E+00    5 F  T
+    968   4        7.7813735104E+04 7.7E+02   182 1.0E+00    7 F  T
+    969   4        7.7813735081E+04 2.8E+01   182 1.0E+00    8 T  T
+    970   4        7.7813735041E+04 8.5E+00   181 1.0E+00   15 F  T
+    971   4        7.7813735041E+04 2.5E+01   181 1.0E+00    1 F  T
+    972   4        7.7813735040E+04 4.2E+00   182 1.0E+00    8 F  T
+    973   4        7.7813735034E+04 2.5E-01   182 1.0E+00   22 F  T
+    974   4        7.7813735016E+04 1.1E+02   182 1.0E+00    4 T  T
+    975   4        7.7813735016E+04 5.0E+00   181 1.0E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    976   4        7.7813734822E+04 1.9E-02   191 1.0E+00   18 T  T
+    977   4        7.7813733883E+04 3.5E+00   189 1.0E+00   28 T  T
+    978   4        7.7813733883E+04 3.6E+02   187 1.0E+00    1 F  T
+    979   4        7.7813733829E+04 3.1E+02   189 1.0E+00    5 F  T
+    980   4        7.7813733718E+04 4.5E+02   189 1.0E+00    4 T  T
+    981   4        7.7813733718E+04 2.3E+01   188 1.0E+00    2 F  T
+    982   4        7.7813733716E+04 3.9E+01   189 1.0E+00    3 F  T
+    983   4        7.7813733584E+04 8.2E-01   189 1.0E+00    9 T  T
+    984   4        7.7813733584E+04 1.0E+01   188 1.0E+00    1 F  T
+    985   4        7.7813733429E+04 3.5E-02   198 1.0E+00    3 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    986   4        7.7813733428E+04 5.0E+01   197 1.0E+00    1 F  T
+    987   4        7.7813733422E+04 3.1E+02   199 1.0E+00    5 F  T
+    988   4        7.7813733118E+04 2.8E-02   205 1.0E+00   13 T  T
+    989   4        7.7813732936E+04 3.2E+01   203 1.0E+00    3 T  T
+    990   4        7.7813732728E+04 1.3E+02   204 1.0E+00    6 T  T
+    991   4        7.7813732728E+04 3.2E+02   203 1.0E+00    1 F  T
+    992   4        7.7813732724E+04 1.9E+00   204 1.0E+00    8 T  T
+    993   4        7.7813732695E+04 9.8E+00   203 1.0E+00    3 F  T
+    994   4        7.7813732683E+04 9.9E+01   203 1.0E-02   16 F  T
+    995   4        7.7813732395E+04 5.8E+03   206 1.0E+00    8 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+    996   4        7.7813731494E+04 5.8E+02   201 1.0E+00   13 T  T
+    997   4        7.7813731494E+04 1.5E+02   199 1.0E+00    2 F  T
+    998   4        7.7813730568E+04 1.6E+02   202 1.0E+00   23 T  T
+    999   4        7.7813730568E+04 4.3E+03   195 3.8E-05   13 F  T
+   1000   4        7.7813730458E+04 1.2E+03   199 1.0E+00    9 F  T
+   1001   4        7.7813730402E+04 1.8E+03   194 1.0E+00    8 T  T
+   1002   4        7.7813730236E+04 2.0E+02   193 1.0E+00   15 T  T
+   1003   4        7.7813730222E+04 1.4E+03   191 1.0E+00    7 T  T
+   1004   4        7.7813730222E+04 2.0E+03   192 1.0E+00    3 F  T
+   1005   4        7.7813730195E+04 2.6E+01   192 1.0E+00    8 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1006   4        7.7813730171E+04 1.9E+02   193 1.0E+00   10 T  T
+   1007   4        7.7813730171E+04 2.7E+02   192 0.0E+00    5 T  T
+   1008   4        7.7813730171E+04 2.7E+02   192 0.0E+00    5 T  T
+   1009   4        7.7813730171E+04 2.7E+02   192 0.0E+00    5 T  T
+   1010   4        7.7813730171E+04 2.7E+02   192 0.0E+00    5 T  T
+   1011   4        7.7813730171E+04 2.7E+02   192 1.0E+00    4 F  T
+   1012   4        7.7813730171E+04 5.5E+01   191 1.0E+00    1 T  T
+   1013   4        7.7813730154E+04 7.0E-02   190 1.0E+00    6 T  T
+   1014   4        7.7813730053E+04 9.2E-01   189 1.0E+00   11 T  T
+   1015   4        7.7813729588E+04 2.1E+00   198 1.0E+00   11 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1016   4        7.7813729588E+04 2.2E+01   197 0.0E+00    4 T  T
+   1017   4        7.7813729588E+04 2.2E+01   197 0.0E+00    4 T  T
+   1018   4        7.7813729588E+04 2.2E+01   197 0.0E+00    4 T  T
+   1019   4        7.7813729588E+04 2.2E+01   197 0.0E+00    4 T  T
+   1020   4        7.7813729588E+04 2.2E+01   197 4.0E+00    4 F  T
+   1021   4        7.7813729588E+04 6.5E+01   196 9.2E-01    2 T  T
+   1022   4        7.7813729447E+04 1.4E-02   194 1.0E+00    6 F  T
+   1023   4        7.7813729444E+04 2.1E+02   196 1.0E+00    3 F  T
+   1024   4        7.7813729039E+04 4.7E-01   195 1.0E+00   11 T  T
+   1025   4        7.7813729039E+04 2.6E+02   196 0.0E+00    5 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1026   4        7.7813729039E+04 2.6E+02   196 0.0E+00    5 T  T
+   1027   4        7.7813729039E+04 2.6E+02   196 0.0E+00    5 T  T
+   1028   4        7.7813729039E+04 2.6E+02   196 1.0E+00    5 F  T
+   1029   4        7.7813729039E+04 6.6E+00   194 1.0E+00    1 F  T
+   1030   4        7.7813728886E+04 9.9E-03   204 1.6E-01    5 T  T
+   1031   4        7.7813728644E+04 1.0E-02   202 1.0E+00   16 F  T
+   1032   4        7.7813728200E+04 2.4E+00   202 1.0E+00    6 T  T
+   1033   4        7.7813727904E+04 2.2E+02   204 1.0E+00    5 T  T
+   1034   4        7.7813727311E+04 1.1E+03   202 5.7E-01    8 F  T
+   1035   4        7.7813727281E+04 1.9E+04   200 7.4E-02    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1036   4        7.7813727222E+04 2.1E+04   204 1.0E+00    4 F  T
+   1037   4        7.7813727161E+04 4.2E+02   204 1.0E+00    9 T  T
+   1038   4        7.7813727106E+04 2.8E+03   201 1.0E+00    4 T  T
+   1039   4        7.7813727080E+04 7.5E+01   202 1.0E+00   10 F  T
+   1040   4        7.7813726736E+04 4.5E+00   201 1.0E+00    6 T  T
+   1041   4        7.7813726720E+04 5.4E+01   200 1.0E+00    3 F  T
+   1042   4        7.7813726502E+04 7.0E+00   201 1.0E+00   12 T  T
+   1043   4        7.7813726502E+04 1.2E+01   199 1.0E+00    1 F  T
+   1044   4        7.7813726494E+04 1.9E+01   202 1.0E+00    8 T  T
+   1045   4        7.7813726494E+04 9.5E+01   200 1.0E+00    1 F  T
+   Elapsed time      583.5 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1046   4        7.7813726493E+04 7.4E+00   201 1.0E+00    4 T  T
+   1047   4        7.7813725822E+04 6.6E+01   202 1.0E+00    7 T  T
+   1048   4        7.7813725815E+04 5.1E+01   199 1.0E+00    6 F  T
+   1049   4        7.7813725809E+04 1.7E+02   199 1.0E+00    2 T  T
+   1050   4        7.7813725805E+04 1.5E+02   200 1.0E+00    7 F  T
+   1051   4        7.7813725803E+04 2.8E+01   200 1.0E+00    4 F  T
+   1052   4        7.7813725287E+04 8.9E-02   200 1.0E+00   12 T  T
+   1053   4        7.7813725262E+04 2.5E+01   198 1.0E+00    2 T  T
+   1054   4        7.7813725189E+04 1.5E+02   201 1.0E+00   11 T  T
+   1055   4        7.7813725156E+04 8.1E+01   200 1.0E+00    9 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1056   4        7.7813725156E+04 1.2E+01   198 1.0E+00    2 F  T
+   1057   4        7.7813725050E+04 6.2E+00   200 1.0E+00   12 T  T
+   1058   4        7.7813725023E+04 5.1E+00   196 1.0E+00    4 F  T
+   1059   4        7.7813725023E+04 2.0E+00   196 1.0E+00    1 F  T
+   1060   4        7.7813724706E+04 5.5E-03   206 1.0E+00    2 T  T
+   1061   4        7.7813724703E+04 4.4E+03   205 1.0E+00    1 F  T
+   1062   4        7.7813724685E+04 2.5E+02   211 1.0E+00   12 F  T
+   1063   4        7.7813724685E+04 1.2E+01   207 6.0E-06   14 F  T
+   1064   4        7.7813724467E+04 2.4E+03   209 1.0E+00    6 F  T
+   1065   4        7.7813724045E+04 1.3E+03   206 1.0E+00    3 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1066   4        7.7813724042E+04 3.2E+03   208 1.0E+00    4 F  T
+   1067   4        7.7813724009E+04 5.1E+01   210 1.0E+00   12 T  T
+   1068   4        7.7813724009E+04 1.7E+04   206 1.0E+00    2 F  T
+   1069   4        7.7813724001E+04 1.5E+01   207 1.0E+00    9 T  T
+   1070   4        7.7813724000E+04 2.6E+01   205 1.0E+00    3 F  T
+   1071   4        7.7813723998E+04 4.8E+01   206 1.0E+00    8 T  T
+   1072   4        7.7813723996E+04 2.1E+01   205 1.0E+00    4 F  T
+   1073   4        7.7813723996E+04 4.8E+01   205 1.0E+00    1 F  T
+   1074   4        7.7813723957E+04 2.0E+01   207 1.0E+00    5 T  T
+   1075   4        7.7813723850E+04 4.4E+02   205 1.0E+00    7 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1076   4        7.7813723839E+04 1.7E+03   208 1.0E+00    6 T  T
+   1077   4        7.7813723837E+04 2.4E+02   205 1.0E+00    6 F  T
+   1078   4        7.7813723837E+04 1.6E+01   204 1.0E+00    3 T  T
+   1079   4        7.7813723837E+04 2.6E+02   206 1.0E+00    7 F  T
+   1080   4        7.7813723831E+04 2.3E+01   205 1.0E+00    9 T  T
+   1081   4        7.7813723831E+04 1.0E+01   203 1.0E+00    1 F  T
+   1082   4        7.7813723826E+04 5.0E+00   204 1.0E+00    7 F  T
+   1083   4        7.7813723826E+04 1.4E+02   204 1.0E+00    1 F  T
+   1084   4        7.7813723791E+04 1.1E+01   205 1.0E+00    7 T  T
+   1085   4        7.7813723749E+04 5.0E+03   204 1.0E+00    2 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1086   4        7.7813723749E+04 6.2E+03   206 1.0E+00    1 F  T
+   1087   4        7.7813723672E+04 9.3E+02   210 1.0E+00    8 T  T
+   1088   4        7.7813723668E+04 3.3E+03   204 1.0E+00    8 T  T
+   1089   4        7.7813723668E+04 5.9E+03   204 1.0E+00    2 F  T
+   1090   4        7.7813723657E+04 2.3E+02   204 1.0E+00    7 F  T
+   1091   4        7.7813723657E+04 1.6E+03   204 1.0E+00    1 F  T
+   1092   4        7.7813723654E+04 9.9E+00   205 1.0E+00    6 T  T
+   1093   4        7.7813723654E+04 4.7E+01   203 6.1E-07    7 F  T
+   1094   4        7.7813723599E+04 5.0E+02   207 1.0E+00    6 F  T
+   1095   4        7.7813723599E+04 7.8E+02   204 1.0E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1096   4        7.7813723534E+04 3.1E+01   206 1.0E+00   11 T  T
+   1097   4        7.7813723534E+04 1.3E+02   203 1.0E+00    2 F  T
+   1098   4        7.7813723500E+04 2.3E+01   204 1.0E+00    6 F  T
+   1099   4        7.7813723500E+04 1.8E+04   204 1.0E+00    2 F  T
+   1100   4        7.7813723310E+04 4.4E+01   205 1.0E+00    9 T  T
+   1101   4        7.7813723307E+04 8.7E+04   204 1.0E+00    1 F  T
+   1102   4        7.7813723307E+04 7.1E+02   207 0.0E+00    7 T  T
+   1103   4        7.7813723307E+04 7.1E+02   203 1.0E+00    1 F  T
+   1104   4        7.7813723297E+04 4.4E+00   204 1.0E+00    7 T  T
+   1105   4        7.7813723293E+04 1.9E+04   203 1.0E+00    1 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1106   4        7.7813723293E+04 3.1E+03   204 1.0E+00    2 F  T
+   1107   4        7.7813723293E+04 1.9E+01   204 1.0E+00    7 T  T
+   1108   4        7.7813723293E+04 4.5E+02   204 0.0E+00    3 T  T
+   1109   4        7.7813723293E+04 4.5E+02   204 0.0E+00    3 T  T
+   1110   4        7.7813723293E+04 4.5E+02   204 0.0E+00    3 T  T
+   1111   4        7.7813723293E+04 4.5E+02   204 0.0E+00    3 T  T
+   1112   4        7.7813723293E+04 4.5E+02   204 0.0E+00    3 T  T
+   1113   4        7.7813723293E+04 4.5E+02   204 0.0E+00    3 T  T
+   1114   4        7.7813723293E+04 4.5E+02   204 4.4E-09      F  T
+   1115   4        7.7813723293E+04 7.4E+01   204 6.1E-09      T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1116   4        7.7813723293E+04 1.6E+01   203 3.1E-01      T  T
+   1117   4        7.7813723293E+04 1.3E+01   203 3.3E-09      F  T
+   1118   4        7.7813723293E+04 3.3E+00   203 1.2E-02      T  T
+   1119   4        7.7813723293E+04 4.4E+00   203 2.0E-08      F  T
+   1120   4        7.7813723293E+04 2.1E+01   203 2.6E-02      T  T
+   1121   4        7.7813723293E+04 1.7E+01   203 2.1E-08      F  T
+   1122   4        7.7813723293E+04 5.5E+01   203 6.9E+00      F  T
+   1123   4        7.7813723288E+04 2.9E+02   203 1.0E+00    2 F  T
+   1124   4        7.7813723203E+04 4.2E+05   203 1.0E+00    2 F  T
+   1125   4        7.7813723200E+04 2.0E+05   203 6.7E-01    5 F  T
+   Elapsed time      615.4 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1126   4        7.7813723200E+04 1.9E+04   204 1.0E+00    1 F  T
+   1127   4        7.7813723199E+04 3.9E+01   204 1.0E+00    4 T  T
+   1128   4        7.7813723199E+04 2.1E+03   203 1.0E+00    1 F  T
+   1129   4        7.7813723199E+04 1.3E+01   203 1.4E-03    6 F  T
+   1130   4        7.7813723199E+04 3.3E+03   206 0.0E+00    5 T  T
+   1131   4        7.7813723199E+04 6.8E+02   202 1.0E+00    1 F  T
+   1132   4        7.7813723199E+04 1.3E+01   203 1.0E+00    8 T  T
+   1133   4        7.7813723198E+04 1.1E+02   202 1.0E+00    1 T  T
+   1134   4        7.7813723198E+04 4.1E+02   202 1.0E+00    1 F  T
+   1135   4        7.7813723193E+04 3.3E+01   204 1.0E+00    8 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1136   4        7.7813723193E+04 9.1E+01   202 1.0E+00    1 F  T
+   1137   4        7.7813723140E+04 6.3E+01   203 1.0E+00   14 T  T
+   1138   4        7.7813723140E+04 1.3E+03   202 1.0E+00    1 F  T
+   1139   4        7.7813723140E+04 7.2E+00   203 1.0E+00    4 F  T
+   1140   4        7.7813723122E+04 1.5E-01   203 1.0E+00   10 T  T
+   1141   4        7.7813723121E+04 3.3E+03   208 1.0E+00    8 F  T
+   1142   4        7.7813723121E+04 6.9E+00   202 1.0E+00    3 T  T
+   1143   4        7.7813723121E+04 4.5E+01   203 0.0E+00    4 T  T
+   1144   4        7.7813723121E+04 4.5E+01   203 0.0E+00    4 T  T
+   1145   4        7.7813723121E+04 4.5E+01   203 0.0E+00    4 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1146   4        7.7813723121E+04 4.5E+01   203 0.0E+00    4 T  T
+   1147   4        7.7813723121E+04 4.5E+01   203 0.0E+00    4 T  T
+   1148   4        7.7813723121E+04 4.5E+01   203 0.0E+00    4 T  T
+   1149   4        7.7813723121E+04 4.5E+01   203 6.7E-08      F  T
+   1150   4        7.7813723121E+04 7.0E+00   203 5.8E-07      T  T
+   1151   4        7.7813723121E+04 6.6E+00   202 1.0E+00      F  T
+   1152   4        7.7813723121E+04 1.6E+00   202 1.0E+00      T  T
+   1153   4        7.7813723121E+04 6.8E-01   202 5.4E-13      F  F
+   1154   4        7.7813723121E+04 6.5E+00   203 7.9E-07      F  T
+   1155   4        7.7813723121E+04 7.6E-01   203 1.0E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1156   4        7.7813723121E+04 1.2E+02   202 1.0E+00    1 F  T
+   1157   4        7.7813723121E+04 2.2E+02   205 0.0E+00    7 T  T
+   1158   4        7.7813723121E+04 2.2E+02   205 0.0E+00    6 T  T
+   1159   4        7.7813723121E+04 2.2E+02   205 0.0E+00    6 T  T
+   1160   4        7.7813723121E+04 2.2E+02   205 0.0E+00    6 T  T
+   1161   4        7.7813723121E+04 2.2E+02   205 0.0E+00    6 T  T
+   1162   4        7.7813723121E+04 2.2E+02   205 0.0E+00    6 T  T
+   1163   4        7.7813723121E+04 2.2E+02   205 1.0E+00    5 F  T
+   1164   4        7.7813723121E+04 1.1E+01   202 1.0E+00    2 F  T
+   1165   4        7.7813723113E+04 5.0E-02   202 1.0E+00    7 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1166   4        7.7813723113E+04 5.4E+01   203 1.0E+00    3 F  T
+   1167   4        7.7813723113E+04 1.5E+01   203 1.0E+00    2 T  T
+   1168   4        7.7813723001E+04 4.2E-03   212 1.0E+00    5 T  T
+   1169   4        7.7813722923E+04 4.3E+03   210 1.0E+00    1 T  T
+   1170   4        7.7813722786E+04 1.1E+04   215 1.0E+00    7 T  T
+   1171   4        7.7813722786E+04 9.6E+03   213 1.0E+00    1 F  T
+   1172   4        7.7813722786E+04 1.7E+02   214 4.1E-03   10 F  T
+   1173   4        7.7813722745E+04 2.3E+04   210 1.0E+00    1 F  T
+   1174   4        7.7813722745E+04 1.4E+04   210 1.0E+00    2 F  T
+   1175   4        7.7813722744E+04 9.8E+01   214 1.0E+00   12 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1176   4        7.7813722744E+04 1.6E+01   210 1.0E+00    1 F  T
+   1177   4        7.7813721690E+04 4.0E+01   210 1.0E+00   16 T  T
+   1178   4        7.7813721690E+04 4.8E+03   209 0.0E+00    3 T  T
+   1179   4        7.7813721675E+04 1.4E+03   206 7.5E-02    1 T  T
+   1180   4        7.7813721675E+04 4.3E+03   209 1.0E+00    3 F  T
+   1181   4        7.7813721644E+04 3.3E+01   209 2.5E-01    3 T  T
+   1182   4        7.7813721570E+04 1.9E+02   207 1.0E+00    3 T  T
+   1183   4        7.7813721551E+04 3.3E+05   211 1.0E+00    7 T  T
+   1184   4        7.7813721551E+04 8.5E+04   210 1.0E+00    1 F  T
+   1185   4        7.7813721545E+04 4.9E+02   212 1.0E+00    8 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1186   4        7.7813721545E+04 6.4E+04   208 1.0E+00    1 F  T
+   1187   4        7.7813721545E+04 4.3E+02   210 1.0E+00   11 T  T
+   1188   4        7.7813721543E+04 1.0E+01   205 1.0E+00    4 T  T
+   1189   4        7.7813721524E+04 4.3E+02   213 1.0E+00   12 T  T
+   1190   4        7.7813721524E+04 1.2E+01   206 1.0E+00    2 F  T
+   1191   4        7.7813721403E+04 5.0E-02   207 1.0E+00    6 T  T
+   1192   4        7.7813721395E+04 2.6E+02   206 1.0E+00    1 F  T
+   1193   4        7.7813721340E+04 8.7E+01   210 1.0E+00    8 F  T
+   1194   4        7.7813721336E+04 3.0E+01   209 1.0E+00    4 F  T
+   1195   4        7.7813721335E+04 5.5E+00   210 1.0E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1196   4        7.7813721034E+04 5.6E-03   220 1.0E+00   12 T  T
+   1197   4        7.7813721019E+04 4.0E+01   217 1.0E+00    2 T  T
+   1198   4        7.7813721015E+04 2.8E+01   218 1.0E+00    4 F  T
+   1199   4        7.7813720829E+04 9.2E+00   219 1.0E+00   13 T  T
+   1200   4        7.7813720829E+04 3.3E+00   216 1.0E+00    1 F  T
+   1201   4        7.7813720657E+04 2.3E-02   220 1.0E+00    4 T  T
+   1202   4        7.7813720550E+04 3.7E+01   219 1.0E+00    4 T  T
+   1203   4        7.7813720451E+04 1.1E+01   217 1.0E+00    5 T  T
+   1204   4        7.7813720451E+04 7.5E-01   217 1.0E+00    3 F  T
+   1205   4        7.7813720301E+04 1.7E+02   226 1.0E+00    4 T  T
+   Elapsed time      647.5 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1206   4        7.7813720289E+04 2.9E+01   229 1.0E+00    8 F  T
+   1207   4        7.7813720286E+04 2.1E+01   228 1.0E+00    7 F  T
+   1208   4        7.7813719791E+04 3.8E+01   238 1.0E+00   14 T  T
+   1209   4        7.7813719766E+04 3.7E+01   237 1.0E+00   12 F  T
+   1210   4        7.7813719746E+04 6.6E+01   236 1.0E+00    4 T  T
+   1211   4        7.7813719406E+04 7.2E+01   235 1.0E+00    6 T  T
+   1212   4        7.7813719256E+04 2.2E+01   236 1.0E+00   12 T  T
+   1213   4        7.7813719254E+04 2.8E+01   234 1.0E+00    6 F  T
+   1214   4        7.7813719250E+04 2.8E+01   234 1.0E+00    3 F  T
+   1215   4        7.7813719135E+04 6.8E+00   235 1.0E+00   11 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1216   4        7.7813719131E+04 4.3E+01   234 1.0E+00    7 F  T
+   1217   4        7.7813719128E+04 1.7E+01   235 1.0E+00    7 T  T
+   1218   4        7.7813718968E+04 1.3E+00   234 1.0E+00    6 T  T
+   1219   4        7.7813718968E+04 5.9E+00   232 1.0E+00    1 F  T
+   1220   4        7.7813718868E+04 3.4E-03   242 1.0E+00    4 F  T
+   1221   4        7.7813718868E+04 2.4E+00   242 1.0E+00    1 F  T
+   1222   4        7.7813718856E+04 3.9E+01   245 1.0E+00    8 F  T
+   1223   4        7.7813718853E+04 3.3E+01   245 1.0E+00    4 F  T
+   1224   4        7.7813718545E+04 1.4E+02   245 1.0E+00   13 T  T
+   1225   4        7.7813718524E+04 3.4E+07   241 3.9E-01    2 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1226   4        7.7813718523E+04 1.2E+02   240 1.0E+00    1 F  T
+   1227   4        7.7813718523E+04 1.2E+04   248 1.0E+00    6 F  T
+   1228   4        7.7813718513E+04 6.1E+02   244 1.0E+00    4 T  T
+   1229   4        7.7813718513E+04 1.1E+05   247 1.0E+00    1 F  T
+   1230   4        7.7813718513E+04 1.1E+02   247 1.0E+00   11 T  T
+   1231   4        7.7813718513E+04 4.7E+04   241 1.0E+00    1 T  T
+   1232   4        7.7813718513E+04 2.6E+04   246 1.0E+00    1 F  T
+   1233   4        7.7813718510E+04 6.6E+01   246 1.0E+00    9 T  T
+   1234   4        7.7813718435E+04 7.5E+02   241 1.0E+00    4 T  T
+   1235   4        7.7813718434E+04 1.1E+02   243 1.0E+00    9 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1236   4        7.7813718433E+04 2.0E+01   244 1.0E+00    8 T  T
+   1237   4        7.7813718301E+04 5.3E+01   245 1.0E+00   11 T  T
+   1238   4        7.7813718301E+04 6.4E+04   249 1.0E+00    1 F  T
+   1239   4        7.7813718299E+04 1.1E+03   249 1.0E+00   10 T  T
+   1240   4        7.7813718299E+04 7.4E+04   243 1.0E+00    2 F  T
+   1241   4        7.7813718299E+04 4.1E+02   248 1.0E+00    7 F  T
+   1242   4        7.7813718298E+04 6.4E+01   243 1.0E+00    3 T  T
+   1243   4        7.7813718298E+04 1.8E+04   250 1.0E+00    2 T  T
+   1244   4        7.7813718298E+04 2.4E+02   249 1.0E+00    8 T  T
+   1245   4        7.7813718298E+04 5.3E+03   243 1.0E+00    2 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1246   4        7.7813718244E+04 1.3E+02   246 1.0E+00    7 T  T
+   1247   4        7.7813718243E+04 6.3E+05   243 1.0E+00    5 F  T
+   1248   4        7.7813718243E+04 6.2E+02   249 0.0E+00    9 T  T
+   1249   4        7.7813718243E+04 4.9E+02   244 1.0E+00    1 F  T
+   1250   4        7.7813718243E+04 4.5E+03   244 1.0E+00    1 F  T
+   1251   4        7.7813718238E+04 8.8E+01   246 1.0E+00   10 T  T
+   1252   4        7.7813718154E+04 3.7E+03   243 1.0E+00    2 T  T
+   1253   4        7.7813718130E+04 1.0E+04   249 1.0E+00    7 F  T
+   1254   4        7.7813718107E+04 1.4E+02   248 1.0E+00   15 T  T
+   1255   4        7.7813718107E+04 1.2E+01   244 1.0E+00    4 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1256   4        7.7813718106E+04 1.1E+01   244 1.0E+00    4 F  T
+   1257   4        7.7813717931E+04 5.9E-02   244 1.0E+00   12 T  T
+   1258   4        7.7813717931E+04 4.1E+01   242 1.0E+00    1 F  T
+   1259   4        7.7813717931E+04 1.4E+00   243 1.0E+00    3 T  T
+   1260   4        7.7813717877E+04 4.1E-03   244 6.3E-01    6 T  T
+   1261   4        7.7813717877E+04 4.9E+01   244 1.0E+00    1 F  T
+   1262   4        7.7813717854E+04 6.2E+02   250 1.0E+00    9 T  T
+   1263   4        7.7813717852E+04 9.4E+00   245 1.0E+00    6 T  T
+   1264   4        7.7813717852E+04 3.2E+00   243 1.0E+00    2 F  T
+   1265   4        7.7813717817E+04 1.2E-01   244 1.0E+00   12 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1266   4        7.7813717803E+04 9.2E+01   245 1.0E+00    5 F  T
+   1267   4        7.7813717802E+04 1.0E+01   246 1.0E+00    9 T  T
+   1268   4        7.7813717802E+04 2.2E+00   245 1.0E+00    3 F  T
+   1269   4        7.7813717742E+04 2.5E+01   246 1.0E+00    9 T  T
+   1270   4        7.7813717713E+04 1.1E+01   244 1.0E+00    7 F  T
+   1271   4        7.7813717713E+04 8.0E+00   246 1.0E+00    8 F  T
+   1272   4        7.7813717712E+04 7.9E+00   246 1.0E+00    3 F  T
+   1273   4        7.7813717611E+04 2.5E-02   246 1.0E+00   12 T  T
+   1274   4        7.7813717611E+04 1.2E+01   243 1.0E+00    2 F  T
+   1275   4        7.7813717551E+04 4.5E-01   244 1.0E+00   19 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1276   4        7.7813717551E+04 1.0E+00   243 1.0E+00    1 F  T
+   1277   4        7.7813717516E+04 3.1E-03   244 1.0E+00    5 F  T
+   1278   4        7.7813717420E+04 3.6E-01   244 1.0E+00   18 F  T
+   1279   4        7.7813717400E+04 5.7E+00   244 1.0E+00   17 T  T
+   1280   4        7.7813717393E+04 6.4E+01   246 1.0E+00    5 F  T
+   1281   4        7.7813717375E+04 3.8E-01   244 1.0E+00   12 T  T
+   1282   4        7.7813717375E+04 4.1E+00   243 1.0E+00    2 F  T
+   1283   4        7.7813717359E+04 2.3E-03   244 1.0E+00    7 F  T
+   1284   4        7.7813717272E+04 1.8E-01   244 1.0E+00   15 T  T
+   1285   4        7.7813717272E+04 3.2E+00   243 1.0E+00    1 F  T
+   Elapsed time      679.8 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1286   4        7.7813717250E+04 6.5E-03   243 1.0E+00    6 F  T
+   1287   4        7.7813717231E+04 5.5E-01   243 1.0E+00    8 T  T
+   1288   4        7.7813717231E+04 7.7E+00   243 1.0E+00    1 F  T
+   1289   4        7.7813717220E+04 1.4E-02   243 1.0E+00    7 T  T
+   1290   4        7.7813717213E+04 3.2E-01   242 1.0E+00   13 T  T
+   1291   4        7.7813717213E+04 2.5E+00   242 1.0E+00    1 F  T
+   1292   4        7.7813717205E+04 1.4E-03   246 1.0E+00    7 T  T
+   1293   4        7.7813717176E+04 1.4E-03   245 1.0E+00   17 F  T
+   1294   4        7.7813717028E+04 7.7E-02   245 1.0E+00   72 F  T
+   1295   4        7.7813716938E+04 1.0E+02   245 1.0E+00   12 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1296   4        7.7813716804E+04 2.7E+04   253 1.0E+00    8 F  T
+   1297   4        7.7813716795E+04 6.2E+02   253 1.0E+00   11 T  T
+   1298   4        7.7813716795E+04 3.9E+02   245 1.0E+00    5 T  T
+   1299   4        7.7813716795E+04 2.6E+04   253 1.0E+00    1 F  T
+   1300   4        7.7813716795E+04 1.5E+02   257 0.0E+00   12 T  T
+   1301   4        7.7813716795E+04 1.2E+02   246 0.0E+00    5 T  T
+   1302   4        7.7813716795E+04 1.5E+02   253 9.9E-01   11 T  T
+   1303   4        7.7813716795E+04 1.0E+02   244 1.0E+00    1 T  T
+   1304   4        7.7813716795E+04 8.1E+01   253 0.0E+00   11 T  T
+   1305   4        7.7813716795E+04 9.4E+01   253 1.0E+00    9 T  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1306   4        7.7813716795E+04 1.6E+01   245 0.0E+00    4 T  T
+   1307   4        7.7813716794E+04 1.1E+01   244 1.0E+00    2 F  T
+   1308   4        7.7813716794E+04 4.7E-01   244 0.0E+00    3 T  T
+   1309   4        7.7813716794E+04 4.7E-01   244 1.0E+00    3 F  T
+   1310   4        7.7813716794E+04 1.9E+00   246 5.1E-05    5 T  T
+   1311   4        7.7813716753E+04 1.3E-03   245 1.0E+00    4 T  T
+   1312   4        7.7813716601E+04 3.0E-02   244 1.0E+00   12 F  T
+   1313   4        7.7813716600E+04 1.8E+01   248 1.0E+00    8 F  T
+   1314   4        7.7813716558E+04 1.8E-01   246 1.0E+00    9 T  T
+   1315   4        7.7813716558E+04 2.7E-01   245 1.0E+00    2 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1316   4        7.7813716558E+04 1.2E+00   246 1.0E+00    3 F  T
+   1317   4        7.7813716548E+04 1.2E-02   246 1.0E+00    9 T  T
+   1318   4        7.7813716548E+04 5.1E-01   245 1.0E+00    1 F  T
+   1319   4        7.7813716527E+04 2.7E-03   245 1.0E+00   23 T  T
+   1320   4        7.7813716526E+04 7.5E+01   244 1.0E+00    1 F  T
+   1321   4        7.7813716484E+04 2.7E-02   244 1.0E+00   58 T  T
+   1322   4        7.7813716483E+04 1.9E+01   248 1.0E+00   10 F  T
+   1323   4        7.7813716481E+04 9.7E-01   246 1.0E+00    8 F  T
+   1324   4        7.7813716430E+04 1.3E-01   246 1.0E+00   16 T  T
+   1325   4        7.7813716419E+04 2.3E+01   246 3.8E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1326   4        7.7813716419E+04 9.2E+01   248 0.0E+00    7 T  T
+   1327   4        7.7813716419E+04 9.2E+01   248 0.0E+00    6 T  T
+   1328   4        7.7813716419E+04 9.2E+01   248 0.0E+00    6 T  T
+   1329   4        7.7813716419E+04 9.2E+01   248 0.0E+00    6 T  T
+   1330   4        7.7813716419E+04 9.2E+01   248 0.0E+00    6 T  T
+   1331   4        7.7813716419E+04 9.2E+01   248 0.0E+00    5 T  T
+   1332   4        7.7813716419E+04 9.2E+01   244 1.0E+00      F  T
+   1333   4        7.7813716419E+04 2.8E-01   244 9.3E-01      T  T
+   1334   4        7.7813716419E+04 2.5E-03   243 2.0E+00      F  T
+   1335   4        7.7813716419E+04 6.4E+00   244 1.6E-05      F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1336   4        7.7813716417E+04 1.7E-03   244 1.0E+00    5 F  T
+   1337   4        7.7813716405E+04 1.5E-01   244 1.0E+00    7 F  T
+   1338   4        7.7813716405E+04 1.7E-01   244 1.0E+00    1 F  T
+   1339   4        7.7813716367E+04 5.7E-04   247 1.0E+00    6 F  T
+   1340   4        7.7813716366E+04 2.4E+02   247 1.0E+00    1 F  T
+   1341   4        7.7813716366E+04 1.0E-01   247 1.0E+00    1 F  T
+   1342   4        7.7813716314E+04 7.4E-04   249 1.0E+00   30 F  T
+   1343   4        7.7813716314E+04 1.8E+00   249 1.0E+00    1 F  T
+   1344   4        7.7813716270E+04 1.2E-03   249 1.0E+00   72 T  T
+   1345   4        7.7813716270E+04 2.0E+01   253 1.0E+00   11 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1346   4        7.7813716270E+04 4.8E-02   250 0.0E+00    7 T  T
+   1347   4        7.7813716270E+04 4.8E-02   249 1.0E+00    1 F  T
+   1348   4        7.7813716264E+04 1.1E-03   249 1.8E+00   30 T  T
+   1349   4        7.7813716264E+04 8.8E-01   249 1.0E+00    2 F  T
+   1350   4        7.7813716261E+04 1.8E-03   249 1.0E+00   12 T  T
+   1351   4        7.7813716256E+04 1.0E-04   248 1.0E+00   82 F  T
+   1352   4        7.7813716256E+04 6.3E-05   248 1.9E+00   15 F  T
+   1353   4        7.7813716256E+04 5.8E-05   248 1.0E+00    1 F  T
+   1354   4        7.7813716255E+04 3.7E-05   251 1.0E+00    8 F  T
+   1355   4        7.7813716255E+04 2.8E-05   252 1.0E+00    4 F  T
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+   1356   4        7.7813716255E+04 3.0E-06   252
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Reading solution for model FUTURE
+--- ACC2_main_future_overshoot.gms(50033) 103 Mb  708 secs
+--- GDX Point C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\FUTURE_p.gdx
+--- Executing after solve: elapsed 0:11:50.799
+--- ACC2_main_future_overshoot.gms(50604) 103 Mb
+--- Putfile OUT_FUTURE_A C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\out_future_a.dat
+--- Putfile OUT_FUTURE_B C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\out_future_b.dat
+--- Putfile OUT_FUTURE_SCN C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\out_future_IPSL_allghg_2130_15.csv
+--- Putfile OUT_FUTURE_1 C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\out_future_1.dat
+--- Putfile OUT_FUTURE_RCMIP C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\out_future_rcmip.dat
+--- Putfile OUT_PAST_RF C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\out_future_RF.dat
+--- Putfile OUT_FUTURE_ALERT C:\GAMS\workspace\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard_overshoot\out_future_alert.dat
+--- Profile Summary (2 records processed)
+   708.500   0.103GB     50033 Solve Alg  FUTURE
+     1.281   0.103GB     50033 Solve Read FUTURE
+*** Status: Normal completion
+--- Job ACC2_main_future_overshoot.gms Stop 12/06/22 17:47:58 elapsed 0:11:50.881

@@ -1,0 +1,174 @@
+
+--- Job ACC2_main_future.gms Start 11/22/23 17:16:55 40.3.0 f227c22a WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\40\gmsprmNT.txt
+--- GAMS Parameters defined
+    Input C:\Users\mastr\Documents\LSCE\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_1pctCO2\ACC2_main_future.gms
+    PageSize 0
+    ScrDir C:\Users\mastr\Documents\LSCE\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_1pctCO2\225a\
+    SysDir C:\GAMS\40\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+Licensee: Small MUD - 5 User License                     S210824|0002AO-GEN
+          UVSQ, LSCE                                                DC15537
+          C:\Users\mastr\OneDrive\Documenti\GAMS\gamslice.txt
+          License Admin: Katsumasa Tanaka, katsumasa.tanaka@lsce.ipsl.fr   
+Processor information: 1 socket(s), 10 core(s), and 12 thread(s) available
+GAMS 40.3.0   Copyright (C) 1987-2022 GAMS Development. All rights reserved
+--- Starting compilation
+--- ACC2_main_future.gms(127) 3 Mb
+--- . ACC2_set_common.inc(117) 3 Mb
+--- ACC2_main_future.gms(128) 3 Mb
+--- . ACC2_constants_common.inc(626) 3 Mb
+--- ACC2_main_future.gms(129) 3 Mb
+--- . ACC2_variables_common.inc(573) 3 Mb
+--- ACC2_main_future.gms(130) 3 Mb
+--- . ACC2_scenarios_future.inc(4661) 6 Mb
+--- ACC2_main_future.gms(131) 6 Mb
+--- . ACC2_settings_future.inc(251) 6 Mb
+--- ACC2_main_future.gms(133) 6 Mb
+--- . ACC2_switchboard_common.inc(257) 6 Mb
+--- ACC2_main_future.gms(134) 6 Mb
+--- . ACC2_init_future.inc(522) 6 Mb
+--- ACC2_main_future.gms(135) 6 Mb
+--- . ACC2_equations_common.inc(1283) 6 Mb
+--- ACC2_main_future.gms(136) 6 Mb
+--- . ACC2_abatement_future.inc(489) 6 Mb
+--- ACC2_main_future.gms(342) 6 Mb
+--- . ACC2_alert_future.inc(76) 6 Mb
+--- ACC2_main_future.gms(343) 6 Mb
+--- Starting execution: elapsed 0:00:00.076
+--- ACC2_main_future.gms(8998) 14 Mb
+--- GDXin=C:\Users\mastr\Documents\LSCE\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_1pctCO2\FUTURE_p.gdx
+--- ACC2_main_future.gms(8998) 27 Mb
+--- GDX File (execute_load) C:\Users\mastr\Documents\LSCE\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_1pctCO2\FUTURE_p.gdx
+--- Generating NLP model FUTURE
+--- ACC2_main_future.gms(9000) 112 Mb
+---   134,270 rows  171,678 columns  1,007,755 non-zeroes
+---   2,571,864 nl-code  655,422 nl-non-zeroes
+--- Range statistics (absolute non-zero finite values)
+--- RHS       [min, max] : [ 2.262E-05, 4.235E+02] - Zero values observed as well
+--- Bound     [min, max] : [ 4.226E-03, 2.350E+04] - Zero values observed as well
+--- Matrix    [min, max] : [ 1.020E-20, 1.050E+04] - Zero values observed as well
+--- ACC2_main_future.gms(9000) 98 Mb
+--- Executing CONOPT3 (Solvelink=2): elapsed 0:00:00.721
+
+CONOPT 3         40.3.0 f227c22a Sep 16, 2022          WEI x86 64bit/MS Window
+
+
+Reading parameter(s) from "C:\Users\mastr\Documents\LSCE\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_1pctCO2\conopt3.opt"
+>>  ********** ACC2 version 3.1.0. *****************************************************************************************
+>>  ********** CONOPT options ==============================================================================================
+>>  * General strategy to use CONOPT options:
+>>  * According to Arne Stolbjerg Drud (personal communication on Oct. 3, 2005) at ARKI, they attempt to creat a system
+>>  * in a way that a user should not be concerned with options. Unfortunately, the state of the art for nonlinear
+>>  * programming is not yet at a stage where options can be avoided completely.
+>>  * But one should always try to start without any options and then add a few if they become necessary.
+>>  *
+>>  * Maximum feasibility tolerance: a constraint will only be considered feasible if the residual is less than
+>>  * rtnwma times MaxJac.
+>>  * RTNWMA 1.e-6 (default 1.e-3)
+>>  *
+>>  * Minmum feasibility tolerance: a constraint will always be considered feasible if...
+>>  * RTNWMI 4.e-10 (default 4.e-10)
+>>  *
+>>  * Maximum Hessian dimension: if the number of superbasics exceeds lfnsup, CONOPT will no longer use the BFGS algorighm
+>>  * but will switch to a steepest descend approach.
+>>  * CONOPT2 and 3 react very differently.
+>>  * There has been a problem for CONOPT3 where a reasonable solution (1 normal completion and 2 locally optimal) is
+>>  * aparantly reached whereas there are some slacks left in the equations. When this happens, one should run the model
+>>  * again and often a correct solution can then be found. According to Arne Stolbjerg Drud (personal communication,
+>>  * Oct. 24, 2006), this problem in CONOPT3 will be fixed in the next version. He suggests that for now, LFNSUP be changed
+>>  * from 1000 to 1500 or 2000. When the model runs, the 'NSB' column in the log-file has numbers around 1265 most of the
+>>  * time. In order to estimate good 2nd order information, lfnsup should be larger than 1265. It seems to give some
+>>  * speedup for the algorithm.
+>>  LFNSUP = 2000
+>>  *
+>>  * Maximum Jacobian element
+>>  * rtmaxj of 2.d7 led to warming, but that of 1.d7 went through.
+>>  * The following choice is made by Arne Stolbjerg Drud experimentally.
+>>  * According to Drud (personal communication on Oct. 3, 2005), the Rtmaxv and Rtmaxj options are necessary,
+>>  * being related to large variables, which cannot be properly scaled automatically at this stage.
+>>  RTMAXJ = 1.e15
+>>  *
+>>  * Internal value of infinity
+>>  * My choice was 8.0E+07.
+>>  * See the note above for TRMAXJ
+>>  RTMAXV = 1.d50
+*** Value Error line 38: Value brought in range for option "RTMAXV" saw "1E50"
+*** Value Error line 38:    Value set to 1E30
+>>  *
+>>  * The optimization is stopped with a "slow progress" message if the change in objective is less than
+>>  * 10*rtobjr*max(1, abs(FOBJ)) for lfnicr consecutive iterations when FOBJ is the value of the current objective function.
+>>  LFNICR = 500
+>>  *
+>>  * Reduced gradient less than tolerance: the largest component of the reduced gradient is less than the tolerance rtredy.
+>>  * default 9.d-8
+>>  RTREDG = 9.d-6
+>>  * The following is a quote from my email communication with Drud on Oct. 12, 2005.
+>>  * Once a feasible solution has been found CONOPT will move in a direction suggested by the reduced gradient
+>>  * until the reduced gradient becomes smaller than the optimality tolerance, Rtredg.
+>>  * During this process the objective function must be reduced monotonically.
+>>  * Sometimes, it is not possible to reduce the objective function even though the reduced gradient is not very small and
+>>  * CONOPT will terminate with some kind of message about 'Slow convergence' and you will see NOPT with some variables.
+>>  * Having a larger Rtredg will remove these NOPT messages, but it may also mean that CONOPT terminates too early
+>>  * while it is still possible to get a better solution.
+>>  * Slow convergence can happen for very large model or model for which CONOPT's scaling procedure does not work well.
+>>  *
+>>  * Maximum number of stalled iteration
+>>  * Default 100
+>>  * LFSTAL 100
+>>  * LFILOG 5000
+>>  * lfmxns 0
+>>  *
+>>  * Alternative method: It can make larger steps and therefore better reductions in the sum of infeasibilities,
+>>  * and it is not very sensitive to degeneracies.
+>>  * According to Drud (personal communication on Oct. 3, 2005), the lmmxsf option should be fine now.
+>>  * This option has now been used by many users for many years without any error reports recently.
+>>  * lmmxsf 1
+>>  *
+>>  * Upon slow convergence, increase rtredg and/or decrease lfnicr
+>>  *
+>>  * Triangular crash turned on as suggested by Drud (personal communication on Oct. 11, 2005).
+>>  * lstcrs = true
+Finished reading from "C:\Users\mastr\Documents\LSCE\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_1pctCO2\conopt3.opt"
+
+ 
+ 
+    C O N O P T 3   version 3.17M
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        3.2500345084E-05 (Input point)
+ 
+                   Pre-triangular equations:   66309
+                   Post-triangular equations:  29683
+                   Definitional equations:     8961
+ 
+      1   0        8.4222266015E-03 (After pre-processing)
+      2   0        1.1604755654E-06 (After scaling)
+ 
+ ** Feasible solution. Value of objective =    0.00000000000
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+      3   3        0.0000000000E+00 0.0E+00     0 0.0E+00    0 F  T
+      4   3        0.0000000000E+00 0.0E+00     0
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Reading solution for model FUTURE
+--- GDX Point C:\Users\mastr\Documents\LSCE\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_1pctCO2\FUTURE_p.gdx
+--- Executing after solve: elapsed 0:00:02.530
+--- ACC2_main_future.gms(9196) 98 Mb
+--- Putfile results_future_scn C:\Users\mastr\Documents\LSCE\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_1pctCO2\results_future_ZECMIP-2000PgC.csv
+--- Putfile OUT_FUTURE_ALERT C:\Users\mastr\Documents\LSCE\ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_1pctCO2\out_future_alert.dat
+--- Profile Summary (1 records processed)
+     1.093   0.098GB      9000 Solve Alg  FUTURE
+*** Status: Normal completion
+--- Job ACC2_main_future.gms Stop 11/22/23 17:16:58 elapsed 0:00:02.551

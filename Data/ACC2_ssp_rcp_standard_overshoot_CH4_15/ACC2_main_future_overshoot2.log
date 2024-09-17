@@ -1,0 +1,214 @@
+
+--- Job ACC2_main_future_overshoot.gms Start 09/22/23 13:12:02 40.3.0 f227c22a WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\40\gmsprmNT.txt
+--- GAMS Parameters defined
+    Input C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\ACC2_main_future_overshoot.gms
+    PageSize 0
+    ScrDir C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\225a\
+    SysDir C:\GAMS\40\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+Licensee: Small MUD - 5 User License                     S210824|0002AO-GEN
+          UVSQ, LSCE                                                DC15537
+          C:\Users\mastr\OneDrive\Documenti\GAMS\gamslice.txt
+          License Admin: Katsumasa Tanaka, katsumasa.tanaka@lsce.ipsl.fr   
+Processor information: 1 socket(s), 10 core(s), and 12 thread(s) available
+GAMS 40.3.0   Copyright (C) 1987-2022 GAMS Development. All rights reserved
+--- Starting compilation
+--- ACC2_main_future_overshoot.gms(125) 3 Mb
+--- . ACC2_set_common.inc(117) 3 Mb
+--- ACC2_main_future_overshoot.gms(126) 3 Mb
+--- . ACC2_constants_common.inc(626) 3 Mb
+--- ACC2_main_future_overshoot.gms(127) 3 Mb
+--- . ACC2_variables_common.inc(573) 3 Mb
+--- ACC2_main_future_overshoot.gms(128) 3 Mb
+--- . ACC2_scenarios_future_2300.inc(29715) 9 Mb
+--- ACC2_main_future_overshoot.gms(129) 9 Mb
+--- . ACC2_settings_future.inc(251) 9 Mb
+--- ACC2_main_future_overshoot.gms(130) 9 Mb
+--- . ACC2_bounds_future.inc(289) 9 Mb
+--- ACC2_main_future_overshoot.gms(131) 9 Mb
+--- . ACC2_switchboard_common.inc(257) 9 Mb
+--- ACC2_main_future_overshoot.gms(132) 9 Mb
+--- . ACC2_init_future.inc(522) 9 Mb
+--- ACC2_main_future_overshoot.gms(133) 9 Mb
+--- . ACC2_equations_common.inc(1281) 9 Mb
+--- ACC2_main_future_overshoot.gms(134) 9 Mb
+--- . ACC2_abatement_future_fixCO2_15.inc(507) 9 Mb
+--- ACC2_main_future_overshoot.gms(333) 9 Mb
+--- . ACC2_outputs_future.inc(391) 9 Mb
+--- ACC2_main_future_overshoot.gms(334) 9 Mb
+--- . ACC2_alert_future.inc(76) 9 Mb
+--- ACC2_main_future_overshoot.gms(335) 9 Mb
+--- Starting execution: elapsed 0:00:00.513
+--- ACC2_main_future_overshoot.gms(34355) 15 Mb
+--- GDXin=C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\FUTURE_p.gdx
+--- ACC2_main_future_overshoot.gms(34355) 22 Mb
+--- GDX File (execute_load) C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\FUTURE_p.gdx
+--- Generating NLP model FUTURE
+--- ACC2_main_future_overshoot.gms(34357) 69 Mb
+---   81,670 rows  104,282 columns  560,697 non-zeroes
+---   1,341,403 nl-code  337,631 nl-non-zeroes
+--- Range statistics (absolute non-zero finite values)
+--- RHS       [min, max] : [ 2.262E-05, 4.235E+02] - Zero values observed as well
+--- Bound     [min, max] : [ 1.000E-06, 3.000E+05] - Zero values observed as well
+--- Matrix    [min, max] : [ 1.020E-20, 1.050E+04] - Zero values observed as well
+--- ACC2_main_future_overshoot.gms(34357) 61 Mb
+--- Executing CONOPT3 (Solvelink=2): elapsed 0:00:01.772
+
+CONOPT 3         40.3.0 f227c22a Sep 16, 2022          WEI x86 64bit/MS Window
+
+
+Reading parameter(s) from "C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\conopt3.opt"
+>>  ********** ACC2 version 3.1.0. *****************************************************************************************
+>>  ********** CONOPT options ==============================================================================================
+>>  * General strategy to use CONOPT options:
+>>  * According to Arne Stolbjerg Drud (personal communication on Oct. 3, 2005) at ARKI, they attempt to creat a system
+>>  * in a way that a user should not be concerned with options. Unfortunately, the state of the art for nonlinear
+>>  * programming is not yet at a stage where options can be avoided completely.
+>>  * But one should always try to start without any options and then add a few if they become necessary.
+>>  *
+>>  * Maximum feasibility tolerance: a constraint will only be considered feasible if the residual is less than
+>>  * rtnwma times MaxJac.
+>>  * RTNWMA 1.e-6 (default 1.e-3)
+>>  *
+>>  * Minmum feasibility tolerance: a constraint will always be considered feasible if...
+>>  * RTNWMI 4.e-10 (default 4.e-10)
+>>  *
+>>  * Maximum Hessian dimension: if the number of superbasics exceeds lfnsup, CONOPT will no longer use the BFGS algorighm
+>>  * but will switch to a steepest descend approach.
+>>  * CONOPT2 and 3 react very differently.
+>>  * There has been a problem for CONOPT3 where a reasonable solution (1 normal completion and 2 locally optimal) is
+>>  * aparantly reached whereas there are some slacks left in the equations. When this happens, one should run the model
+>>  * again and often a correct solution can then be found. According to Arne Stolbjerg Drud (personal communication,
+>>  * Oct. 24, 2006), this problem in CONOPT3 will be fixed in the next version. He suggests that for now, LFNSUP be changed
+>>  * from 1000 to 1500 or 2000. When the model runs, the 'NSB' column in the log-file has numbers around 1265 most of the
+>>  * time. In order to estimate good 2nd order information, lfnsup should be larger than 1265. It seems to give some
+>>  * speedup for the algorithm.
+>>  LFNSUP = 2000
+>>  *
+>>  * Maximum Jacobian element
+>>  * rtmaxj of 2.d7 led to warming, but that of 1.d7 went through.
+>>  * The following choice is made by Arne Stolbjerg Drud experimentally.
+>>  * According to Drud (personal communication on Oct. 3, 2005), the Rtmaxv and Rtmaxj options are necessary,
+>>  * being related to large variables, which cannot be properly scaled automatically at this stage.
+>>  RTMAXJ = 1.e15
+>>  *
+>>  * Internal value of infinity
+>>  * My choice was 8.0E+07.
+>>  * See the note above for TRMAXJ
+>>  RTMAXV = 1.d50
+*** Value Error line 38: Value brought in range for option "RTMAXV" saw "1E50"
+*** Value Error line 38:    Value set to 1E30
+>>  *
+>>  * The optimization is stopped with a "slow progress" message if the change in objective is less than
+>>  * 10*rtobjr*max(1, abs(FOBJ)) for lfnicr consecutive iterations when FOBJ is the value of the current objective function.
+>>  LFNICR = 500
+>>  *
+>>  * Reduced gradient less than tolerance: the largest component of the reduced gradient is less than the tolerance rtredy.
+>>  * default 9.d-8
+>>  RTREDG = 9.d-6
+>>  * The following is a quote from my email communication with Drud on Oct. 12, 2005.
+>>  * Once a feasible solution has been found CONOPT will move in a direction suggested by the reduced gradient
+>>  * until the reduced gradient becomes smaller than the optimality tolerance, Rtredg.
+>>  * During this process the objective function must be reduced monotonically.
+>>  * Sometimes, it is not possible to reduce the objective function even though the reduced gradient is not very small and
+>>  * CONOPT will terminate with some kind of message about 'Slow convergence' and you will see NOPT with some variables.
+>>  * Having a larger Rtredg will remove these NOPT messages, but it may also mean that CONOPT terminates too early
+>>  * while it is still possible to get a better solution.
+>>  * Slow convergence can happen for very large model or model for which CONOPT's scaling procedure does not work well.
+>>  *
+>>  * Maximum number of stalled iteration
+>>  * Default 100
+>>  * LFSTAL 100
+>>  * LFILOG 5000
+>>  * lfmxns 0
+>>  *
+>>  * Alternative method: It can make larger steps and therefore better reductions in the sum of infeasibilities,
+>>  * and it is not very sensitive to degeneracies.
+>>  * According to Drud (personal communication on Oct. 3, 2005), the lmmxsf option should be fine now.
+>>  * This option has now been used by many users for many years without any error reports recently.
+>>  * lmmxsf 1
+>>  *
+>>  * Upon slow convergence, increase rtredg and/or decrease lfnicr
+>>  *
+>>  * Triangular crash turned on as suggested by Drud (personal communication on Oct. 11, 2005).
+>>  * lstcrs = true
+Finished reading from "C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\conopt3.opt"
+
+ 
+ 
+    C O N O P T 3   version 3.17M
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        2.1218927029E+00 (Input point)
+ 
+                   Pre-triangular equations:   40174
+                   Post-triangular equations:  11264
+                   Definitional equations:     10779
+ 
+      1   0        1.0615576936E+00 (After pre-processing)
+      2   0        1.0615480889E+00 (After scaling)
+      3   0     0  1.0615480889E+00               0.0E+00      T  T
+      4   0     0  1.0615480889E+00               0.0E+00      T  T
+      5   0     0  1.0615480889E+00               0.0E+00      T  T
+      6   0     0  1.0453548733E+00               1.5E-02      T  T
+      7   0     0  1.0414041770E+00               3.8E-03      T  T
+      8   0     0  1.0414041770E+00               0.0E+00      T  T
+      9   0     0  1.0240183169E+00               1.7E-02      T  T
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+     10   0     0  1.0166496945E+00               7.3E-03      T  T
+     11   0     0  1.0023024820E+00               1.4E-02      T  T
+     12   0     0  9.8698021305E-01               1.6E-02      T  T
+     13   0     0  9.8233100096E-01               4.9E-03      T  T
+     14   0     0  9.6501799631E-01               1.9E-02      T  T
+     15   0     0  9.4838336606E-01               1.8E-02      T  T
+     16   0     0  9.3318795278E-01               1.7E-02      T  T
+     17   0     0  9.1702550700E-01               1.9E-02      T  T
+     18   0     0  9.1702550700E-01               0.0E+00      T  T
+     19   0     0  8.8909915739E-01               3.4E-02      T  T
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+     20   0     0  8.7409174414E-01               1.9E-02      T  T
+     21   0     0  8.7409174414E-01               0.0E+00      T  T
+     22   0     0  8.4938006901E-01               3.3E-02      T  T
+     23   0     0  8.3544905521E-01               2.0E-02      T  T
+     24   0     0  8.1328176494E-01               3.3E-02      T  T
+     25   0     0  8.0020092724E-01               2.1E-02      T  T
+     26   0     0  7.7419426305E-01               3.3E-02      T  T
+     27   0     0  7.5808040734E-01               2.2E-02      T  T
+     28   0     0  7.3488493381E-01               3.2E-02      T  T
+     29   0     0  7.3212794075E-01               4.0E-03      T  T
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+     30   0     0  6.8816422075E-01               6.2E-02      T  T
+     31   0     0  6.5719971067E-01               4.8E-02      T  T
+ 
+ ** User Interrupt.
+--- Reading solution for model FUTURE
+--- ACC2_main_future_overshoot.gms(34357) 61 Mb  4 secs
+--- GDX Point C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\FUTURE_p.gdx
+--- Executing after solve: elapsed 0:00:05.736
+--- ACC2_main_future_overshoot.gms(34938) 61 Mb
+--- Putfile results_future_scn C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\results_future_scn.csv
+--- Putfile OUT_FUTURE_A C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\out_future_a.dat
+--- Putfile OUT_FUTURE_B C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\out_future_b.dat
+--- Putfile OUT_FUTURE_SCN C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\out_future_scn.dat
+--- Putfile OUT_FUTURE_1 C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\out_future_1.dat
+--- Putfile OUT_FUTURE_RCMIP C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\out_future_rcmip.dat
+--- Putfile OUT_PAST_RF C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\out_future_RF.dat
+--- Putfile OUT_FUTURE_ALERT C:\Users\mastr\Documents\LSCE\ACC2_ssp_rcp_standard_overshoot_CH4_15\out_future_alert.dat
+--- Profile Summary (2 records processed)
+     2.844   0.061GB     34357 Solve Alg  FUTURE
+     1.109   0.061GB     34357 Solve Read FUTURE
+*** Status: Normal completion
+--- Job ACC2_main_future_overshoot.gms Stop 09/22/23 13:12:08 elapsed 0:00:05.805

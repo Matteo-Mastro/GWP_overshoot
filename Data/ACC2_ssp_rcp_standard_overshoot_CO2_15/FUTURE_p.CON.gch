@@ -1,0 +1,9 @@
+[CHART]
+VERID=GAMSIDE Chart(s) V1
+GDXFILE=FUTURE_p.gdx
+TITLE=CON
+SUBTITLE=Atmospheric concentrations of direct and indirect forcing agents
+
+[SERIES1]
+SYMBOL=CON
+TYPE=multi-line

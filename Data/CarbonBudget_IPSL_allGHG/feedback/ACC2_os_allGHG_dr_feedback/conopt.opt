@@ -1,0 +1,72 @@
+********** ACC2 version 3.1.0. *****************************************************************************************
+********** CONOPT options ==============================================================================================
+* General strategy to use CONOPT options:
+* According to Arne Stolbjerg Drud (personal communication on Oct. 3, 2005) at ARKI, they attempt to creat a system
+* in a way that a user should not be concerned with options. Unfortunately, the state of the art for nonlinear
+* programming is not yet at a stage where options can be avoided completely.
+* But one should always try to start without any options and then add a few if they become necessary.
+
+* Maximum feasibility tolerance: a constraint will only be considered feasible if the residual is less than
+* rtnwma times MaxJac.
+* RTNWMA 1.e-6 (default 1.e-3)
+
+* Minmum feasibility tolerance: a constraint will always be considered feasible if...
+* RTNWMI 4.e-10 (default 4.e-10)
+
+* Maximum Hessian dimension: if the number of superbasics exceeds lfnsup, CONOPT will no longer use the BFGS algorighm
+* but will switch to a steepest descend approach.
+* CONOPT2 and 3 react very differently.
+* There has been a problem for CONOPT3 where a reasonable solution (1 normal completion and 2 locally optimal) is
+* aparantly reached whereas there are some slacks left in the equations. When this happens, one should run the model
+* again and often a correct solution can then be found. According to Arne Stolbjerg Drud (personal communication,
+* Oct. 24, 2006), this problem in CONOPT3 will be fixed in the next version. He suggests that for now, LFNSUP be changed
+* from 1000 to 1500 or 2000. When the model runs, the 'NSB' column in the log-file has numbers around 1265 most of the
+* time. In order to estimate good 2nd order information, lfnsup should be larger than 1265. It seems to give some
+* speedup for the algorithm.
+LFNSUP=2000
+
+* Maximum Jacobian element
+* rtmaxj of 2.d7 led to warming, but that of 1.d7 went through.
+* The following choice is made by Arne Stolbjerg Drud experimentally.
+* According to Drud (personal communication on Oct. 3, 2005), the Rtmaxv and Rtmaxj options are necessary,
+* being related to large variables, which cannot be properly scaled automatically at this stage.
+RTMAXJ=1.e15
+
+* Internal value of infinity
+* My choice was 8.0E+07.
+* See the note above for TRMAXJ
+RTMAXV
+
+* The optimization is stopped with a "slow progress" message if the change in objective is less than
+* 10*rtobjr*max(1, abs(FOBJ)) for lfnicr consecutive iterations when FOBJ is the value of the current objective function.
+LFNICR=500
+
+* Reduced gradient less than tolerance: the largest component of the reduced gradient is less than the tolerance rtredy.
+* default 9.d-8
+RTREDG
+* The following is a quote from my email communication with Drud on Oct. 12, 2005.
+* Once a feasible solution has been found CONOPT will move in a direction suggested by the reduced gradient
+* until the reduced gradient becomes smaller than the optimality tolerance, Rtredg.
+* During this process the objective function must be reduced monotonically.
+* Sometimes, it is not possible to reduce the objective function even though the reduced gradient is not very small and
+* CONOPT will terminate with some kind of message about 'Slow convergence' and you will see NOPT with some variables.
+* Having a larger Rtredg will remove these NOPT messages, but it may also mean that CONOPT terminates too early
+* while it is still possible to get a better solution.
+* Slow convergence can happen for very large model or model for which CONOPT's scaling procedure does not work well.
+
+* Maximum number of stalled iteration
+* Default 100
+* LFSTAL 100
+* LFILOG 5000
+* lfmxns 0
+
+* Alternative method: It can make larger steps and therefore better reductions in the sum of infeasibilities,
+* and it is not very sensitive to degeneracies.
+* According to Drud (personal communication on Oct. 3, 2005), the lmmxsf option should be fine now.
+* This option has now been used by many users for many years without any error reports recently.
+* lmmxsf 1
+
+* Upon slow convergence, increase rtredg and/or decrease lfnicr
+
+* Triangular crash turned on as suggested by Drud (personal communication on Oct. 11, 2005).
+* lstcrs = true

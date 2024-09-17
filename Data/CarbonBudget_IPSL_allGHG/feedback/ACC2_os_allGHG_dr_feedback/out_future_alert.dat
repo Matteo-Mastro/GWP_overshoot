@@ -1,0 +1,664 @@
+Check the following variables are stuck at their bounds:
+(If no variables are listed below, there is no variable stuck at its bounds.)
+2100          T2M
+2101          T2M
+2102          T2M
+2103          T2M
+2104          T2M
+2105          T2M
+2106          T2M
+2107          T2M
+2108          T2M
+2109          T2M
+2110          T2M
+2111          T2M
+2112          T2M
+2113          T2M
+2114          T2M
+2115          T2M
+2116          T2M
+2117          T2M
+2118          T2M
+2119          T2M
+2120          T2M
+2121          T2M
+2122          T2M
+2123          T2M
+2124          T2M
+2125          T2M
+2126          T2M
+2127          T2M
+2128          T2M
+2129          T2M
+2130          T2M
+2131          T2M
+2132          T2M
+2133          T2M
+2134          T2M
+2135          T2M
+2136          T2M
+2137          T2M
+2138          T2M
+2139          T2M
+2140          T2M
+2141          T2M
+2142          T2M
+2143          T2M
+2144          T2M
+2145          T2M
+2146          T2M
+2147          T2M
+2148          T2M
+2149          T2M
+2150          T2M
+2151          T2M
+2152          T2M
+2153          T2M
+2154          T2M
+2155          T2M
+2156          T2M
+2157          T2M
+2158          T2M
+2159          T2M
+2160          T2M
+2161          T2M
+2162          T2M
+2163          T2M
+2164          T2M
+2165          T2M
+2166          T2M
+2167          T2M
+2168          T2M
+2169          T2M
+2170          T2M
+2171          T2M
+2172          T2M
+2173          T2M
+2174          T2M
+2175          T2M
+2176          T2M
+2177          T2M
+2178          T2M
+2179          T2M
+2180          T2M
+2181          T2M
+2182          T2M
+2183          T2M
+2184          T2M
+2185          T2M
+2186          T2M
+2187          T2M
+2188          T2M
+2189          T2M
+2190          T2M
+2191          T2M
+2192          T2M
+2193          T2M
+2194          T2M
+2195          T2M
+2196          T2M
+2197          T2M
+2198          T2M
+2199          T2M
+2200          T2M
+2201          T2M
+2202          T2M
+2203          T2M
+2204          T2M
+2205          T2M
+2206          T2M
+2207          T2M
+2208          T2M
+2209          T2M
+2210          T2M
+2211          T2M
+2212          T2M
+2213          T2M
+2214          T2M
+2215          T2M
+2216          T2M
+2217          T2M
+2218          T2M
+2219          T2M
+2220          T2M
+2221          T2M
+2222          T2M
+2223          T2M
+2224          T2M
+2225          T2M
+2226          T2M
+2227          T2M
+2228          T2M
+2229          T2M
+2230          T2M
+2231          T2M
+2232          T2M
+2233          T2M
+2234          T2M
+2235          T2M
+2236          T2M
+2237          T2M
+2238          T2M
+2239          T2M
+2240          T2M
+2241          T2M
+2242          T2M
+2243          T2M
+2244          T2M
+2245          T2M
+2246          T2M
+2247          T2M
+2248          T2M
+2249          T2M
+2250          T2M
+2251          T2M
+2252          T2M
+2253          T2M
+2254          T2M
+2255          T2M
+2256          T2M
+2257          T2M
+2258          T2M
+2259          T2M
+2260          T2M
+2261          T2M
+2262          T2M
+2263          T2M
+2264          T2M
+2265          T2M
+2266          T2M
+2267          T2M
+2268          T2M
+2269          T2M
+2270          T2M
+2271          T2M
+2272          T2M
+2273          T2M
+2274          T2M
+2275          T2M
+2276          T2M
+2277          T2M
+2278          T2M
+2279          T2M
+2280          T2M
+2281          T2M
+2282          T2M
+2283          T2M
+2284          T2M
+2285          T2M
+2286          T2M
+2287          T2M
+2288          T2M
+2289          T2M
+2290          T2M
+2291          T2M
+2292          T2M
+2293          T2M
+2294          T2M
+2295          T2M
+2296          T2M
+2297          T2M
+2298          T2M
+2299          T2M
+2300          T2M
+2301          T2M
+2302          T2M
+2303          T2M
+2304          T2M
+2305          T2M
+2306          T2M
+2307          T2M
+2308          T2M
+2309          T2M
+2310          T2M
+2311          T2M
+2312          T2M
+2313          T2M
+2314          T2M
+2315          T2M
+2316          T2M
+2317          T2M
+2318          T2M
+2319          T2M
+2320          T2M
+2321          T2M
+2322          T2M
+2323          T2M
+2324          T2M
+2325          T2M
+2326          T2M
+2327          T2M
+2328          T2M
+2329          T2M
+2330          T2M
+2331          T2M
+2332          T2M
+2333          T2M
+2334          T2M
+2335          T2M
+2336          T2M
+2337          T2M
+2338          T2M
+2339          T2M
+2340          T2M
+2341          T2M
+2342          T2M
+2343          T2M
+2344          T2M
+2345          T2M
+2346          T2M
+2347          T2M
+2348          T2M
+2349          T2M
+2350          T2M
+2351          T2M
+2352          T2M
+2353          T2M
+2354          T2M
+2355          T2M
+2356          T2M
+2357          T2M
+2358          T2M
+2359          T2M
+2360          T2M
+2361          T2M
+2362          T2M
+2363          T2M
+2364          T2M
+2365          T2M
+2366          T2M
+2367          T2M
+2368          T2M
+2369          T2M
+2370          T2M
+2371          T2M
+2372          T2M
+2373          T2M
+2374          T2M
+2375          T2M
+2376          T2M
+2377          T2M
+2378          T2M
+2379          T2M
+2380          T2M
+2381          T2M
+2382          T2M
+2383          T2M
+2384          T2M
+2385          T2M
+2386          T2M
+2387          T2M
+2388          T2M
+2389          T2M
+2390          T2M
+2391          T2M
+2392          T2M
+2393          T2M
+2394          T2M
+2395          T2M
+2396          T2M
+2397          T2M
+2398          T2M
+2399          T2M
+2400          T2M
+2401          T2M
+2402          T2M
+2403          T2M
+2404          T2M
+2405          T2M
+2406          T2M
+2407          T2M
+2408          T2M
+2409          T2M
+2410          T2M
+2411          T2M
+2412          T2M
+2413          T2M
+2414          T2M
+2415          T2M
+2416          T2M
+2417          T2M
+2418          T2M
+2419          T2M
+2420          T2M
+2421          T2M
+2422          T2M
+2423          T2M
+2424          T2M
+2425          T2M
+2426          T2M
+2427          T2M
+2428          T2M
+2429          T2M
+2430          T2M
+2431          T2M
+2432          T2M
+2433          T2M
+2434          T2M
+2435          T2M
+2436          T2M
+2437          T2M
+2438          T2M
+2439          T2M
+2440          T2M
+2441          T2M
+2442          T2M
+2443          T2M
+2444          T2M
+2445          T2M
+2446          T2M
+2447          T2M
+2448          T2M
+2449          T2M
+2450          T2M
+2451          T2M
+2452          T2M
+2453          T2M
+2454          T2M
+2455          T2M
+2456          T2M
+2457          T2M
+2458          T2M
+2459          T2M
+2460          T2M
+2461          T2M
+2462          T2M
+2463          T2M
+2464          T2M
+2465          T2M
+2466          T2M
+2467          T2M
+2468          T2M
+2469          T2M
+2470          T2M
+2471          T2M
+2472          T2M
+2473          T2M
+2474          T2M
+2475          T2M
+2476          T2M
+2477          T2M
+2478          T2M
+2479          T2M
+2480          T2M
+2481          T2M
+2482          T2M
+2483          T2M
+2484          T2M
+2485          T2M
+2486          T2M
+2487          T2M
+2488          T2M
+2489          T2M
+2490          T2M
+2491          T2M
+2492          T2M
+2493          T2M
+2494          T2M
+2495          T2M
+2496          T2M
+2497          T2M
+2498          T2M
+2499          T2M
+2500          T2M
+2299          HCFC141b       CON
+2300          HCFC141b       CON
+2301          HCFC141b       CON
+2302          HCFC141b       CON
+2303          HCFC141b       CON
+2304          HCFC141b       CON
+2305          HCFC141b       CON
+2306          HCFC141b       CON
+2307          HCFC141b       CON
+2308          HCFC141b       CON
+2309          HCFC141b       CON
+2310          HCFC141b       CON
+2311          HCFC141b       CON
+2312          HCFC141b       CON
+2313          HCFC141b       CON
+2314          HCFC141b       CON
+2315          HCFC141b       CON
+2316          HCFC141b       CON
+2317          HCFC141b       CON
+2318          HCFC141b       CON
+2319          HCFC141b       CON
+2320          HCFC141b       CON
+2321          HCFC141b       CON
+2322          HCFC141b       CON
+2323          HCFC141b       CON
+2324          HCFC141b       CON
+2325          HCFC141b       CON
+2326          HCFC141b       CON
+2327          HCFC141b       CON
+2328          HCFC141b       CON
+2329          HCFC141b       CON
+2330          HCFC141b       CON
+2331          HCFC141b       CON
+2332          HCFC141b       CON
+2333          HCFC141b       CON
+2334          HCFC141b       CON
+2335          HCFC141b       CON
+2336          HCFC141b       CON
+2337          HCFC141b       CON
+2338          HCFC141b       CON
+2339          HCFC141b       CON
+2340          HCFC141b       CON
+2341          HCFC141b       CON
+2342          HCFC141b       CON
+2343          HCFC141b       CON
+2344          HCFC141b       CON
+2345          HCFC141b       CON
+2346          HCFC141b       CON
+2347          HCFC141b       CON
+2348          HCFC141b       CON
+2349          HCFC141b       CON
+2350          HCFC141b       CON
+2351          HCFC141b       CON
+2352          HCFC141b       CON
+2353          HCFC141b       CON
+2354          HCFC141b       CON
+2355          HCFC141b       CON
+2356          HCFC141b       CON
+2357          HCFC141b       CON
+2358          HCFC141b       CON
+2359          HCFC141b       CON
+2360          HCFC141b       CON
+2361          HCFC141b       CON
+2362          HCFC141b       CON
+2363          HCFC141b       CON
+2364          HCFC141b       CON
+2365          HCFC141b       CON
+2366          HCFC141b       CON
+2367          HCFC141b       CON
+2368          HCFC141b       CON
+2369          HCFC141b       CON
+2370          HCFC141b       CON
+2371          HCFC141b       CON
+2372          HCFC141b       CON
+2373          HCFC141b       CON
+2374          HCFC141b       CON
+2375          HCFC141b       CON
+2376          HCFC141b       CON
+2377          HCFC141b       CON
+2378          HCFC141b       CON
+2379          HCFC141b       CON
+2380          HCFC141b       CON
+2381          HCFC141b       CON
+2382          HCFC141b       CON
+2383          HCFC141b       CON
+2384          HCFC141b       CON
+2385          HCFC141b       CON
+2386          HCFC141b       CON
+2387          HCFC141b       CON
+2388          HCFC141b       CON
+2389          HCFC141b       CON
+2390          HCFC141b       CON
+2391          HCFC141b       CON
+2392          HCFC141b       CON
+2393          HCFC141b       CON
+2394          HCFC141b       CON
+2395          HCFC141b       CON
+2396          HCFC141b       CON
+2397          HCFC141b       CON
+2398          HCFC141b       CON
+2399          HCFC141b       CON
+2400          HCFC141b       CON
+2401          HCFC141b       CON
+2402          HCFC141b       CON
+2403          HCFC141b       CON
+2404          HCFC141b       CON
+2405          HCFC141b       CON
+2406          HCFC141b       CON
+2407          HCFC141b       CON
+2408          HCFC141b       CON
+2409          HCFC141b       CON
+2410          HCFC141b       CON
+2411          HCFC141b       CON
+2412          HCFC141b       CON
+2413          HCFC141b       CON
+2414          HCFC141b       CON
+2415          HCFC141b       CON
+2416          HCFC141b       CON
+2417          HCFC141b       CON
+2418          HCFC141b       CON
+2419          HCFC141b       CON
+2420          HCFC141b       CON
+2421          HCFC141b       CON
+2422          HCFC141b       CON
+2423          HCFC141b       CON
+2424          HCFC141b       CON
+2425          HCFC141b       CON
+2426          HCFC141b       CON
+2427          HCFC141b       CON
+2428          HCFC141b       CON
+2429          HCFC141b       CON
+2430          HCFC141b       CON
+2431          HCFC141b       CON
+2432          HCFC141b       CON
+2433          HCFC141b       CON
+2434          HCFC141b       CON
+2435          HCFC141b       CON
+2436          HCFC141b       CON
+2437          HCFC141b       CON
+2438          HCFC141b       CON
+2439          HCFC141b       CON
+2440          HCFC141b       CON
+2441          HCFC141b       CON
+2442          HCFC22         CON
+2442          HCFC141b       CON
+2443          HCFC22         CON
+2443          HCFC141b       CON
+2444          HCFC22         CON
+2444          HCFC141b       CON
+2445          HCFC22         CON
+2445          HCFC141b       CON
+2446          HCFC22         CON
+2446          HCFC141b       CON
+2447          HCFC22         CON
+2447          HCFC141b       CON
+2448          HCFC22         CON
+2448          HCFC141b       CON
+2449          HCFC22         CON
+2449          HCFC141b       CON
+2450          HCFC22         CON
+2450          HCFC141b       CON
+2451          HCFC22         CON
+2451          HCFC141b       CON
+2452          HCFC22         CON
+2452          HCFC141b       CON
+2453          HCFC22         CON
+2453          HCFC141b       CON
+2454          HCFC22         CON
+2454          HCFC141b       CON
+2455          HCFC22         CON
+2455          HCFC141b       CON
+2456          HCFC22         CON
+2456          HCFC141b       CON
+2457          HCFC22         CON
+2457          HCFC141b       CON
+2458          HCFC22         CON
+2458          HCFC141b       CON
+2459          HCFC22         CON
+2459          HCFC141b       CON
+2460          HCFC22         CON
+2460          HCFC141b       CON
+2461          HCFC22         CON
+2461          HCFC141b       CON
+2462          HCFC22         CON
+2462          HCFC141b       CON
+2463          HCFC22         CON
+2463          HCFC141b       CON
+2464          HCFC22         CON
+2464          HCFC141b       CON
+2465          HCFC22         CON
+2465          HCFC141b       CON
+2466          HCFC22         CON
+2466          HCFC141b       CON
+2467          HCFC22         CON
+2467          HCFC141b       CON
+2468          HCFC22         CON
+2468          HCFC141b       CON
+2469          HCFC22         CON
+2469          HCFC141b       CON
+2470          HCFC22         CON
+2470          HCFC141b       CON
+2471          HCFC22         CON
+2471          HCFC141b       CON
+2472          HCFC22         CON
+2472          HCFC141b       CON
+2473          HCFC22         CON
+2473          HCFC141b       CON
+2474          HCFC22         CON
+2474          HCFC141b       CON
+2475          HCFC22         CON
+2475          HCFC141b       CON
+2476          HCFC22         CON
+2476          HCFC141b       CON
+2477          HCFC22         CON
+2477          HCFC141b       CON
+2478          HCFC22         CON
+2478          HCFC141b       CON
+2479          HCFC22         CON
+2479          HCFC141b       CON
+2480          HCFC22         CON
+2480          HCFC141b       CON
+2481          HCFC22         CON
+2481          HCFC141b       CON
+2482          HCFC22         CON
+2482          HCFC141b       CON
+2483          HCFC22         CON
+2483          HCFC141b       CON
+2484          HCFC22         CON
+2484          HCFC141b       CON
+2485          HCFC22         CON
+2485          HCFC141b       CON
+2486          HCFC22         CON
+2486          HCFC141b       CON
+2487          HCFC22         CON
+2487          HCFC141b       CON
+2488          HCFC22         CON
+2488          HCFC141b       CON
+2489          HCFC22         CON
+2489          HCFC141b       CON
+2490          HCFC22         CON
+2490          HCFC141b       CON
+2491          HCFC22         CON
+2491          HCFC141b       CON
+2492          HCFC22         CON
+2492          HCFC141b       CON
+2493          HCFC22         CON
+2493          HCFC141b       CON
+2494          HCFC22         CON
+2494          HCFC141b       CON
+2495          HCFC22         CON
+2495          HCFC141b       CON
+2496          HCFC22         CON
+2496          HCFC141b       CON
+2497          HCFC22         CON
+2497          HCFC141b       CON
+2498          HCFC22         CON
+2498          HCFC141b       CON
+2499          HCFC22         CON
+2499          HCFC141b       CON
+2500          HCFC22         CON
+2500          HCFC141b       CON

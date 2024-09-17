@@ -1,0 +1,58 @@
+
+--- Job ACC2_main_past.gms Start 03/08/22 14:33:10 38.1.0 a1a3b545 DEX-DEG x86 64bit/Mac OS X
+--- Applying:
+    /Library/Frameworks/GAMS.framework/Versions/38/Resources/gmsprmun.txt
+--- GAMS Parameters defined
+    Input /Volumes/HDEXT/Data/LSCE/ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard/ACC2_main_past.gms
+    PageSize 0
+    ScrDir /Volumes/HDEXT/Data/LSCE/ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard/225a/
+    SysDir /Library/Frameworks/GAMS.framework/Versions/38/Resources/
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+Licensee: Small MUD - 5 User License                     S210824|0002AO-GEN
+          UVSQ, LSCE                                                DC15537
+          /Users/mmastro/Library/Application Support/GAMS/gamslice.txt
+          License Admin: Katsumasa Tanaka, katsumasa.tanaka@lsce.ipsl.fr   
+Processor information: 1 socket(s), 4 core(s), and 8 thread(s) available
+GAMS 38.1.0   Copyright (C) 1987-2022 GAMS Development. All rights reserved
+--- Starting compilation
+--- ACC2_main_past.gms(90) 3 Mb
+--- . ACC2_set_common.inc(117) 3 Mb
+--- ACC2_main_past.gms(91) 3 Mb
+--- . ACC2_constants_common.inc(626) 3 Mb
+--- ACC2_main_past.gms(92) 3 Mb
+--- . ACC2_variables_common.inc(573) 3 Mb
+--- ACC2_main_past.gms(93) 3 Mb
+--- . ACC2_scenarios_past.inc(10307) 4 Mb
+--- ACC2_main_past.gms(94) 4 Mb
+--- . ACC2_settings_past.inc(1701) 4 Mb
+--- ACC2_main_past.gms(95) 4 Mb
+--- . ACC2_bounds_past.inc(883) 4 Mb
+--- ACC2_main_past.gms(96) 4 Mb
+--- . ACC2_switchboard_common.inc(257) 4 Mb
+--- ACC2_main_past.gms(97) 4 Mb
+--- . ACC2_init_past.inc(45) 4 Mb
+--- ACC2_main_past.gms(98) 4 Mb
+--- . ACC2_equations_common.inc(1281) 4 Mb
+--- ACC2_main_past.gms(255) 4 Mb
+--- . ACC2_alert_past.inc(211) 4 Mb
+--- ACC2_main_past.gms(256) 4 Mb
+--- . ACC2_transfer_past.inc(555) 4 Mb
+--- ACC2_main_past.gms(257) 4 Mb
+--- . ACC2_outputs_past.inc(565) 4 Mb 2 Errors
+*** Error 116 in /Volumes/HDEXT/Data/LSCE/ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard/ACC2_outputs_past.inc
+    Label is unknown
+*** Error 170 in /Volumes/HDEXT/Data/LSCE/ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard/ACC2_outputs_past.inc
+    Domain violation for element
+--- . ACC2_outputs_past.inc(566) 4 Mb 4 Errors
+*** Error 116 in /Volumes/HDEXT/Data/LSCE/ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard/ACC2_outputs_past.inc
+    Label is unknown
+*** Error 170 in /Volumes/HDEXT/Data/LSCE/ACC2_v420_m1_NoCCF_Fscl_CS30_ST20_D4_A2rG4_ssp_rcp_standard/ACC2_outputs_past.inc
+    Domain violation for element
+--- . ACC2_outputs_past.inc(574) 4 Mb
+--- ACC2_main_past.gms(257) 4 Mb 4 Errors
+*** Status: Compilation error(s)
+--- Job ACC2_main_past.gms Stop 03/08/22 14:33:10 elapsed 0:00:00.151

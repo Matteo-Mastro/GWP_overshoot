@@ -1,0 +1,8 @@
+Input=./ACC2_main_future_overshoot.gms
+ScrDir=225a
+SysDir=C:\GAMS\40
+ScriptNext=225a\gamsnext.cmd
+--TARGET=126
+--DR=6
+--FIR=7
+--SEC=1

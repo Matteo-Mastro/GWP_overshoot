@@ -1,0 +1,391 @@
+********** ACC2 version 4.2: ACC2_outputs_future.inc *******************************************************************
+********** File outputs to display results (future mode) ===============================================================
+
+FILE OUT_FUTURE_A /out_future_a.dat/;
+OUT_FUTURE_A.AP=0;
+OUT_FUTURE_A.PW=1000;
+PUT OUT_FUTURE_A;
+LOOP(T, PUT T.TL:5,
+CON.L(T,'CO2'):8:3,
+CON.L(T,'CH4'):9:3,
+CON.L(T,'N2O'):8:3,
+CON.L(T,'rOH'):8:3,
+CON.L(T,'CF4'):8:3,
+CON.L(T,'C2F6'):8:3,
+CON.L(T,'C4F10'):8:3,
+CON.L(T,'HFC23'):8:3,
+CON.L(T,'HFC32'):8:3,
+CON.L(T,'HFC4310mee'):8:3,
+CON.L(T,'HFC125'):8:3,
+CON.L(T,'HFC134a'):8:3,
+CON.L(T,'HFC143a'):8:3,
+CON.L(T,'HFC152a'):9:3,
+CON.L(T,'HFC227ea'):8:3,
+CON.L(T,'HFC236fa'):8:3,
+CON.L(T,'HFC245ca'):8:3,
+CON.L(T,'CFC11'):8:3,
+CON.L(T,'CFC12'):8:3,
+CON.L(T,'CFC113'):8:3,
+CON.L(T,'CFC114'):8:3,
+CON.L(T,'CFC115'):8:3,
+CON.L(T,'CCl4'):8:3,
+CON.L(T,'CH3CCl3'):8:3,
+CON.L(T,'Halon1211'):8:3,
+CON.L(T,'Halon1301'):8:3,
+CON.L(T,'Halon2402'):8:3,
+CON.L(T,'HCFC22'):8:3,
+CON.L(T,'HCFC141b'):8:3,
+CON.L(T,'HCFC142b'):8:3,
+CON.L(T,'HCFC123'):8:3,
+CON.L(T,'CH3Cl'):8:3,
+CON.L(T,'CH3Br'):8:3,
+CON.L(T,'EESC'):9:3,
+CON.L(T,'SF6'):8:3,
+CON.L(T,'O3TRP'):8:3/;);
+
+
+FILE OUT_FUTURE_B /out_future_b.dat/;
+OUT_FUTURE_B.AP=0;
+OUT_FUTURE_B.PW=1000;
+PUT OUT_FUTURE_B;
+LOOP(T, PUT T.TL:4,
+RAD.L(T,'CO2'):9:5,
+RAD.L(T,'CH4'):9:5,
+RAD.L(T,'N2O'):9:5,
+RAD.L(T,'CF4'):9:5,
+RAD.L(T,'C2F6'):9:5,
+RAD.L(T,'C4F10'):9:5,
+RAD.L(T,'HFC23'):9:5,
+RAD.L(T,'HFC32'):9:5,
+RAD.L(T,'HFC4310mee'):9:5,
+RAD.L(T,'HFC125'):9:5,
+RAD.L(T,'HFC134a'):9:5,
+RAD.L(T,'HFC143a'):9:5,
+RAD.L(T,'HFC152a'):9:5,
+RAD.L(T,'HFC227ea'):9:5,
+RAD.L(T,'HFC236fa'):9:5,
+RAD.L(T,'HFC245ca'):9:5,
+RAD.L(T,'CFC11'):9:5,
+RAD.L(T,'CFC12'):9:5,
+RAD.L(T,'CFC113'):9:5,
+RAD.L(T,'CFC114'):9:5,
+RAD.L(T,'CFC115'):10:6,
+RAD.L(T,'CCl4'):9:5,
+RAD.L(T,'CH3CCl3'):9:5,
+RAD.L(T,'Halon1211'):10:6,
+RAD.L(T,'Halon1301'):10:6,
+RAD.L(T,'Halon2402'):11:7,
+RAD.L(T,'HCFC22'):9:5,
+RAD.L(T,'HCFC141b'):9:5,
+RAD.L(T,'HCFC142b'):9:5,
+RAD.L(T,'HCFC123'):10:6,
+RAD.L(T,'SF6'):9:5,
+RAD.L(T,'O3TRP'):9:5,
+RAD.L(T,'O3STR'):9:5,
+RAD.L(T,'SO2'):9:5,
+RAD.L(T,'CRBAER'):9:5,
+RAD.L(T,'AERIND'):9:5,
+RAD.L(T,'H2OSTR'):9:5,
+RADSOL.L(T):9:5,
+RADTTL.L(T):12:8,
+T2M.L(T):13:8,
+T2MRT1990.L(T):13:8/;);
+
+
+FILE OUT_FUTURE_SCN /out_future_scn.dat/;
+OUT_FUTURE_SCN.AP=0;
+OUT_FUTURE_SCN.PW=1000;
+PUT OUT_FUTURE_SCN;
+PUT
+'YEAR ',
+'ANTCO2 ',
+'ANTCH4 ',
+'ANTN2O ',
+'ANTCO2EQ ',
+'ABLCO2 ',
+'ABLCH4 ',
+'ABLN2O ',
+'MACCO2 ',
+'MACCH4 ',
+'MACN2O ',
+'ABCCO2 ',
+'ABCCH4 ',
+'ABCN2O ',
+'CONCO2 ',
+'CONCH4 ',
+'CONN2O ',
+'CONrOH ',
+'RADCO2 ',
+'RADCH4 ',
+'RADN2O ',
+'RADO3TRP ',
+'RADHALO ',
+'RADSF6 ',
+'RADSO2 ',
+'RADCRBAER ',
+'RADAERIND ',
+'RADTTL ',
+'T2M ',
+'pH ',
+'DSCCUR ',
+'ANTQ1M ',
+'ANTQ2M ',
+'ANTQ3M '/;
+LOOP(T, PUT T.TL:4,
+ANT.L(T,'CO2'):10:4,
+ANT.L(T,'CH4'):10:2,
+ANT.L(T,'N2O'):8:2,
+ANTCO2EQ.L(T):8:2,
+ABL.L(T,'CO2'):8:2,
+ABL.L(T,'CH4'):8:2,
+ABL.L(T,'N2O'):8:2,
+MAC.L(T,'CO2'):15:2,
+MAC.L(T,'CH4'):15:2,
+MAC.L(T,'N2O'):15:2,
+ABC.L(T,'CO2'):15:2,
+ABC.L(T,'CH4'):15:2,
+ABC.L(T,'N2O'):15:2,
+CON.L(T,'CO2'):9:2,
+CON.L(T,'CH4'):9:2,
+CON.L(T,'N2O'):9:2,
+CON.L(T,'rOH'):9:4,
+RAD.L(T,'CO2'):9:4,
+RAD.L(T,'CH4'):9:4,
+RAD.L(T,'N2O'):9:4,
+RAD.L(T,'O3TRP'):9:4,
+RADHAL.L(T):9:4,
+RAD.L(T,'SF6'):9:4,
+RAD.L(T,'SO2'):9:4,
+RAD.L(T,'CRBAER'):9:4,
+RAD.L(T,'AERIND'):9:4,
+RADTTL.L(T):9:4,
+T2M.L(T):9:4,
+PH.L(T):9:4,
+DSCCUR.L(T):13:2,
+ANTQ1.M(T):20:6,
+ANTQ2.M(T):20:6,
+ANTQ3.M(T):20:6/;);
+
+
+*** File outputs to display results (additional) -----------------------------------------------------------------------
+
+FILE OUT_FUTURE_1 /out_future_1.dat/;
+OUT_FUTURE_1.AP=0;
+PUT OUT_FUTURE_1;
+PUT
+'YEAR ',
+'ENG ',
+'NEG ',
+'CONCO2 ',
+'OCNCO2UP ',
+'LNDCO2UP ',
+'ANTCH4 ',
+'ANTN2O ',
+'CONCH4 ',
+'CONN2O ',
+'RADTTL ',
+'T2MP '/;
+LOOP(T, PUT T.TL:4,
+ENG.L(T,'CO2'):12:6,
+NEG.L(T,'CO2'):12:6,
+CON.L(T,'CO2'):12:6,
+CO2OCNUPTTL.L(T):12:6,
+CO2LNDUPTTL.L(T):12:6,
+ANT.L(T,'CH4'):9:3,
+ANT.L(T,'N2O'):9:4,
+CON.L(T,'CH4'):8:1,
+CON.L(T,'N2O'):8:1,
+RADTTL.L(T):10:5,
+T2M.L(T):10:5/;);
+
+$ontext
+FILE OUT_FUTURE_2 /out_future_2.dat/;
+OUT_FUTURE_2.AP=0;
+PUT OUT_FUTURE_2;
+LOOP(TOUT, PUT TOUT.TL:5,
+CON.L(TOUT,'CO2'):6:0,
+CON.L(TOUT,'CH4'):6:0,
+CON.L(TOUT,'N2O'):6:0,
+RADTTL.L(TOUT):7:2,
+T2MRT1990.L(TOUT):7:2/;);
+
+FILE OUT_FUTURE_3 /out_future_3.dat/;
+OUT_FUTURE_3.AP=0;
+PUT OUT_FUTURE_3;
+LOOP(T, PUT T.TL:5,
+COC.L(T,'1'):10:2,
+COC.L(T,'2'):10:2,
+COC.L(T,'3'):10:2,
+COC.L(T,'4'):10:2,
+CTR.L(T,'1'):10:2,
+CTR.L(T,'2'):10:2,
+CTR.L(T,'3'):10:2,
+CTR.L(T,'4'):10:2,
+SUMCOC.L(T):12:6,
+SUMCTR.L(T):12:6/;);
+
+FILE OUT_FUTURE_4 /out_future_4.dat/;
+OUT_FUTURE_4.AP=0;
+PUT OUT_FUTURE_4;
+PUT
+'YEAR ',
+'CTRREL1 ',
+'CTRREL2 ',
+'CTRREL3 ',
+'CTRREL4 ',
+'NPPBAC1 ',
+'NPPBAC2 ',
+'NPPBAC3 ',
+'NPPBAC4 ',
+'CO2FRT1 ',
+'CO2FRT2 ',
+'CO2FRT3 ',
+'CO2FRT4 ',
+'HTRRES1 ',
+'HTRRES2 ',
+'HTRRES3 ',
+'HTRRES4 ',
+'FLXCTR1 ',
+'FLXCTR2 ',
+'FLXCTR3 ',
+'FLXCTR4 ',
+'TNPPFAC ',
+'TRESFAC ',
+'Q10EFF '/;
+LOOP(T, PUT T.TL:4,
+CTRREL.L(T,'1'):9:2,
+CTRREL.L(T,'2'):9:2,
+CTRREL.L(T,'3'):9:2,
+CTRREL.L(T,'4'):9:2,
+NPPBAC.L(T,'1'):10:5,
+NPPBAC.L(T,'2'):10:5,
+NPPBAC.L(T,'3'):10:5,
+NPPBAC.L(T,'4'):10:5,
+CO2FRT.L(T,'1'):10:5,
+CO2FRT.L(T,'2'):10:5,
+CO2FRT.L(T,'3'):10:5,
+CO2FRT.L(T,'4'):10:5,
+HTRRES.L(T,'1'):10:3,
+HTRRES.L(T,'2'):10:3,
+HTRRES.L(T,'3'):10:3,
+HTRRES.L(T,'4'):10:3,
+FLXCTR.L(T,'1'):9:5,
+FLXCTR.L(T,'2'):9:5,
+FLXCTR.L(T,'3'):9:5,
+FLXCTR.L(T,'4'):9:5,
+TNPPFAC.L(T):8:4,
+TRESFAC.L(T):8:4,
+Q10EFF.L(T):7:4/;);
+
+FILE OUT_FUTURE_5 /out_future_5.dat/;
+OUT_FUTURE_5.AP=0;
+PUT OUT_FUTURE_5;
+LOOP(T, PUT T.TL:5,
+T2M.L(T):10:6,
+T2MRT1990.L(T):10:6,
+PCS.L(T):10:6,
+SLRGLWC.L(T):10:6,
+SLRGR.L(T):10:6,
+SLRAN.L(T):10:6,
+SLRRT1750.L(T):10:6,
+PCSRT1990.L(T):10:6,
+SLRGLWCRT1990.L(T):10:6,
+SLRGRRT1990.L(T):10:6,
+SLRANRT1990.L(T):10:6,
+SLRRT1990.L(T):10:6/;);
+$offtext
+
+
+*** File outputs to display results (RCMIP) ----------------------------------------------------------------------------
+
+FILE OUT_FUTURE_RCMIP /out_future_rcmip.dat/;
+OUT_FUTURE_RCMIP.AP=0;
+OUT_FUTURE_RCMIP.PW=1000;
+PUT OUT_FUTURE_RCMIP;
+PUT
+'YEAR ',
+'CONCO2 ',
+'CONCH4 ',
+'CONN2O ',
+'T2M ',
+'CUMCO2 ',
+'ANTCO2 ',
+'ANTCH4 ',
+'ANTN2O ',
+'ANTNOx ',
+'ANTCO ',
+'ANTVOC ',
+'ANTSO2 ',
+'RADTTL ',
+'RADANT ',
+'RADAER ',
+'RADCO2 ',
+'RADCH4 ',
+'RADN2O ',
+'pH '/;
+LOOP(T, PUT T.TL:4,
+CON.L(T,'CO2'):9:2,
+CON.L(T,'CH4'):9:2,
+CON.L(T,'N2O'):9:2,
+T2M.L(T):9:4,
+CUMCO2.L(T):10:2,
+ANT.L(T,'CO2'):10:4,
+ANT.L(T,'CH4'):10:2,
+ANT.L(T,'N2O'):8:2,
+ANT.L(T,'NOx'):8:2,
+ANT.L(T,'CO'):8:2,
+ANT.L(T,'VOC'):8:2,
+ANT.L(T,'SO2'):8:2,
+RADTTL.L(T):9:4,
+RADANT.L(T):9:4,
+RADAER.L(T):9:4,
+RAD.L(T,'CO2'):9:4,
+RAD.L(T,'CH4'):9:4,
+RAD.L(T,'N2O'):9:4,
+PH.L(T):9:4/;);
+
+*** File outputs to display results (RF) ----------------------------------------------------------------------------
+
+FILE OUT_PAST_RF /out_future_RF.dat/;
+OUT_PAST_RF.AP=0;
+OUT_PAST_RF.PW=1000;
+PUT OUT_PAST_RF;
+PUT
+'YEAR ',
+'RADTTL ',
+'RADANT ',
+'RADAER ',
+'RADCO2 ',
+'RADCH4 ',
+'RADN2O ',
+'RADSO2 ',
+'RADO3TRP ',
+'RADO3STR ',
+'RADrOH ',
+'RADNOx ',
+'RADEESC ',
+'RADSF6 ',
+'RADCO ',
+'RADVOC ',
+'RADCRBAER ',
+'RADAERIND ',
+'RADH20STR '/;
+LOOP(T, PUT T.TL:4,
+RADTTL.L(T):9:4,
+RADANT.L(T):9:4,
+RADAER.L(T):9:4,
+RAD.L(T,'CO2'):9:4,
+RAD.L(T,'CH4'):9:4,
+RAD.L(T,'N2O'):9:4,
+RAD.L(T,'SO2'):9:4,
+RAD.L(T,'O3TRP'):9:4,
+RAD.L(T,'O3STR'):9:4,
+RAD.L(T,'rOH'):9:4,
+RAD.L(T,'NOx'):9:4,
+RAD.L(T,'EESC'):9:4,
+RAD.L(T,'SF6'):9:4,
+RAD.L(T,'CO'):9:4,
+RAD.L(T,'VOC'):9:4,
+RAD.L(T,'CRBAER'):9:4,
+RAD.L(T,'AERIND'):9:4,
+RAD.L(T,'H2OSTR'):9:4/;);

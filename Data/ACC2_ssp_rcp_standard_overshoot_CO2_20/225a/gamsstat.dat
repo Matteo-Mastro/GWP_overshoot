@@ -1,0 +1,177 @@
+=1
+=2
+=0CONOPT 3         40.3.0 f227c22a Sep 16, 2022          WEI x86 64bit/MS Window
+=C
+=1
+=CReading parameter(s) from "C:\Users\mastr\Documents\LSCE\ACC2_simulations\ACC2_ssp_rcp_standard_overshoot_CO2_20\conopt3.opt"
+=C>>  ********** ACC2 version 3.1.0. *****************************************************************************************
+=C>>  ********** CONOPT options ==============================================================================================
+=C>>  * General strategy to use CONOPT options:
+=C>>  * According to Arne Stolbjerg Drud (personal communication on Oct. 3, 2005) at ARKI, they attempt to creat a system
+=C>>  * in a way that a user should not be concerned with options. Unfortunately, the state of the art for nonlinear
+=C>>  * programming is not yet at a stage where options can be avoided completely.
+=C>>  * But one should always try to start without any options and then add a few if they become necessary.
+=C>>  *
+=C>>  * Maximum feasibility tolerance: a constraint will only be considered feasible if the residual is less than
+=C>>  * rtnwma times MaxJac.
+=C>>  * RTNWMA 1.e-6 (default 1.e-3)
+=C>>  *
+=C>>  * Minmum feasibility tolerance: a constraint will always be considered feasible if...
+=C>>  * RTNWMI 4.e-10 (default 4.e-10)
+=C>>  *
+=C>>  * Maximum Hessian dimension: if the number of superbasics exceeds lfnsup, CONOPT will no longer use the BFGS algorighm
+=C>>  * but will switch to a steepest descend approach.
+=C>>  * CONOPT2 and 3 react very differently.
+=C>>  * There has been a problem for CONOPT3 where a reasonable solution (1 normal completion and 2 locally optimal) is
+=C>>  * aparantly reached whereas there are some slacks left in the equations. When this happens, one should run the model
+=C>>  * again and often a correct solution can then be found. According to Arne Stolbjerg Drud (personal communication,
+=C>>  * Oct. 24, 2006), this problem in CONOPT3 will be fixed in the next version. He suggests that for now, LFNSUP be changed
+=C>>  * from 1000 to 1500 or 2000. When the model runs, the 'NSB' column in the log-file has numbers around 1265 most of the
+=C>>  * time. In order to estimate good 2nd order information, lfnsup should be larger than 1265. It seems to give some
+=C>>  * speedup for the algorithm.
+=C>>  LFNSUP = 2000
+=C>>  *
+=C>>  * Maximum Jacobian element
+=C>>  * rtmaxj of 2.d7 led to warming, but that of 1.d7 went through.
+=C>>  * The following choice is made by Arne Stolbjerg Drud experimentally.
+=C>>  * According to Drud (personal communication on Oct. 3, 2005), the Rtmaxv and Rtmaxj options are necessary,
+=C>>  * being related to large variables, which cannot be properly scaled automatically at this stage.
+=C>>  RTMAXJ = 1.e15
+=C>>  *
+=C>>  * Internal value of infinity
+=C>>  * My choice was 8.0E+07.
+=C>>  * See the note above for TRMAXJ
+=C>>  RTMAXV = 1.d50
+=C*** Value Error line 38: Value brought in range for option "RTMAXV" saw "1E50"
+=C*** Value Error line 38:    Value set to 1E30
+=C>>  *
+=C>>  * The optimization is stopped with a "slow progress" message if the change in objective is less than
+=C>>  * 10*rtobjr*max(1, abs(FOBJ)) for lfnicr consecutive iterations when FOBJ is the value of the current objective function.
+=C>>  LFNICR = 500
+=C>>  *
+=C>>  * Reduced gradient less than tolerance: the largest component of the reduced gradient is less than the tolerance rtredy.
+=C>>  * default 9.d-8
+=C>>  RTREDG = 9.d-6
+=C>>  * The following is a quote from my email communication with Drud on Oct. 12, 2005.
+=C>>  * Once a feasible solution has been found CONOPT will move in a direction suggested by the reduced gradient
+=C>>  * until the reduced gradient becomes smaller than the optimality tolerance, Rtredg.
+=C>>  * During this process the objective function must be reduced monotonically.
+=C>>  * Sometimes, it is not possible to reduce the objective function even though the reduced gradient is not very small and
+=C>>  * CONOPT will terminate with some kind of message about 'Slow convergence' and you will see NOPT with some variables.
+=C>>  * Having a larger Rtredg will remove these NOPT messages, but it may also mean that CONOPT terminates too early
+=C>>  * while it is still possible to get a better solution.
+=C>>  * Slow convergence can happen for very large model or model for which CONOPT's scaling procedure does not work well.
+=C>>  *
+=C>>  * Maximum number of stalled iteration
+=C>>  * Default 100
+=C>>  * LFSTAL 100
+=C>>  * LFILOG 5000
+=C>>  * lfmxns 0
+=C>>  *
+=C>>  * Alternative method: It can make larger steps and therefore better reductions in the sum of infeasibilities,
+=C>>  * and it is not very sensitive to degeneracies.
+=C>>  * According to Drud (personal communication on Oct. 3, 2005), the lmmxsf option should be fine now.
+=C>>  * This option has now been used by many users for many years without any error reports recently.
+=C>>  * lmmxsf 1
+=C>>  *
+=C>>  * Upon slow convergence, increase rtredg and/or decrease lfnicr
+=C>>  *
+=C>>  * Triangular crash turned on as suggested by Drud (personal communication on Oct. 11, 2005).
+=C>>  * lstcrs = true
+=CFinished reading from "C:\Users\mastr\Documents\LSCE\ACC2_simulations\ACC2_ssp_rcp_standard_overshoot_CO2_20\conopt3.opt"
+=2
+=C
+=1
+ 
+ 
+    C O N O P T 3   version 3.17M
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+=2
+    1  INPUT                                                                  (DEFAULT)
+    2  BRANCH * MAJERR MINERR JACERR                                          (DEFAULT)
+    3  OPTIMIZE                                                               (DEFAULT)
+    4  BRANCH * * * * * * MAJERR                                              (DEFAULT)
+    5  OUTPUT                                                                 (DEFAULT)
+    6  EXIT                                                                   (DEFAULT)
+    7  MAJERR MESSAGE MAJOR ERROR - TERMINATE                                 (DEFAULT)
+    8  EXIT                                                                   (DEFAULT)
+    9  MINERR MESSAGE MINOR ERROR - TERMINATE                                 (DEFAULT)
+   10  EXIT                                                                   (DEFAULT)
+   11  JACERR MESSAGE FUNCTION OR DERIVATIVE ERROR                            (DEFAULT)
+   12  OUTPUT                                                                 (DEFAULT)
+   13  EXIT                                                                   (DEFAULT)
+ 
+  ***  Line    1  INPUT
+ 
+  ***  Line    0  SET       LSAZRW   = TRUE
+ 
+  ***  Line    0  SET       LFEERR   =           0
+ 
+  ***  Line    0  SET       LFITER   =     1000000
+ 
+  ***  Line    0  SET       LFNICR   =         500
+ 
+  ***  Line    0  SET       LFNSUP   =        2000
+ 
+  ***  Line    0  SET       RTMAXJ   =     1.0000000000E+15
+ 
+  ***  Line    0  SET       RTMAXV   =     1.0000000000E+30
+ 
+  ***  Line    0  SET       RTREDG   =     9.0000000000E-06
+ 
+  ***  Line    0  SET       RVTIME   =      500000.0000
+ 
+  ***  Line    2  BRANCH with Lbranch =  1
+ 
+  ***  Line    3  OPTIMIZE
+ Rtmaxs increased to 1.00000000E+28 due to large value of Rtmaxv
+ 
+Search for a first feasible solution
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        1.6431773141E+08 (Input point)
+=1
+ 
+ ** Warning **  The variance of the derivatives in the initial
+                point is large (= 5.5 ). A better initial
+                point, a better scaling, or better bounds on the
+                variables will probably help the optimization.
+ 
+=2
+=1
+ 
+                   Pre-triangular equations:   64494
+                   Post-triangular equations:  19344
+                   Definitional equations:     17479
+ 
+=2
+      1   0        3.6550944814E-09 (After pre-processing)
+      2   0        3.3257555851E-12 (After scaling)
+ 
+ ** Feasible solution. Value of objective =    5065.27853336
+ 
+Search for an optimal solution.
+ 
+   Elapsed time       56.3 seconds.
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+      3   3        5.0072727281E+03 6.1E+01    63 1.0E+00    1 T  T
+      4   3        5.0012671561E+03 4.5E+06    64 5.8E-01    5 F  T
+      5   3        4.9994904602E+03 1.2E+04    67 1.0E+00    4 T  T
+      6   3        4.9988345894E+03 8.3E+03    74 1.0E+00    6 T  T
+      7   3        4.9942179187E+03 5.4E+03    73 1.0E+00   11 T  T
+      8   3        4.9942014053E+03 5.8E+03    78 1.0E+00   23 T  T
+      9   3        4.9933509370E+03 1.3E+04    77 1.0E+00   10 T  T
+     10   3        4.9930842879E+03 3.2E+02    83 1.0E+00   16 T  T
+     11   3        4.9930489863E+03 6.8E+02    99 1.0E+00   23 T  T
+     12   3        4.9930487447E+03 1.3E+02    89 3.9E-01   27 F  T
+     13   3        4.9930486473E+03 2.3E+02    90 2.7E-01   14 F  T
+     14   3        4.9930486409E+03 1.8E+02    90 6.8E-11      T  T
+     15   3        4.9930486365E+03 1.6E+02    89 7.8E-11      T  T
+     16   3        4.9930486364E+03 1.6E+02    88 2.2E-12      T  T
+     17   3        4.9930486046E+03 3.9E+02    89 1.6E-10      T  T
+     18   3        4.9930485099E+03 3.9E+02    88 7.5E-10      T  T

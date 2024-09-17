@@ -1,0 +1,11 @@
+Check the following variables are stuck at their bounds:
+(If no variables are listed below, there is no variable stuck at its bounds.)
+2000          BETA
+2000          SENS
+              TMIX1750
+              DMPTMIX
+              Q10BAS
+              Q10TMP
+              RAD2XCO2
+              SCLRAD
+              KAPPA

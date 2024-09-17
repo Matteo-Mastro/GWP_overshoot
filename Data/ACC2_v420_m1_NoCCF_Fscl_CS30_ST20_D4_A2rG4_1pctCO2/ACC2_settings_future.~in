@@ -1,0 +1,251 @@
+********** ACC2 version 4.2: ACC2_settings_future.inc ******************************************************************
+********** Parameters declarations and assignments (future mode) =======================================================
+*
+****** Program mode ====================================================================================================
+*
+* Never change the MODEFLAG assignment below.
+* The assignment below (=0) indicates that the program runs on the future mode.
+* To run the past mode, execute the file called 'ACC2_main_past.gms'.
+*
+         MODEFLAG =       0;
+*
+*
+****** Constant declarations ===========================================================================================
+
+* PARAMETERS
+
+* Following three parameters are used for the past mode.
+* Because they are used in ACC2_equations_common.inc, they are declared here to prevent errors.
+
+* Used for future run outputs for multiple scenarios
+
+* SAVSUMR(T,SRES)         Summary of future run TOTALRAD for each scenario
+
+* SAVSUMT(T,SRES)         Summary of future run T2M1990RT for each scenario;
+
+
+****** Constant assignments ============================================================================================
+
+RADVOL(T) = 0;
+
+* The following is taken over from ICM 1.1.
+* Sensible guardrails
+* ENG.LO(T,FOB)           = 0;
+* CON.LO(T,FOB)           = 0;
+* CON.LO(T,'CH4')         = 700;
+
+
+****** Variable declarations ===========================================================================================
+
+VARIABLES
+
+ANT(T,FOB)               Anthropogenic emissions (both energy and non-energy related emissions)
+*                        Natural emissions are fixed and treated as parameters.
+*                        Units are gas dependent. Units used in the model follows those in IPCC (2001) Appendix A.
+*                        CO2             [GtC/year]
+*                        CH4             [TgCH4/year]
+*                        N2O             [TgN/year]
+*                        SO2             [TgS/year]
+*                        (rOH)
+*                        (O3TRP)
+*                        CF4             [Gg/year]
+*                        C2F6            [Gg/year]
+*                        C4F10           [Gg/year]
+*                        HFC23           [Gg/year]
+*                        HFC32           [Gg/year]
+*                        HFC4310mee      [Gg/year]
+*                        HFC125          [Gg/year]
+*                        HFC134a         [Gg/year]
+*                        HFC143a         [Gg/year]
+*                        HFC152a         [Gg/year]
+*                        HFC227ea        [Gg/year]
+*                        HFC236fa        [Gg/year]
+*                        HFC245ca        [Gg/year]
+*                        SF6             [Gg/year]
+*                        CFC11           [Gg/year]
+*                        CFC12           [Gg/year]
+*                        CFC113          [Gg/year]
+*                        CFC114          [Gg/year]
+*                        CFC115          [Gg/year]
+*                        CCl4            [Gg/year]
+*                        CH3CCl3         [Gg/year]
+*                        Halon1211       [Gg/year]
+*                        Halon1301       [Gg/year]
+*                        Halon2402       [Gg/year]
+*                        HCFC22          [Gg/year]
+*                        HCFC141b        [Gg/year]
+*                        HCFC142b        [Gg/year]
+*                        HCFC123         [Gg/year]
+*                        (CH3Cl)
+*                        (CH3Br)
+*                        NOx             [TgN/year]
+*                        CO              [TgCO/year]
+*                        VOC             [TgVOC/year]
+*                        (EESC)
+
+ENG(T,FOB)               Energy (and cement production) related anthropogenic emissions
+* Units are the same as the units used for ANT(T,FOB)
+
+NEG(T,FOB)               Non-energy related anthropogenic emissions
+* Units are the same as the units used for ANT(T,FOB)
+
+CON(T,FOB)               Atmospheric concentrations of direct and indirect forcing agents
+*                        CO2             [ppm]
+*                        N2O             [ppb]
+*                        CH4             [ppb]
+*                        O3TRP           [DU]
+*                        CF4             [ppt]
+*                        C2F6            [ppt]
+*                        C4F10           [ppt]
+*                        HFC23           [ppt]
+*                        HFC32           [ppt]
+*                        HFC4310mee      [ppt]
+*                        HFC125          [ppt]
+*                        HFC134a         [ppt]
+*                        HFC143a         [ppt]
+*                        HFC152a         [ppt]
+*                        HFC227ea        [ppt]
+*                        HFC236fa        [ppt]
+*                        HFC245ca        [ppt]
+*                        SF6             [ppt]
+*                        CFC11           [ppt]
+*                        CFC12           [ppt]
+*                        CFC113          [ppt]
+*                        CFC114          [ppt]
+*                        CFC115          [ppt]
+*                        CCl4            [ppt]
+*                        CH3CCl3         [ppt]
+*                        Halon1211       [ppt]
+*                        Halon1301       [ppt]
+*                        Halon2402       [ppt]
+*                        HCFC22          [ppt]
+*                        HCFC141b        [ppt]
+*                        HCFC142b        [ppt]
+*                        HCFC123         [ppt]
+*                        EESC            [ppt]
+*                        rOH             [1]
+* Concentrations of pollutants (NOx, CO, VOC) are not explicitly specified.
+* Concentration of OH is relative concentration to the concentration in the year 2000.
+
+
+****** Equation declarations ===========================================================================================
+
+EQUATIONS
+
+*ANTQ(T,FOB)
+
+
+CONO3TRPQ(T)
+
+CONSF6Q(T)
+
+CONHAL1Q(T,HAL)
+
+CONHAL2Q(T,HAL)
+
+CONEESCQ(T)
+
+
+RADHALQ(T,HALR)
+
+RADSF6Q(T)
+
+RADO3TRPQ(T)
+
+RADO3STRQ(T)
+
+RADSOLQ(T)
+
+RADMISQ(T)
+
+RADAERQ(T)
+
+RADANTQ(T)
+
+RADANTLQ(T)
+
+RADANTOQ(T)
+
+RADTTLQ(T);
+
+
+****** Equation Definitions ============================================================================================
+
+*** Emissions ----------------------------------------------------------------------------------------------------------
+
+* Use below when the prescribed scenario are used as it is.
+*ANTQ(T,FOB)                   .. ANT(T,FOB) =E= ENG(T,FOB)+NEG(T,FOB);
+
+
+*** Concentrations -----------------------------------------------------------------------------------------------------
+
+CONO3TRPQ(T) $(Ord(T) GT 1)   .. CON(T,'O3TRP') =E=
+                                 CON('2000','O3TRP')+5.0*(LOG(CON(T,'CH4'))-
+                                 LOG(CON('2000','CH4')))+0.125*(ANT(T,'NOx')-ANT('2000','NOx'))
+                                 +0.0011*(ANT(T,'CO')-ANT('2000','CO'))+0.0033*(ANT(T,'VOC')-ANT('2000','VOC'));
+
+CONSF6Q(T) $(Ord(T) GT 1)     .. (CON(T,'SF6')-CON(T-1,'SF6'))/DELTAT =E= 0.5*
+                                 ((1/CNVSF6*(ANT(T,'SF6'))-(1/TAUSF6*CON(T,'SF6')))+
+                                 (1/CNVSF6*(ANT(T-1,'SF6'))-(1/TAUSF6*CON(T-1,'SF6'))));
+
+CONHAL1Q(T,HAL) $((Ord(T) GT 1) AND (NHYD(HAL) EQ 0)) .. (CON(T,HAL)-CON(T-1,HAL))/DELTAT =E= 0.5*
+                                 ((1/CNV(HAL)*(ANT(T,HAL)+ NAT(HAL))-(1/TAUATM(HAL)*CON(T,HAL)))+
+                                 (1/CNV(HAL)*(ANT(T-1,HAL)+ NAT(HAL))-(1/TAUATM(HAL)*CON(T-1,HAL))));
+* For halocarbons with their concentrations not controlled by OH
+
+CONHAL2Q(T,HAL) $((Ord(T) GT 1) AND (NHYD(HAL) GT 0)) .. (CON(T,HAL)-CON(T-1,HAL))/DELTAT =E= 0.5*
+                                 ((1/CNV(HAL)*(ANT(T,HAL)+ NAT(HAL))-(1/TAUATM(HAL)*CON(T,'rOH')*CON(T,HAL)))+
+                                 (1/CNV(HAL)*(ANT(T-1,HAL)+ NAT(HAL))-(1/TAUATM(HAL)*CON(T-1,'rOH')*CON(T-1,HAL))));
+* For halocarbons with their concentrations controlled by OH
+
+CONEESCQ(T)                   .. CON(T,'EESC') =E=
+                                 SUM(ODS, AFRCFC11*(NCLO(ODS)+ALPEESC*NBRO(ODS))*RFRF(ODS)*CON(T-3,ODS))$(Ord(T) GT 3)
+                                 +SUM(ODS, AFRCFC11*(NCLO(ODS)+ALPEESC*NBRO(ODS))*RFRF(ODS)*CON1997(ODS))$(Ord(T) EQ 1)
+                                 +SUM(ODS, AFRCFC11*(NCLO(ODS)+ALPEESC*NBRO(ODS))*RFRF(ODS)*CON1998(ODS))$(Ord(T) EQ 2)
+                                 +SUM(ODS, AFRCFC11*(NCLO(ODS)+ALPEESC*NBRO(ODS))*RFRF(ODS)*CON1999(ODS))$(Ord(T) EQ 3);
+
+
+*** Radiative forcings -------------------------------------------------------------------------------------------------
+
+RADHALQ(T,HALR)  .. RAD(T,HALR) =E= RHORAD(HALR)*CON(T,HALR);
+* CH3Cl and CH3Br are not included in radiative forcing calculation.
+*RADHALQ(T,HALR)  .. RAD(T,HALR) =E= 0;
+
+RADSF6Q(T)       .. RAD(T,'SF6') =E= RHOSF6*CON(T,'SF6');
+*RADSF6Q(T)       .. RAD(T,'SF6') =E= 0;
+
+RADO3TRPQ(T)     .. RAD(T,'O3TRP') =E= RHOO3TRP*(CON(T,'O3TRP')-CONO3TRPPRE);
+*RADO3TRPQ(T)     .. RAD(T,'O3TRP') =E= 0;
+
+*RADO3STRQ(T)     .. RAD(T,'O3STR') =E= RHOO3STR*(CON(T,'EESC')-CONEESC1970);
+RADO3STRQ(T)     .. RAD(T,'O3STR') =E= 0;
+
+RADSOLQ(T)       .. RADSOL(T) =E= [[RADSOL2000-(RADSOL2000-RADSOL20AVE)/30*(Ord(T)-1)]$(Ord(T) < 32)
+                                  +[RADSOL20AVE]$(Ord(T) >= 32)]$(SOLSWCH > 0.5)
+                                  +[0]$(SOLSWCH < 0.5);
+
+RADMISQ(T)       .. RADMIS(T) =E= 0;
+
+RADAERQ(T)       .. RADAER(T) =E= RAD(T,'SO2')+RAD(T,'CRBAER')+RAD(T,'AERIND');
+
+RADANTQ(T)       .. RADANT(T) =E=
+                    RAD(T,'CO2')+RAD(T,'CH4')+RAD(T,'N2O')+RADHAL(T)+RAD(T,'SF6')+RAD(T,'H2OSTR')+RAD(T,'AERIND')+
+                    (RAD(T,'O3TRP')+RAD(T,'O3STR'))+
+                    RAD(T,'SO2')+
+                    RAD(T,'CRBAER');
+
+RADANTLQ(T)      .. RADANTL(T) =E=
+                    RAD(T,'CO2')+RAD(T,'CH4')+RAD(T,'N2O')+RADHAL(T)+RAD(T,'SF6')+RAD(T,'H2OSTR')+RAD(T,'AERIND')+
+                    ROZO/(1-FLA+FLA*ROZO)*(RAD(T,'O3TRP')+RAD(T,'O3STR'))+
+                    RSUL/(1-FLA+FLA*RSUL)*RAD(T,'SO2')+
+                    RFF/(1-FLA+FLA*RFF)*RAD(T,'CRBAER');
+
+RADANTOQ(T)      .. RADANTO(T) =E=
+                    RAD(T,'CO2')+RAD(T,'CH4')+RAD(T,'N2O')+RADHAL(T)+RAD(T,'SF6')+RAD(T,'H2OSTR')+RAD(T,'AERIND')+
+                    1/(1-FLA+FLA*ROZO)*(RAD(T,'O3TRP')+RAD(T,'O3STR'))+
+                    1/(1-FLA+FLA*RSUL)*RAD(T,'SO2')+
+                    1/(1-FLA+FLA*RFF)*RAD(T,'CRBAER');
+
+RADTTLQ(T)       .. RADTTL(T) =E=
+                    RAD(T,'CO2')+RAD(T,'CH4')+RAD(T,'N2O')+RADHAL(T)+RAD(T,'SF6')+RAD(T,'O3TRP')+RAD(T,'O3STR')
+                    +RAD(T,'H2OSTR')+RAD(T,'SO2')+RAD(T,'CRBAER')+RAD(T,'AERIND')+RADVOL(T)+RADSOL(T)+RADMIS(T);
