@@ -1,0 +1,1 @@
+## This repository contains Codes and Data for replicating the figures of the (preprint) paper "Testing GWP* to quantify non-CO2 contributions in the carbon budget framework: the case of overshoot scenarios", by Mastropierro et al., (2024)
